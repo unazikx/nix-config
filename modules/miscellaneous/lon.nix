@@ -10,9 +10,15 @@
         ...
       }:
       {
-        environment.systemPackages = [
-          pkgs.lon
-        ];
+        environment = {
+          systemPackages = [
+            pkgs.lon
+          ];
+
+          variables = {
+            LON_DIRECTORY = ".lon";
+          };
+        };
       };
 
     homeManager =
@@ -21,9 +27,15 @@
         ...
       }:
       {
-        home.packages = [
-          pkgs.lon
-        ];
+        home = {
+          packages = [
+            pkgs.lon
+          ];
+
+          sessionVariables = {
+            LON_DIRECTORY = ".lon";
+          };
+        };
       };
   };
 }

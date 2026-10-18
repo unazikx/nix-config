@@ -41,6 +41,7 @@
       }:
       let
         cfg = config.programs.spotifast;
+        json = pkgs.formats.json { };
       in
       {
         programs.spotifast = {
@@ -114,7 +115,7 @@
             sidebar_width = 210.0;
             skin = null;
             skin_scale = 3;
-            theme = "system";
+            theme = "stylix";
             tracklist_compact = false;
             vis = "bars";
             volume = 26214;
@@ -129,9 +130,10 @@
         };
 
         xdg.configFile = {
-          "spotifast/settings.json".source =
-            config.lib.file.mkOutOfStoreSymlink
-              config.sops.templates."spotifast-config".path;
+          "spotifast/settings.json" = {
+            source = config.lib.file.mkOutOfStoreSymlink config.sops.templates."spotifast-config".path;
+            force = true;
+          };
         };
 
         sops.secrets = {
@@ -139,13 +141,7 @@
         };
 
         sops.templates = {
-          "spotifast-config".content = lib.toJSON cfg.settings;
-        };
-
-        home.activation = {
-          spotifast = lib.hm.dag.entryAfter [
-            "writeBoundary"
-          ] "rm ${config.xdg.configHome}/spotifast/settings.json";
+          "spotifast-config".content = lib.readFile (json.generate "spotifast-config.json" cfg.settings);
         };
       };
   };
