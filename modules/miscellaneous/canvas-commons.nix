@@ -42,10 +42,16 @@
             packages = [
               pkgs.xdg-utils
               pkgs.nodejs
-              pkgs.helix
             ];
 
             startup = {
+              open-links.text =
+                # bash
+                ''
+                  xdg-open "http://localhost:9000"
+                  xdg-open "https://canvascommons.io/docs"
+                '';
+
               mkdir-projects.text =
                 # bash
                 ''
@@ -59,11 +65,6 @@
                   npm init @canvas-commons@latest -y --silent
                   read -p "Directory: " PROJECT_DIR; cd $PROJECT_DIR
                   npm --silent install; npm --silent start
-
-                  xdg-open "http://localhost:9000"
-                  xdg-open "https://canvascommons.io/docs"
-
-                  hx $PROJECT_DIR
                 '';
             };
           };
