@@ -90,7 +90,7 @@
             mac_notch_widget = false;
             middle_click_autoscroll = false;
             mono = false;
-            normalisation = false;
+            normalisation = true;
             personal_app_intro_seen = true;
             personal_app_nudge_at = null;
             pinned_contexts = [
