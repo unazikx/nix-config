@@ -7,7 +7,7 @@
     # keep-sorted start block=yes newline_separated=yes
     proxy-suite-flake = {
       type = "github";
-      owner = "fufsob";
+      owner = "unazikx";
       repo = "proxy-suite-flake";
     };
     # keep-sorted end

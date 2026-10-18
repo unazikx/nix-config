@@ -454,12 +454,12 @@
     "proxy-suite-flake": {
       "type": "GitHub",
       "fetchType": "tarball",
-      "owner": "fufsob",
+      "owner": "unazikx",
       "repo": "proxy-suite-flake",
       "branch": "main",
-      "revision": "2f8414455d2813b96ae1d4442a90ee8f58525300",
-      "url": "https://github.com/fufsob/proxy-suite-flake/archive/2f8414455d2813b96ae1d4442a90ee8f58525300.tar.gz",
-      "hash": "sha256-/JdG/uqisviWD0b1y6kZmVwXUXwBggzh4hU6AhmvdZA="
+      "revision": "99bac220ea6517b18122232234ad2be8bc04234e",
+      "url": "https://github.com/unazikx/proxy-suite-flake/archive/99bac220ea6517b18122232234ad2be8bc04234e.tar.gz",
+      "hash": "sha256-ut+3qCVOSFnuwRNrwByeYYiyyfihvMEfW8Lg3Bj26qk="
     },
     "remove-edge": {
       "type": "GitHub",

@@ -42,7 +42,7 @@ nixpkgs-unstable	github:nixos/nixpkgs/nixos-unstable
 nur	github:nix-community/nur
 optnix	github:water-sucks/optnix
 pkgs-by-name	github:drupol/pkgs-by-name-for-flake-parts
-proxy-suite-flake	github:fufsob/proxy-suite-flake
+proxy-suite-flake	github:unazikx/proxy-suite-flake
 remove-edge	github:shadowwhisperer/remove-ms-edge
 sopsnix	github:mic92/sops-nix
 spectrum	github:unazikx/spectrum
