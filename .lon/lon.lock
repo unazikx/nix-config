@@ -341,6 +341,16 @@
       "url": "https://github.com/hustlerone/nix-minecraft/archive/813f295a842eabb3c0a5a55a8a411dfeaa09c804.tar.gz",
       "hash": "sha256-6T2jaIPiTGnjtTpolY2+Rh7IIfkFVY6j8rDyJ3V2g2M="
     },
+    "nix-wrapper-modules": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "nix-community",
+      "repo": "nix-wrapper-modules",
+      "branch": "main",
+      "revision": "6bc32f5cc67ee0f1bfb246c47b4b2c53ba1bc014",
+      "url": "https://github.com/nix-community/nix-wrapper-modules/archive/6bc32f5cc67ee0f1bfb246c47b4b2c53ba1bc014.tar.gz",
+      "hash": "sha256-J3sKT3dVyCXlblkgzWc41cUZ4ezZbR5XZzfvETkAH78="
+    },
     "nixos-cli": {
       "type": "GitHub",
       "fetchType": "tarball",

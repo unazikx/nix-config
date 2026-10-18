@@ -14,6 +14,7 @@
     diskoUSB = { };
     overlays = { };
     root = { };
+    wrappers = { };
     # keep-sorted end
   };
 
@@ -113,6 +114,27 @@
           path = [
             "flake"
           ];
+        })
+      ];
+
+    wrappers-to-flake-system =
+      {
+        ...
+      }:
+      [
+        (den.lib.policy.route {
+          fromClass = "wrappers";
+          intoClass = "flake";
+          path = [
+            "wrappers"
+          ];
+          adaptArgs =
+            {
+              ...
+            }:
+            {
+              inherit self;
+            };
         })
       ];
     # keep-sorted end
