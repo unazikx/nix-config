@@ -25,61 +25,38 @@
       ];
     };
 
-    devshells = {
-      canvas-commons =
-        {
-          pkgs,
-          ...
-        }:
-        {
-          devshell = {
-            name = "canvas-commons";
-
-            motd = ''
-              {202}Welcome to devshell for Canvas-Commons{reset}
-            '';
-
-            packages = [
-              pkgs.xdg-utils
-              pkgs.nodejs
-            ];
-
-            startup = {
-              open-links.text =
-                # bash
-                ''
-                  xdg-open "http://localhost:9000"
-                  xdg-open "https://canvascommons.io/docs"
-                '';
-
-              mkdir-projects.text =
-                # bash
-                ''
-                  [ -d $CANVAS_DIR ] || mkdir -p $CANVAS_DIR  
-                  cd $CANVAS_DIR
-                '';
-
-              startup-project.text =
-                # bash
-                ''
-                  npm init @canvas-commons@latest -y --silent
-                  read -p "Directory: " PROJECT_DIR; cd $PROJECT_DIR
-                  npm --silent install; npm --silent start
-                '';
-            };
-          };
-
-          env = [
-            {
-              name = "CANVAS_DIR";
-              eval = "$XDG_DOCUMENTS_DIR/Canvas-Commons";
-            }
-          ];
-        };
-    };
-
     wrappers = { };
   };
+
+  perSystem =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      devShells.canvas-commons = pkgs.mkShell {
+        packages = [
+          pkgs.xdg-utils
+          pkgs.nodejs
+        ];
+
+        shellHook =
+          # bash
+          ''
+            CANVAS_DIR=$XDG_DOCUMENTS_DIR/Canvas-Commons
+
+            xdg-open "http://localhost:9000"
+            xdg-open "https://canvascommons.io/docs"
+
+            [ -d $CANVAS_DIR ] || mkdir -p $CANVAS_DIR  
+            cd $CANVAS_DIR
+
+            npm init @canvas-commons@latest -y --silent
+            read -p "Directory: " PROJECT_DIR; cd $PROJECT_DIR
+            npm --silent install; npm --silent start
+          '';
+      };
+    };
 
   zen.flake-system.default = {
     includes = [ zen.miscellaneous.canvas-commons ];
