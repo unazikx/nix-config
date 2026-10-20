@@ -89,10 +89,10 @@ rustPlatform.buildRustPackage (_final: {
     substituteInPlace $out/lib/systemd/user/driftwm.service --replace-fail "ExecStart=driftwm" "ExecStart=$out/bin/driftwm"
   '';
 
-  meta = with lib; {
+  meta = {
     description = "A trackpad-first infinite canvas Wayland compositor";
     homepage = "https://github.com/malbiruk/driftwm";
-    license = licenses.gpl3Plus;
+    license = lib.licenses.gpl3Plus;
     mainProgram = "driftwm";
   };
 })

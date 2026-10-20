@@ -2,6 +2,7 @@
   stdenv,
   writeText,
   nitter,
+  lib,
   colors ? {
     base00 = "#151515";
     base01 = "#1f1f1f";
@@ -84,15 +85,15 @@ stdenv.mkDerivation (_final: {
   installPhase = ''
     mkdir $out
 
-    cp -r \
-      public/* \
-      $out
+    cp -r public/* $out
 
-    cp -r \
-      ${stylix-theme} \
-      $out/css/themes/stylix.css
+    cp -r ${stylix-theme} $out/css/themes/stylix.css
   '';
 
   allowSubstitutes = false;
   preferLocalBuild = true;
+
+  meta = nitter.meta // {
+    description = "Nitter with custom base16 theme.";
+  };
 })
