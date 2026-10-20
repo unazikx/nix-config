@@ -32,6 +32,7 @@ nix-darwin	github:nix-darwin/nix-darwin
 nix-filter	github:numtide/nix-filter
 nix-math	github:xddxdd/nix-math
 nix-minecraft	github:hustlerone/nix-minecraft
+nix-obsidian-extensions	github:karaolidis/nix-obsidian-extensions
 nix-wrapper-modules	github:nix-community/nix-wrapper-modules
 nixos-cli	github:nix-community/nixos-cli
 nixos-hardware	github:NixOS/nixos-hardware
@@ -55,6 +56,7 @@ tinted-kitty	github:tinted-theming/tinted-kitty
 tinted-schemes	github:tinted-theming/schemes
 tinted-tmux	github:tinted-theming/tinted-tmux
 tinted-zed	github:tinted-theming/base16-zed
+treefmt-nix	github:numtide/treefmt-nix
 umbriel	github:noctalia-dev/umbriel
 winapps	github:winapps-org/winapps
 with-inputs	github:unazikx/with-inputs

@@ -3,11 +3,12 @@
     _:
     let
       self = ./.;
+      lonDir = "${self}/.lon";
 
-      sources = import "${self}/.lon/lon.nix";
-      with-inputs = (import sources.with-inputs).from;
+      sources = import "${lonDir}/lon.nix";
+      follows = import "${lonDir}/lon-follows.nix";
 
-      follows = import "${self}/.lon/lon-follows.nix";
+      with-inputs = import sources.with-inputs;
 
       outputs =
         inputs:
@@ -23,7 +24,7 @@
           )
         );
     in
-    (with-inputs.lon' self ".lon") follows outputs;
+    (with-inputs.from.lon' self ".lon") follows outputs;
 
   nixConfig = {
     accept-flake-config = true;

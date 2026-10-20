@@ -71,6 +71,7 @@
       zen.games.hytale
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
+      zen.programs.editors.obsidian.personal
       zen.games.srb2
       zen.games.steam
       zen.games.steam-tui

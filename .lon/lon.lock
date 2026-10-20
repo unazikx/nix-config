@@ -341,6 +341,16 @@
       "url": "https://github.com/hustlerone/nix-minecraft/archive/813f295a842eabb3c0a5a55a8a411dfeaa09c804.tar.gz",
       "hash": "sha256-6T2jaIPiTGnjtTpolY2+Rh7IIfkFVY6j8rDyJ3V2g2M="
     },
+    "nix-obsidian-extensions": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "karaolidis",
+      "repo": "nix-obsidian-extensions",
+      "branch": "main",
+      "revision": "88fb633c7bce1befc18caeb147bd33cb0bc3f8f8",
+      "url": "https://github.com/karaolidis/nix-obsidian-extensions/archive/88fb633c7bce1befc18caeb147bd33cb0bc3f8f8.tar.gz",
+      "hash": "sha256-N0bb0xi5R/md3Wg3kzIuV+4JUTsNbAlilz8vfMgUETA="
+    },
     "nix-wrapper-modules": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -580,6 +590,16 @@
       "revision": "279856d0e40f2a89cb011c088353d7454cdff2c2",
       "url": "https://github.com/tinted-theming/base16-zed/archive/279856d0e40f2a89cb011c088353d7454cdff2c2.tar.gz",
       "hash": "sha256-YazESoCZq2wjWJ2HqtudwJcyLXcYLE0Bl6/pT5eBTJQ="
+    },
+    "treefmt-nix": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "numtide",
+      "repo": "treefmt-nix",
+      "branch": "main",
+      "revision": "0d6d739a833ba9a9c93034862e4a7b061a062a1c",
+      "url": "https://github.com/numtide/treefmt-nix/archive/0d6d739a833ba9a9c93034862e4a7b061a062a1c.tar.gz",
+      "hash": "sha256-C3alQ2MEt0zVrUSho5NUDo3jmhbff72++bfwoqT9Omo="
     },
     "umbriel": {
       "type": "GitHub",
