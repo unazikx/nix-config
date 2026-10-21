@@ -64,11 +64,19 @@
     packages =
       {
         pkgs,
+        lib,
         ...
       }:
+      let
+        unset =
+          exec:
+          pkgs.writeShellScriptBin "write-lon" ''
+            LON_DIRECTORY= ; ${exec pkgs |> lib.getExe}
+          '';
+      in
       {
-        write-lon = config.flake-file.apps.write-lon pkgs;
-        write-lock = config.flake-file.apps.write-lock pkgs;
+        write-lon = config.flake-file.apps.write-lon |> unset;
+        write-lock = config.flake-file.apps.write-lock |> unset;
       };
   };
 }
