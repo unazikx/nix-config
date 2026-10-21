@@ -7,6 +7,7 @@
     root =
       {
         pkgs,
+        config,
         ...
       }:
       {
@@ -17,6 +18,7 @@
             pkgs.deadnix
             pkgs.keep-sorted
             pkgs.nixfmt
+            # pkgs.pedantix
             pkgs.prettier
             # keep-sorted end
           ];
@@ -47,6 +49,17 @@
                 includes = [ "*.nix" ];
               };
 
+              # pedantix = {
+              #   command = "pedantix";
+              #   excludes = [ ];
+              #   includes = [ "*.nix" ];
+              #   options = [
+              #     "--config"
+              #     config.packages.pedantix-config
+              #   ];
+              #   priority = 1;
+              # };
+
               prettier = {
                 command = "prettier";
                 excludes = [ ];
@@ -60,6 +73,66 @@
             };
           };
         };
+      };
+
+    packages =
+      {
+        pkgs,
+        ...
+      }:
+      {
+        pedantix-config =
+          let
+            toml = pkgs.formats.toml { };
+          in
+          {
+            args = {
+              sort = true;
+
+              first = [
+                "self"
+                "self'"
+                "inputs"
+                "inputs'"
+                "pkgs"
+                "lib"
+                "config"
+                "system"
+                "modulesPath"
+                "host"
+                "home"
+                "user"
+              ];
+
+              last = [
+                "<defaulted>"
+                "..."
+              ];
+            };
+
+            attrs = {
+              sort = false;
+              merge = true;
+            };
+
+            files = [
+              {
+                pattern = "**/packages/**";
+                preset = "nixpkgs-package";
+                attrs.sort = true;
+                overrides = [
+                  {
+                    path = "**.replacements";
+                    attrs.first = [
+                      "oldDependency"
+                      "newDependency"
+                    ];
+                  }
+                ];
+              }
+            ];
+          }
+          |> toml.generate "pedantix-config.toml";
       };
   };
 }
