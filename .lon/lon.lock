@@ -477,9 +477,9 @@
       "owner": "unazikx",
       "repo": "proxy-suite-flake",
       "branch": "main",
-      "revision": "99bac220ea6517b18122232234ad2be8bc04234e",
-      "url": "https://github.com/unazikx/proxy-suite-flake/archive/99bac220ea6517b18122232234ad2be8bc04234e.tar.gz",
-      "hash": "sha256-ut+3qCVOSFnuwRNrwByeYYiyyfihvMEfW8Lg3Bj26qk="
+      "revision": "a41fbc10e658312077a81ff685a736b61713f6e6",
+      "url": "https://github.com/unazikx/proxy-suite-flake/archive/a41fbc10e658312077a81ff685a736b61713f6e6.tar.gz",
+      "hash": "sha256-FG2EA2Mwm1rH5wzgvtyHl4DK9LU1bGmoOhywbtW7dPU="
     },
     "remove-edge": {
       "type": "GitHub",
