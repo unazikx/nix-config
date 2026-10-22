@@ -121,9 +121,12 @@
                 "Mod+Alt+Space" = "dock-toggle";
 
                 "Mod+A" = "annotate";
+                "Mod+Shift+A" = "caffeine-toggle ";
+
                 "Mod+W" = "window-switcher";
-                "Mod+Z" = "panel-toggle launcher /emo";
-                "Mod+X" = "panel-toggle clipboard";
+
+                "Mod+Z" = "panel-toggle clipboard";
+                "Mod+Shift+Z" = "panel-toggle launcher /emo";
 
                 "Mod+Backspace" = "session lock";
                 "Mod+Escape" = "panel-toggle session";
