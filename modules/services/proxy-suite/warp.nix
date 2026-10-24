@@ -37,14 +37,16 @@
         };
 
         sops.secrets =
-          lib.genAttrs
-            [
-              "warp-one"
-            ]
-            (name: {
+          [
+            "warp-one"
+          ]
+          |> (
+            list:
+            lib.genAttrs list (name: {
               sopsFile = "${self}/secrets/${host.hostName}/${name}.conf";
               format = "binary";
-            });
+            })
+          );
       };
   };
 }
