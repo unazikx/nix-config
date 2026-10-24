@@ -54,6 +54,7 @@
       zen.services.proxy-suite.tg-ws-proxy
       zen.services.proxy-suite.zapret2
       zen.services.qbittorrent
+      zen.services.sunshine
       zen.services.tailscale
       zen.services.vaultwarden
       zen.styles.stylix
