@@ -52,13 +52,6 @@
                 };
               }
               {
-                name = "daily-notes";
-                settings = {
-                  "folder" = "Daily Notes";
-                  "format" = "DD-MM-YYYY";
-                };
-              }
-              {
                 name = "canvas";
                 settings = {
                   "cardLabelVisibility" = "always";
@@ -66,6 +59,13 @@
                   "newFileLocation" = "current";
                   "snapToGrid" = true;
                   "snapToObjects" = true;
+                };
+              }
+              {
+                name = "daily-notes";
+                settings = {
+                  "folder" = "Daily Notes";
+                  "format" = "DD-MM-YYYY";
                 };
               }
               {
@@ -93,32 +93,32 @@
               # keep-sorted end
 
               # keep-sorted start
-              "file-explorer"
-              "global-search"
-              "switcher"
-              "outgoing-link"
-              "tag-pane"
-              "footnotes"
-              "properties"
-              "page-preview"
-              "templates"
-              "note-composer"
-              "command-palette"
-              "slash-command"
-              "editor-status"
-              "bookmarks"
-              "zk-prefixer"
-              "random-note"
-              "outline"
-              "word-count"
-              "slides"
               "audio-recorder"
-              "workspaces"
-              "file-recovery"
-              "publish"
-              "sync"
               "bases"
+              "bookmarks"
+              "command-palette"
+              "editor-status"
+              "file-explorer"
+              "file-recovery"
+              "footnotes"
+              "global-search"
+              "note-composer"
+              "outgoing-link"
+              "outline"
+              "page-preview"
+              "properties"
+              "publish"
+              "random-note"
+              "slash-command"
+              "slides"
+              "switcher"
+              "sync"
+              "tag-pane"
+              "templates"
               "webviewer"
+              "word-count"
+              "workspaces"
+              "zk-prefixer"
               # keep-sorted end
             ];
 
@@ -337,17 +337,17 @@
             cssSnippets = [
               # keep-sorted start block=yes
               {
-                name = "stop-blinking-cursor";
-                text = # css
-                  ".cm-cursorLayer { animation: none !important; }";
-              }
-              {
                 name = "helix-remove-statusbar";
                 text = # css
                   ''
                     .cm-hx-command-panel { display: none !important; }
                     .cm-hx-status-panel  { display: none !important; }
                   '';
+              }
+              {
+                name = "stop-blinking-cursor";
+                text = # css
+                  ".cm-cursorLayer { animation: none !important; }";
               }
               # keep-sorted end
             ];

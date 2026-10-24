@@ -2,7 +2,6 @@
   stdenv,
   writeText,
   nitter,
-  lib,
   colors ? {
     base00 = "#151515";
     base01 = "#1f1f1f";

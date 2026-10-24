@@ -7,7 +7,6 @@
     root =
       {
         pkgs,
-        config,
         ...
       }:
       {
@@ -30,6 +29,17 @@
 
             formatter = {
               # keep-sorted start block=yes newline_separated=yes
+              # pedantix = {
+              #   command = "pedantix";
+              #   excludes = [ ];
+              #   includes = [ "*.nix" ];
+              #   options = [
+              #     "--config"
+              #     config.packages.pedantix-config
+              #   ];
+              #   priority = 1;
+              # };
+
               deadnix = {
                 command = "deadnix";
                 excludes = [ ];
@@ -48,17 +58,6 @@
                 command = "nixfmt";
                 includes = [ "*.nix" ];
               };
-
-              # pedantix = {
-              #   command = "pedantix";
-              #   excludes = [ ];
-              #   includes = [ "*.nix" ];
-              #   options = [
-              #     "--config"
-              #     config.packages.pedantix-config
-              #   ];
-              #   priority = 1;
-              # };
 
               prettier = {
                 command = "prettier";

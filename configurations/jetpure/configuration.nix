@@ -71,12 +71,12 @@
       zen.games.hytale
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl
-      zen.programs.editors.obsidian.personal
       zen.games.srb2
       zen.games.steam
       zen.games.steam-tui
       zen.games.supertuxkart
       zen.games.umu-launcher
+      zen.miscellaneous.canvas-commons
       zen.miscellaneous.nix
       zen.miscellaneous.users
       zen.miscellaneous.xdg
@@ -90,6 +90,7 @@
       zen.programs.cli.yazi
       zen.programs.desktop.umbriel
       zen.programs.editors.helix
+      zen.programs.editors.obsidian.personal
       zen.programs.gui._64gram
       zen.programs.gui.easy-effects
       zen.programs.gui.librewolf
