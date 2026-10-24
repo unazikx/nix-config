@@ -34,6 +34,7 @@ nix-math	github:xddxdd/nix-math
 nix-minecraft	github:hustlerone/nix-minecraft
 nix-obsidian-extensions	github:karaolidis/nix-obsidian-extensions
 nix-wrapper-modules	github:nix-community/nix-wrapper-modules
+nixcraft	github:loystonpais/nixcraft
 nixos-cli	github:nix-community/nixos-cli
 nixos-hardware	github:NixOS/nixos-hardware
 nixpkgs-easyeffects	github:nixos/nixpkgs/nixos-25.05
@@ -44,9 +45,10 @@ nixpkgs-unstable	github:nixos/nixpkgs/nixos-unstable
 nur	github:nix-community/nur
 optnix	github:water-sucks/optnix
 pkgs-by-name	github:drupol/pkgs-by-name-for-flake-parts
-proxy-suite-flake	github:fufsob/proxy-suite-flake
+proxy-suite-flake	github:unazikx/proxy-suite-flake
 remove-edge	github:shadowwhisperer/remove-ms-edge
 sopsnix	github:mic92/sops-nix
+sources	github:loystonpais/minecraft-sources/nixcraft
 spectrum	github:unazikx/spectrum
 spicetify-nix	github:gerg-l/spicetify-nix
 steam-config-nix	github:different-name/steam-config-nix

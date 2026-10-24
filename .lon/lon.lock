@@ -361,6 +361,16 @@
       "url": "https://github.com/nix-community/nix-wrapper-modules/archive/6bc32f5cc67ee0f1bfb246c47b4b2c53ba1bc014.tar.gz",
       "hash": "sha256-J3sKT3dVyCXlblkgzWc41cUZ4ezZbR5XZzfvETkAH78="
     },
+    "nixcraft": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "loystonpais",
+      "repo": "nixcraft",
+      "branch": "main",
+      "revision": "4d36a1e96d48f6803b301b7ea5405bc612a2cc76",
+      "url": "https://github.com/loystonpais/nixcraft/archive/4d36a1e96d48f6803b301b7ea5405bc612a2cc76.tar.gz",
+      "hash": "sha256-inn7hYfC6iRXSS8UYSqJhZIGKdkzubWzSQUC7TE1ke8="
+    },
     "nixos-cli": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -500,6 +510,16 @@
       "revision": "ee48786c6f9160d2c1a084aac841f68195b8420c",
       "url": "https://github.com/mic92/sops-nix/archive/ee48786c6f9160d2c1a084aac841f68195b8420c.tar.gz",
       "hash": "sha256-mVD4XIc5JkqMW2K04IkFUzHgHmyJZlzw5ktfgMDCbKU="
+    },
+    "sources": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "loystonpais",
+      "repo": "minecraft-sources",
+      "branch": "nixcraft",
+      "revision": "cb2ad70c232cdba7923c5a7b36f2a6b05a4dc64b",
+      "url": "https://github.com/loystonpais/minecraft-sources/archive/cb2ad70c232cdba7923c5a7b36f2a6b05a4dc64b.tar.gz",
+      "hash": "sha256-9Vy6VYxNe69S49/pxeVzxKC5VFE99bBMW9y/Q9Em10E="
     },
     "spectrum": {
       "type": "GitHub",

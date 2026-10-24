@@ -4,15 +4,15 @@
 }:
 
 {
-  # flake-file.inputs = {
-  #   # keep-sorted start block=yes newline_separated=yes
-  #   nixcraft = {
-  #     type = "github";
-  #     owner = "loystonpais";
-  #     repo = "nixcraft";
-  #   };
-  #   # keep-sorted end
-  # };
+  flake-file.inputs = {
+    # keep-sorted start block=yes newline_separated=yes
+    nixcraft = {
+      type = "github";
+      owner = "loystonpais";
+      repo = "nixcraft";
+    };
+    # keep-sorted end
+  };
 
   zen.games.nixcraft = {
     description = ''
@@ -41,7 +41,7 @@
             desktopEntry.enable = true;
 
             enableExternalAssets = true;
-            # placeFilesAtActivation = true;
+            placeFilesAtActivation = true;
 
             account = {
               inherit (meta)
