@@ -102,7 +102,7 @@
             ];
 
             volumes = [
-              "windows-drive:/storage"
+              "windows-storage:/storage"
 
               "${config.home.homeDirectory}:/shared/home:rw"
               "/media:/shared/media:rw"
@@ -130,7 +130,7 @@
 
           volumes = {
             # auto create directory for windows
-            "windows-drive" = { };
+            "windows-storage" = { };
           };
         };
 

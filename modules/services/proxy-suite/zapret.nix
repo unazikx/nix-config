@@ -126,6 +126,7 @@
               domains = [
                 "modrinth.com"
                 "anilist.co"
+                "app.mangoreader.org"
 
                 "api.spotify.com"
                 "login5.spotify.com"

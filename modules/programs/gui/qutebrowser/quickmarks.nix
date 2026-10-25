@@ -41,6 +41,7 @@
             dreamCast = "dreamerscast.com";
             miruro = "miruro.tv";
             anikai = "anikai.ro/home";
+            mangoreader = "app.mangoreader.org";
 
             # torrents
             rutracker = "rutracker.org";
