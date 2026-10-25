@@ -46,7 +46,6 @@
 
             downloadAsCbz = true;
             downloadConversions =
-
               [
                 {
                   from = "image/webp";

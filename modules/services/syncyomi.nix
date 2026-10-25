@@ -19,7 +19,8 @@
       }:
       {
         services.syncyomi = {
-          enable = false;
+          enable = true;
+          openFirewall = true;
         };
       };
   };
