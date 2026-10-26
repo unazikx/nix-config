@@ -3,10 +3,10 @@ buildFirefoxXpiAddon:
 {
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "2026.9.3";
+    version = "2026.10.0";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5076543/bitwarden_password_manager-2026.9.3.xpi";
-    sha256 = "5dd6efa5d228dbeac7a0c6a883f951787dc66e57985322ce549210b0df8d054c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5125667/bitwarden_password_manager-2026.10.0.xpi";
+    sha256 = "a25e02e961f4ffcecda12584f32f1993102ad7509e9ca84582e5287109f5bd20";
     meta = { };
   };
 
@@ -30,10 +30,10 @@ buildFirefoxXpiAddon:
 
   "keepassxc-browser" = buildFirefoxXpiAddon {
     pname = "keepassxc-browser";
-    version = "1.10.3";
+    version = "1.10.4.1";
     addonId = "keepassxc-browser@keepassxc.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4831838/keepassxc_browser-1.10.3.xpi";
-    sha256 = "4df9c54e0a293aa2e37e9bcf97ec307a35a00e78cebaa9a68edba552c07c4568";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5078406/keepassxc_browser-1.10.4.1.xpi";
+    sha256 = "ae41157a3f017b0773abba2097d5b0056241631d0a38ad36d68d0b24b1a409c1";
     meta = { };
   };
 
@@ -57,10 +57,10 @@ buildFirefoxXpiAddon:
 
   "protondb-for-steam" = buildFirefoxXpiAddon {
     pname = "protondb-for-steam";
-    version = "2.3.0";
+    version = "2.3.1";
     addonId = "{30280527-c46c-4e03-bb16-2e3ed94fa57c}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4490230/protondb_for_steam-2.3.0.xpi";
-    sha256 = "e5ab8d594cd71c7a345a6694620ad9c4a3abb97161a191b72484f5b934ba96c5";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5021069/protondb_for_steam-2.3.1.xpi";
+    sha256 = "9b31b0ea189b909fe52513e91f210d45b366817a966c9512784fbbd97bec7acc";
     meta = { };
   };
 
@@ -93,10 +93,10 @@ buildFirefoxXpiAddon:
 
   "styl-us" = buildFirefoxXpiAddon {
     pname = "styl-us";
-    version = "2.4.14";
+    version = "2.4.17";
     addonId = "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5044316/styl_us-2.4.14.xpi";
-    sha256 = "51d4efd6aa6484a749b97e36222f7bbe2ff699ed16b9a13adf40ecb6a0597081";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5142667/styl_us-2.4.17.xpi";
+    sha256 = "6ea20f86a2015e3e7a639e2dbb13bc0d63461fdfdb80d7138c3f8e8924e4fb1c";
     meta = { };
   };
 
@@ -129,10 +129,10 @@ buildFirefoxXpiAddon:
 
   "vicinae" = buildFirefoxXpiAddon {
     pname = "vicinae";
-    version = "1.0.0";
+    version = "1.1";
     addonId = "firefox@vicinae.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4839406/vicinae-1.0.0.xpi";
-    sha256 = "996c056d556be9c9c97494403672463117973e7d1bfc10fad9f719f8c07d9426";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5154581/vicinae-1.1.xpi";
+    sha256 = "0015b61e3e5716c0512729ed380a0332d0ca1330b1cc84221d1d786e87d9b3e8";
     meta = { };
   };
 

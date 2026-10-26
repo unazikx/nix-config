@@ -116,14 +116,6 @@
                     language = "russian";
                   };
 
-                  "1262580" = {
-                    name = "Need For Speed: Payback";
-                    compatTool = "proton_experimental";
-                    language = "russian";
-                    env.PROTON_EAC_RUNTIME = 1;
-                    args = [ "-skip-launcher" ];
-                  };
-
                   "1238080" = {
                     name = "Burnout Paradise: Remastered";
                     language = "russian";
@@ -138,6 +130,14 @@
                   "1262540" = {
                     name = "Need For Speed";
                     language = "russian";
+                  };
+
+                  "1262580" = {
+                    name = "Need For Speed: Payback";
+                    compatTool = "proton_experimental";
+                    language = "russian";
+                    env.PROTON_EAC_RUNTIME = 1;
+                    args = [ "-skip-launcher" ];
                   };
 
                   "1296360" = {
