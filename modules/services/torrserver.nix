@@ -56,7 +56,6 @@
               (pkgs.formats.json { }).generate "settings.json" {
                 BitTorr = {
                   # keep-sorted start block=yes
-                  UseDisk = true;
                   CacheSize = 2147483648;
                   ConnectionsLimit = 25;
                   DisableDHT = false;
@@ -88,6 +87,7 @@
                   StoreViewedInJson = false;
                   TorrentsSavePath = cfg.torrentsDir;
                   UploadRateLimit = 0;
+                  UseDisk = true;
                   # keep-sorted end
                 };
               }

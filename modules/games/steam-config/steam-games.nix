@@ -135,6 +135,10 @@
                 name = "Archvale";
               };
 
+              "1304680" = {
+                name = "Voidigo";
+              };
+
               "1318690" = {
                 name = "Shapez";
               };
@@ -159,6 +163,10 @@
 
               "1433340" = {
                 name = "Happy Humble Burger Farm";
+              };
+
+              "1484720" = {
+                name = "Dead Estate";
               };
 
               "1486630" = {
@@ -353,6 +361,11 @@
 
               "2355150" = {
                 name = "Midbourne";
+              };
+
+              "236450" = {
+                name = "Pac-Man: Championship Edition DX+";
+                language = "russian";
               };
 
               "2379780" = {
@@ -678,6 +691,11 @@
                 language = "russian";
               };
 
+              "4304900" = {
+                name = "Big Dig"; # BIG DICK???????
+                language = "russian";
+              };
+
               "431240" = {
                 name = "Golf with Your Friends";
                 compatTool = null;
@@ -785,6 +803,11 @@
                 language = "russian";
               };
 
+              "5228920" = {
+                name = "Brick by Brick";
+                language = "russian";
+              };
+
               "526870" = {
                 name = "Satisfactory";
               };
@@ -810,33 +833,6 @@
 
               "588650" = {
                 name = "Dead Cells";
-                language = "russian";
-              };
-
-              "1484720" = {
-                name = "Dead Estate";
-              };
-
-              "1304680" = {
-                name = "Voidigo";
-              };
-
-              "674940" = {
-                name = "Stick Fight: The Game";
-              };
-
-              "236450" = {
-                name = "Pac-Man: Championship Edition DX+";
-                language = "russian";
-              };
-
-              "4304900" = {
-                name = "Big Dig"; # BIG DICK???????
-                language = "russian";
-              };
-
-              "5228920" = {
-                name = "Brick by Brick";
                 language = "russian";
               };
 
@@ -900,6 +896,10 @@
               "673880" = {
                 name = "Warhammer 40.000: Mechanicus";
                 language = "russian";
+              };
+
+              "674940" = {
+                name = "Stick Fight: The Game";
               };
 
               "678960" = {
