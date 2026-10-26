@@ -30,6 +30,30 @@
       zen.custom.spotifast
     ];
 
+    nixos =
+      {
+        ...
+      }:
+      {
+        networking.extraHosts =
+          # hosts
+          ''
+            37.221.93.141 gew1-spclient.spotify.com
+            37.221.93.141 login5.spotify.com
+            37.221.93.141 api.spotify.com
+            37.221.93.141 accounts.spotify.com
+            37.221.93.141 aet.spotify.com
+            37.221.93.141 open.spotify.com
+            37.221.93.141 spotifycdn.com
+            37.221.93.141 www.spotify.com
+            37.221.93.141 spclient.wg.spotify.com
+            37.221.93.141 api-partner.spotify.com
+            37.221.93.141 encore.scdn.co
+            37.221.93.141 i.scdn.co
+            37.221.93.141 image-cdn-ak.spotifycdn.com
+          '';
+      };
+
     homeManagerNixos =
       {
         pkgs,
