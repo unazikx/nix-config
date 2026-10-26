@@ -2,7 +2,6 @@
   appimageTools,
   fetchurl,
   lib,
-  ...
 }:
 
 appimageTools.wrapAppImage (_final: {

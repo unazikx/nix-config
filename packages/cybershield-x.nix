@@ -1,7 +1,6 @@
 {
   appimageTools,
   lib,
-  ...
 }:
 
 appimageTools.wrapAppImage (_final: {
