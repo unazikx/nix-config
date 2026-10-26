@@ -75,6 +75,16 @@
           steam = {
             enable = true;
 
+            package = pkgs.steam.override {
+              extraProfile =
+                {
+                  PROTON_ENABLE_WAYLAND = 1;
+                }
+                |> lib.generators.toKeyValue {
+                  mkKeyValue = key: value: "export ${key}=${toString value}";
+                };
+            };
+
             extraCompatPackages = lib.attrValues {
               "GE-Proton" = self'.packages.proton-ge;
             };
@@ -107,7 +117,7 @@
           # WARN:
           # idk it isnt works
           (pkgs.writeShellScriptBin "steamos-session-select" ''
-            steam -shutdown
+            setsid steam steam://close/bigpicture
           '')
         ];
       };

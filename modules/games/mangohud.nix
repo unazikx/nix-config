@@ -19,7 +19,6 @@
 
           settings = {
             vsync = 0;
-            no_display = true;
             round_corners = 12;
           };
         };

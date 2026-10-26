@@ -2,7 +2,6 @@
   proton-ge-bin,
   fetchzip,
   lib,
-  ...
 }:
 
 proton-ge-bin.overrideAttrs (
