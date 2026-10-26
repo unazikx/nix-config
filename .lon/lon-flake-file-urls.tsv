@@ -59,6 +59,7 @@ tinted-kitty	github:tinted-theming/tinted-kitty
 tinted-schemes	github:tinted-theming/schemes
 tinted-tmux	github:tinted-theming/tinted-tmux
 tinted-zed	github:tinted-theming/base16-zed
+torrserver	github:yourok/torrserver
 treefmt-nix	github:numtide/treefmt-nix
 umbriel	github:noctalia-dev/umbriel
 winapps	github:winapps-org/winapps

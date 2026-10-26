@@ -621,6 +621,16 @@
       "url": "https://github.com/tinted-theming/base16-zed/archive/279856d0e40f2a89cb011c088353d7454cdff2c2.tar.gz",
       "hash": "sha256-YazESoCZq2wjWJ2HqtudwJcyLXcYLE0Bl6/pT5eBTJQ="
     },
+    "torrserver": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "yourok",
+      "repo": "torrserver",
+      "branch": "master",
+      "revision": "3bae030e98b93e377ac97430a9699e45cceb8219",
+      "url": "https://github.com/yourok/torrserver/archive/3bae030e98b93e377ac97430a9699e45cceb8219.tar.gz",
+      "hash": "sha256-lJhmoJT5MqqsuKTJJ1eF2oZw+iyYC+3+vsJHYlo0xFQ="
+    },
     "treefmt-nix": {
       "type": "GitHub",
       "fetchType": "tarball",
