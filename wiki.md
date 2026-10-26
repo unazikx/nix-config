@@ -10,6 +10,14 @@
 
 - <img src="https://cdn4.telesco.pe/file/O4ev9Y3fy3XEU8CI5mBVd31esISWdfSed2BRq7UYFB_ZDI81EaYp8Xn_BaDJhLiEp6OG7jKl7qtrSnUVq0xfBhJ3JFmJ0yk-6PQueucQtUYdm4FXnH7wucu-O_IznKlopdfId4KjDj-NKRHOYfhlpXBXiqJ1avqCns2eEhj_2ZasFdwPi2KkTT2MJW72z8YlzsL76skYGv96bCrFQvylYkZC-MqLcJrO9tYsiifGiIQY_pTvdmtQngEZkK0pTWt5fBi8CqutE-LW9O3kdKTIWDQJN7TH7QrDsMk7O9rd7AEVWztlKsaMez-jp3KH-YEN-ecaW2c0GzYwK2sMaxERFg.jpg" height="24"> warp-status -> https://cfwarpstatus.t.me
 
+## **Canvas-Commons**
+
+- <img src="https://canvascommons.io/img/logo_dark.svg" height="24"> main-page -> https://canvascommons.io
+
+- <img src="https://canvascommons.io/img/logo_dark.svg" height="24"> documentation -> https://canvascommons.io/docs
+
+- <img src="https://canvascommons.io/img/logo_dark.svg" height="24"> api -> https://canvascommons.io/api/core
+
 ## **Finix**
 
 nixos distro replaces systemd to finit
@@ -23,6 +31,8 @@ nixos distro replaces systemd to finit
 ## **Hytale Launcher**
 
 - <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/hytale.png" height="24"> nix-package-previous -> https://github.com/unazikx/hytale-launcher-nix
+
+- <img src="https://hyseeds.ru/assets/logo-640.png" height="24"> hytale-seeds-viewer -> https://hyseeds.ru
 
 ## **Minecraft Modpacks**
 
@@ -79,4 +89,4 @@ protondb -> https://www.protondb.com/users/1633163188
 
 - <img src="https://steampeek.hu/s_style/images/sp_logo_g.png" height="24"> steam-peek -> https://steampeek.hu
 
-## Total: 7 wikis
+## Total: 8 wikis

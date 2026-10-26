@@ -17,6 +17,11 @@
           link = "https://github.com/unazikx/hytale-launcher-nix";
           logo = "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/hytale.png";
         }
+        {
+          name = "hytale-seeds-viewer";
+          link = "https://hyseeds.ru";
+          logo = "https://hyseeds.ru/assets/logo-640.png";
+        }
       ];
     };
 
