@@ -30,8 +30,6 @@ nixos distro replaces systemd to finit
 
 ## **Hytale Launcher**
 
-- <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/hytale.png" height="24"> nix-package-previous -> https://github.com/unazikx/hytale-launcher-nix
-
 - <img src="https://hyseeds.ru/assets/logo-640.png" height="24"> hytale-seeds-viewer -> https://hyseeds.ru
 
 ## **Minecraft Modpacks**

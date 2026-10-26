@@ -28,7 +28,7 @@ jobs:
           else
             echo "No changes from updater"
           fi
-name: Update Nix flake
+name: Update packages
 "on":
   workflow_dispatch: {}
 permissions:

@@ -261,6 +261,16 @@
       "url": "https://github.com/nix-community/home-manager/archive/92a0ed1be12f1e20093faf8af63bae2c74ad521e.tar.gz",
       "hash": "sha256-hRCCi4fp5IjLz4cA8+RkUsaYAHzbd7M5FSAjKOq4E+k="
     },
+    "hytale-nix": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "andreashgk",
+      "repo": "hytale-nix",
+      "branch": "main",
+      "revision": "09d95efe12cb7b08686e4938c9f20180f3fcfd3b",
+      "url": "https://github.com/andreashgk/hytale-nix/archive/09d95efe12cb7b08686e4938c9f20180f3fcfd3b.tar.gz",
+      "hash": "sha256-Q8ABI5yp6jReValLZD/b1G3tvu4Z3xNmV9Z2RAzzGUI="
+    },
     "import-tree": {
       "type": "GitHub",
       "fetchType": "tarball",

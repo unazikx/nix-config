@@ -24,6 +24,7 @@ gnome-shell	github:gnome/gnome-shell
 hjem	github:feel-co/hjem
 hjem-rum	github:snugnug/hjem-rum
 home-manager	github:nix-community/home-manager
+hytale-nix	github:andreashgk/hytale-nix
 import-tree	github:denful/import-tree
 massgravel	github:massgravel/microsoft-activation-scripts
 microvm-nix	github:microvm-nix/microvm.nix

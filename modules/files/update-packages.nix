@@ -11,7 +11,7 @@
       {
         file.".github/workflows/update-packages.yaml" = {
           yaml = {
-            name = "Update Nix flake";
+            name = "Update packages";
 
             on = {
               # just useful
