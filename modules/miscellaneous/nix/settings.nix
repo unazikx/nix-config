@@ -36,6 +36,7 @@
 
       homeManager =
         {
+          lib,
           config,
           ...
         }:
@@ -48,10 +49,16 @@
             '';
           };
 
-          home.sessionVariables = {
-            CACHIX_AUTH_TOKEN = "$(cat ${config.sops.secrets."programs/cachix".path})";
-            GITHUB_TOKEN = "$(cat ${config.sops.secrets."programs/github".path})";
-          };
+          # FUCK I SO TIRED TO FIX THAT
+          # WHY IS FIX IS RED????
+          programs.fish.shellInitLast =
+            {
+              CACHIX_AUTH_TOKEN = config.sops.secrets."programs/cachix".path;
+              GITHUB_TOKEN = config.sops.secrets."programs/github".path;
+            }
+            |> lib.generators.toKeyValue {
+              mkKeyValue = key: value: "export ${key}=$(cat ${toString value})";
+            };
 
           sops.secrets = {
             "programs/cachix" = { };

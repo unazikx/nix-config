@@ -58,9 +58,7 @@
               abbr --erase '!$'
               abbr --erase '!*'
               abbr --erase '!^'
-            ''
-
-          ;
+            '';
 
           shellInitLast =
             # fish
