@@ -39,8 +39,6 @@
           consoleLogLevel = 0;
 
           initrd = {
-            verbose = false;
-
             compressor = "zstd";
             compressorArgs = [ "-16" ];
           };

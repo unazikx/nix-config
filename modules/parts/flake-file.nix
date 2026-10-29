@@ -17,6 +17,7 @@
 
   imports = [
     inputs.flake-file.flakeModules.lon
+    inputs.flake-file.flakeModules.tack
   ];
 
   flake-file = {
@@ -77,6 +78,7 @@
       {
         write-lon = config.flake-file.apps.write-lon |> unset;
         write-lock = config.flake-file.apps.write-lock |> unset;
+        write-tack = config.flake-file.apps.write-tack pkgs;
       };
   };
 }

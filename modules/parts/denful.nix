@@ -50,16 +50,16 @@
     ];
   };
 
-  # zen.flake-parts.default = {
-  #   packages =
-  #     {
-  #       pkgs,
-  #       ...
-  #     }:
-  #     den.lib.nh.denPackages {
-  #       defaultAction = "switch";
-  #     } pkgs;
-  # };
+  zen.flake-parts.default = {
+    packages =
+      {
+        pkgs,
+        ...
+      }:
+      den.lib.nh.denPackages {
+        defaultAction = "switch";
+      } pkgs;
+  };
 
   debug = true;
 }

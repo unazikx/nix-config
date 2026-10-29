@@ -13,9 +13,5 @@ qutebrowser.overrideAttrs (
       tag = "issue-8533-fido2-user-verification";
       hash = "sha256-KrGFlqZGHtaBCnyxvJCqoeG5Ndo7dSw//8HkIjVSYxQ=";
     };
-
-    meta = _prev // {
-      homepage = "https://github.com/coderkun/qutebrowser";
-    };
   }
 )

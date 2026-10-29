@@ -5,7 +5,7 @@
 
 {
   flake-file.inputs = {
-    nixpkgs-lib.follows = "nixpkgs";
+    # nixpkgs-lib.follows = "nixpkgs";
 
     # keep-sorted start block=yes newline_separated=yes
     flake-parts = {
