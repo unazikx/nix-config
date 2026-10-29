@@ -1,11 +1,13 @@
 {
-  python312Packages,
+  python3Packages,
   fetchPypi,
   ani-cli-ru,
   lib,
+
+  withWeb ? false,
 }:
 
-python312Packages.buildPythonApplication (_final: {
+python3Packages.buildPythonApplication (_final: {
   pname = "anicli_ru";
   version = "6.1.3";
   pyproject = true;
@@ -19,22 +21,24 @@ python312Packages.buildPythonApplication (_final: {
   };
 
   build-system = [
-    python312Packages.hatchling
+    python3Packages.hatchling
   ];
 
   dependencies = [
     # keep-sorted start
     ani-cli-ru.api
-    ani-cli-ru.uvicorn
-    python312Packages.fastapi
-    python312Packages.jinja2
-    python312Packages.prompt-toolkit
-    python312Packages.python-multipart
-    python312Packages.rich
-    python312Packages.segno
-    python312Packages.typer
+    python3Packages.prompt-toolkit
+    python3Packages.rich
+    python3Packages.typer
     # keep-sorted end
-  ];
+  ]
+  ++ (lib.optionals withWeb [
+    ani-cli-ru.uvicorn
+    python3Packages.fastapi
+    python3Packages.jinja2
+    python3Packages.python-multipart
+    python3Packages.segno
+  ]);
 
   allowSubstitutes = false;
   preferLocalBuild = true;

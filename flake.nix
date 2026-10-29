@@ -10,6 +10,8 @@
 
       with-inputs = import sources.with-inputs;
 
+      builder = with-inputs.from.lon' self ".lon";
+
       outputs =
         inputs:
         (inputs.flake-parts.lib.mkFlake
@@ -17,14 +19,15 @@
             inherit inputs;
           }
           (
-            inputs.import-tree [
+            [
               ./configurations
               ./modules
             ]
+            |> inputs.import-tree
           )
         );
     in
-    (with-inputs.from.lon' self ".lon") follows outputs;
+    builder follows outputs;
 
   nixConfig = {
     accept-flake-config = true;

@@ -1,10 +1,10 @@
 {
-  python312Packages,
+  python3Packages,
   fetchPypi,
   lib,
 }:
 
-python312Packages.buildPythonApplication (_final: {
+python3Packages.buildPythonApplication (_final: {
   pname = "uvicorn";
   version = "0.54.0";
   pyproject = true;
@@ -18,13 +18,13 @@ python312Packages.buildPythonApplication (_final: {
   };
 
   build-system = [
-    python312Packages.hatchling
+    python3Packages.hatchling
   ];
 
   dependencies = [
-    python312Packages.click
-    python312Packages.h11
-    python312Packages.typing-extensions
+    python3Packages.click
+    python3Packages.h11
+    python3Packages.typing-extensions
   ];
 
   allowSubstitutes = false;

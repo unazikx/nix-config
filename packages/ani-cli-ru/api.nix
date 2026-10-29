@@ -1,12 +1,12 @@
 {
-  python312Packages,
+  python3Packages,
   fetchPypi,
   lib,
 }:
 
-python312Packages.buildPythonApplication (_final: {
+python3Packages.buildPythonApplication (_final: {
   pname = "anicli_api";
-  version = "0.12.0";
+  version = "git";
   pyproject = true;
 
   src = fetchPypi {
@@ -18,17 +18,17 @@ python312Packages.buildPythonApplication (_final: {
   };
 
   build-system = [
-    python312Packages.hatchling
+    python3Packages.hatchling
   ];
 
   dependencies = lib.flatten [
     # keep-sorted start
-    python312Packages.attrs
-    python312Packages.h2
-    python312Packages.hatchling
-    python312Packages.httpx
-    python312Packages.parsel
-    python312Packages.tqdm
+    python3Packages.attrs
+    python3Packages.h2
+    python3Packages.hatchling
+    python3Packages.httpx
+    python3Packages.parsel
+    python3Packages.tqdm
     # keep-sorted end
   ];
 
