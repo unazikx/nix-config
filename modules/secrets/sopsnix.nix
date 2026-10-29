@@ -47,6 +47,7 @@
 
         environment.sessionVariables = {
           SOPS_AGE_KEY_FILE = keyFilePath;
+          SOPS_CONFIG = "secrets/config.yaml";
         };
 
         sops.age = {
@@ -82,6 +83,7 @@
 
         home.sessionVariables = {
           SOPS_AGE_KEY_FILE = keyFilePath;
+          SOPS_CONFIG = "secrets/config.yaml";
         };
 
         sops.age = {

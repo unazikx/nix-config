@@ -11,7 +11,7 @@
         ...
       }:
       {
-        file.".sops.yaml" =
+        file."secrets/config.yaml" =
           let
             clean = lib.filterAttrs (name: _: !lib.hasPrefix "_" name);
 

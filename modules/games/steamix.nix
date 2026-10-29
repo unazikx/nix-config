@@ -17,7 +17,6 @@
   #     owner = "arunoruto";
   #     repo = "steamix";
   #     ref = "main";
-  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };
