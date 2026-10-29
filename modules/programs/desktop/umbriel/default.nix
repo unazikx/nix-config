@@ -50,8 +50,13 @@
 
     nixos =
       {
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.umbriel;
+      in
       {
         programs.umbriel = {
           enable = true;
@@ -60,7 +65,7 @@
         programs.uwsm = {
           waylandCompositors.umbriel = {
             prettyName = "Umbriel";
-            binPath = "/run/current-system/sw/bin/start-umbriel";
+            binPath = lib.getExe cfg.package;
           };
         };
       };

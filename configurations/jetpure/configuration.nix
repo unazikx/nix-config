@@ -75,7 +75,6 @@
       zen.games.minecraft.xmcl
       zen.games.srb2
       zen.games.steam
-      zen.games.steam-tui
       zen.games.supertuxkart
       zen.games.umu-launcher
       zen.miscellaneous.canvas-commons
