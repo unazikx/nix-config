@@ -134,46 +134,42 @@
           };
         };
 
-        xdg.configFile = {
-          "winapps/winapps.env".source =
-            config.lib.file.mkOutOfStoreSymlink
-              config.sops.templates."winapps-env".path;
-
-          "winapps/winapps.conf".source =
-            config.lib.file.mkOutOfStoreSymlink
-              config.sops.templates."winapps-conf".path;
-        };
-
         sops.secrets = {
           "windows/username" = { };
           "windows/password" = { };
         };
 
         sops.templates = {
-          "winapps-env".content =
-            # env
-            ''
-              USERNAME=${config.sops.placeholder."windows/username"}
-              PASSWORD=${config.sops.placeholder."windows/password"}
-            '';
+          "winapps-env" = {
+            path = "${config.xdg.configHome}/winapps/winapps.env";
+            content =
+              # env
+              ''
+                USERNAME=${config.sops.placeholder."windows/username"}
+                PASSWORD=${config.sops.placeholder."windows/password"}
+              '';
+          };
 
-          "winapps-conf".content =
-            # https://github.com/winapps-org/winapps/discussions/972#discussioncomment-18421216
-            # conf
-            ''
-              RDP_USER="${config.sops.placeholder."windows/username"}"
-              RDP_PASS="${config.sops.placeholder."windows/password"}"
-              WAFLAVOR="manual"
-              VM_NAME="RDPWindows"
-              REMOVABLE_MEDIA="/run/media"
-              APP_SCAN_TIMEOUT="60"
-              BOOT_TIMEOUT="120"
-              PORT_TIMEOUT="5"
-              RDP_FLAGS="/cert:tofu /sound /microphone"
-              RDP_IP="127.0.0.1"
-              RDP_SCALE="100"
-              RDP_TIMEOUT="30"
-            '';
+          "winapps-conf" = {
+            path = "${config.xdg.configHome}/winapps/winapps.conf";
+            content =
+              # https://github.com/winapps-org/winapps/discussions/972#discussioncomment-18421216
+              # conf
+              ''
+                RDP_USER="${config.sops.placeholder."windows/username"}"
+                RDP_PASS="${config.sops.placeholder."windows/password"}"
+                WAFLAVOR="manual"
+                VM_NAME="RDPWindows"
+                REMOVABLE_MEDIA="/run/media"
+                APP_SCAN_TIMEOUT="60"
+                BOOT_TIMEOUT="120"
+                PORT_TIMEOUT="5"
+                RDP_FLAGS="/cert:tofu /sound /microphone"
+                RDP_IP="127.0.0.1"
+                RDP_SCALE="100"
+                RDP_TIMEOUT="30"
+              '';
+          };
         };
       };
   };

@@ -153,19 +153,15 @@
           # };
         };
 
-        # xdg.configFile = {
-        #   "spotifast/settings.json" = {
-        #     source = config.lib.file.mkOutOfStoreSymlink config.sops.templates."spotifast-config".path;
-        #     force = true;
-        #   };
-        # };
-
         # sops.secrets = {
         #   "programs/spotifast" = { };
         # };
 
         # sops.templates = {
-        #   "spotifast-config".content = lib.readFile (json.generate "spotifast-config.json" cfg.settings);
+        #   "spotifast-config" = {
+        #     path = "${config.xdg.configHome}/spotifast/settings.json";
+        #     content = lib.readFile (json.generate "spotifast-config.json" cfg.settings);
+        #   };
         # };
       };
   };

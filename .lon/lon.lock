@@ -61,6 +61,16 @@
       "url": "https://github.com/yokoffing/betterfox/archive/067172a4b0dc90e78e5b8b94d9abfe6430c6a7be.tar.gz",
       "hash": "sha256-mIP/WcXUcGrJsWCJzR4zqPOmt0BbbpTZVaN/MbIwBbw="
     },
+    "crane": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "ipetkov",
+      "repo": "crane",
+      "branch": "master",
+      "revision": "e675a36b7377bebe41d548388a2501cbb16d380d",
+      "url": "https://github.com/ipetkov/crane/archive/e675a36b7377bebe41d548388a2501cbb16d380d.tar.gz",
+      "hash": "sha256-292lvpvxTGKryKxh3/3tcIVi85CwYGdl4oOi113Sob8="
+    },
     "dag": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -500,6 +510,16 @@
       "revision": "a41fbc10e658312077a81ff685a736b61713f6e6",
       "url": "https://github.com/unazikx/proxy-suite-flake/archive/a41fbc10e658312077a81ff685a736b61713f6e6.tar.gz",
       "hash": "sha256-FG2EA2Mwm1rH5wzgvtyHl4DK9LU1bGmoOhywbtW7dPU="
+    },
+    "rbw-forked": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "pschmitt",
+      "repo": "rbw",
+      "branch": "main",
+      "revision": "35c9473af50622b76ebc2408db36c746aa4ae241",
+      "url": "https://github.com/pschmitt/rbw/archive/35c9473af50622b76ebc2408db36c746aa4ae241.tar.gz",
+      "hash": "sha256-P0OyC2w86+CarCkTRIPgy6NdhdQHGEnlo9uT5oAds24="
     },
     "remove-edge": {
       "type": "GitHub",

@@ -4,6 +4,7 @@ base16-fish	github:tomyun/base16-fish/86cbea4dca62e08fb7fd83a70e96472f92574782
 base16-helix	github:tinted-theming/base16-helix
 base16-vim	github:tinted-theming/base16-vim/577fe8125d74ff456cf942c733a85d769afe58b7
 betterfox	github:yokoffing/betterfox
+crane	github:ipetkov/crane
 dag	github:denful/dag
 den	github:denful/den
 devshells	github:numtide/devshell
@@ -47,6 +48,7 @@ nur	github:nix-community/nur
 optnix	github:water-sucks/optnix
 pkgs-by-name	github:drupol/pkgs-by-name-for-flake-parts
 proxy-suite-flake	github:unazikx/proxy-suite-flake
+rbw-forked	github:pschmitt/rbw
 remove-edge	github:shadowwhisperer/remove-ms-edge
 sopsnix	github:mic92/sops-nix
 sources	github:loystonpais/minecraft-sources/nixcraft
