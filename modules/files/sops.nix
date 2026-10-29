@@ -69,7 +69,7 @@
                 (
                   allConfigurations
                   |> map (configuration: {
-                    path_regex = "secrets/${configuration.name}/[^/]+\.*$";
+                    path_regex = "${configuration.name}/[^/]+\.*$";
                     key_groups = [
                       {
                         age = configuration.keys;
@@ -79,7 +79,7 @@
                 )
 
                 {
-                  path_regex = "secrets/shared/[^/]+\.(yaml|json|env|ini)$";
+                  path_regex = "shared/[^/]+\.(yaml|json|env|ini)$";
                   key_groups = [
                     {
                       age = sharedKeys;

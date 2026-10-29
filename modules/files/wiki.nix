@@ -25,48 +25,51 @@
         ...
       }:
       {
-        file."wiki.md".text =
-          let
-            formatLinks =
-              links:
-              links
-              |> map (entry: ''
-                - <img src="${entry.logo}" height="24"> ${entry.name} -> ${entry.link}
+        file."wiki.md" = {
+          enable = false;
+          text =
+            let
+              formatLinks =
+                links:
+                links
+                |> map (entry: ''
+                  - <img src="${entry.logo}" height="24"> ${entry.name} -> ${entry.link}
 
-                  ${toString entry.extra}
+                    ${toString entry.extra}
 
-              '')
-              |> lib.concatStrings;
+                '')
+                |> lib.concatStrings;
 
-            formatWiki = name: data: ''
-              ## __${name}__
+              formatWiki = name: data: ''
+                ## __${name}__
 
-              ${data.extra or (toString null)}
+                ${data.extra or (toString null)}
 
-              ${formatLinks data.links}
+                ${formatLinks data.links}
+              '';
+            in
+            ''
+              # Wiki for various programs, and my notes for them
+
+              > take icons from here:
+              > https://dashboardicons.com
+              > https://simpleicons.org
+
+              ${
+                config.wiki
+                |> builtins.attrNames
+                |> map (name: formatWiki name config.wiki.${name})
+                |> lib.concatStrings
+              }
+
+              ## Total: ${
+                config.wiki
+                |> builtins.attrNames
+                |> lib.length
+                |> toString
+              } wikis
             '';
-          in
-          ''
-            # Wiki for various programs, and my notes for them
-
-            > take icons from here:
-            > https://dashboardicons.com
-            > https://simpleicons.org
-
-            ${
-              config.wiki
-              |> builtins.attrNames
-              |> map (name: formatWiki name config.wiki.${name})
-              |> lib.concatStrings
-            }
-
-            ## Total: ${
-              config.wiki
-              |> builtins.attrNames
-              |> lib.length
-              |> toString
-            } wikis
-          '';
+        };
       };
   };
 }
