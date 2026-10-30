@@ -5,7 +5,7 @@
 }:
 
 yaziPlugins.mkYaziPlugin {
-  pname = "cba-preview";
+  pname = "cba-preview.yazi";
   version = "0.3.3";
 
   src = fetchFromGitHub {

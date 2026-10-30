@@ -330,7 +330,6 @@
                   smart-enter
                   smart-paste
                   toggle-pane
-                  yatline
                   ;
 
                 inherit (self'.legacyPackages.yazi-plugins)
@@ -340,6 +339,7 @@
                   office
                   piper
                   torrent-preview
+                  yatline
                   ;
               }
 

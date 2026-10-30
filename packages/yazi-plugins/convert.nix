@@ -5,7 +5,7 @@
 }:
 
 yaziPlugins.mkYaziPlugin {
-  pname = "convert";
+  pname = "convert.yazi";
   version = "git";
 
   src = fetchFromGitHub {

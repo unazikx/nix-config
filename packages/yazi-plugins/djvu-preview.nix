@@ -5,7 +5,7 @@
 }:
 
 yaziPlugins.mkYaziPlugin {
-  pname = "djvu-view";
+  pname = "djvu-view.yazi";
   version = "git";
 
   src = fetchFromGitHub {

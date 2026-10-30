@@ -5,7 +5,7 @@
 }:
 
 yaziPlugins.mkYaziPlugin {
-  pname = "torrent-preview";
+  pname = "torrent-preview.yazi";
   version = "git";
 
   src = fetchFromGitHub {

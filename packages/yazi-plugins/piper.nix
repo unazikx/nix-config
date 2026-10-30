@@ -5,7 +5,7 @@
 }:
 
 yaziPlugins.mkYaziPlugin (_final: {
-  pname = "piper";
+  pname = "piper.yazi";
   version = "1.1.1";
 
   src = fetchFromGitHub {
