@@ -33,9 +33,7 @@
           (
             inputs.import-tree [
               ./configurations
-              ./files
               ./modules
-              ./shells
             ]
           )
       '';

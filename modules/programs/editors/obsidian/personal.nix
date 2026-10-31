@@ -242,7 +242,6 @@
                   "minimal-style@@icon-color-focused@@dark" = colors.base04;
                   "minimal-style@@icon-color-hover@@dark" = colors.base04;
                   "minimal-style@@sp1@@dark" = colors.base00;
-                  "minimal-style@@table-center" = true;
                   "minimal-style@@table-lines" = true;
                   "minimal-style@@table-tabular" = true;
                   "minimal-style@@ui1@@dark" = colors.base02;

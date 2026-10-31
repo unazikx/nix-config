@@ -33,10 +33,10 @@
           inputs.rbw-forked.homeManagerModules.default
         ];
 
-        programs.rbw.declarative = {
+        programs.rbw = {
           enable = true;
 
-          package = inputs'.rbw-forked.packages.rbw-gtk;
+          package = inputs'.rbw-forked.packages.rbw;
 
           settings = {
             # keep-sorted start block=yes

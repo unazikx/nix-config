@@ -56,7 +56,6 @@
 
     homeManagerNixos =
       {
-        pkgs,
         # lib,
         # config,
         # host,
@@ -70,7 +69,6 @@
       {
         programs.spotifast = {
           enable = true;
-          package = pkgs._master.spotifast;
 
           generate = false;
 
