@@ -38,7 +38,6 @@
 
     homeManagerNixos =
       {
-        self',
         inputs,
         ...
       }:
@@ -52,7 +51,7 @@
           onSteamRunning = "close";
           # ^^^ close Steam and apply the changes, waiting for any running games to exit first
 
-          defaultCompatTool = self'.packages.proton-ge;
+          defaultCompatTool = "proton_experimental";
 
           displayRatesAsBits = false;
           notifications = true;

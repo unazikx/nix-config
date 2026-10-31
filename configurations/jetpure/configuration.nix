@@ -76,7 +76,6 @@
       zen.games.srb2
       zen.games.steam
       zen.games.supertuxkart
-      zen.games.umu-launcher
       zen.miscellaneous.canvas-commons
       zen.miscellaneous.nix
       zen.miscellaneous.users

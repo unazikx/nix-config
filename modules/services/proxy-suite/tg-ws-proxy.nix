@@ -27,6 +27,11 @@
               port = 1443;
             };
 
+            dcIps = {
+              "2" = "149.154.167.220";
+              "4" = "149.154.167.220";
+            };
+
             # WARN: generate via
             # nix run nixpkgs#openssl -- rand -hex 16
             secretFile = config.sops.secrets."services/telegram-ws".path;
