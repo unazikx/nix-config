@@ -4,17 +4,17 @@
 }:
 
 {
-  flake-file.tack = {
-    allFollow = {
-      nixpkgs-unstable = [
-        "nixpkgs"
-        "nixpkgs-lib"
-      ];
-    };
-  };
+  # flake-file.tack = {
+  #   allFollow = {
+  #     nixpkgs-unstable = [
+  #       "nixpkgs"
+  #       "nixpkgs-lib"
+  #     ];
+  #   };
+  # };
 
   flake-file.inputs = {
-    # nixpkgs.follows = "nixpkgs-unstable";
+    nixpkgs.follows = "nixpkgs-unstable";
 
     # keep-sorted start block=yes newline_separated=yes
     nixpkgs-fixed = {
