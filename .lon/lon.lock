@@ -421,16 +421,6 @@
       "url": "https://github.com/nixos/nixpkgs/archive/ac62194c3917d5f474c1a844b6fd6da2db95077d.tar.gz",
       "hash": "sha256-16KkgfdYqjaeRGBaYsNrhPRRENs0qzkQVUooNHtoy2w="
     },
-    "nixpkgs-fixed": {
-      "type": "GitHub",
-      "fetchType": "tarball",
-      "owner": "nixos",
-      "repo": "nixpkgs",
-      "branch": "master",
-      "revision": "5772e19988afd8bb223da0e260075f69205ea0d6",
-      "url": "https://github.com/nixos/nixpkgs/archive/5772e19988afd8bb223da0e260075f69205ea0d6.tar.gz",
-      "hash": "sha256-bs9tuWC7JnXmTIDtYiWsdvdQT3TxjoTrxNhzlZl3klQ="
-    },
     "nixpkgs-lib": {
       "type": "GitHub",
       "fetchType": "tarball",
@@ -600,6 +590,16 @@
       "revision": "d36eeed142f88b5a636f2e3856a53c61654cf29b",
       "url": "https://github.com/nix-systems/default/archive/d36eeed142f88b5a636f2e3856a53c61654cf29b.tar.gz",
       "hash": "sha256-uuanbkFk8a313Zfrxdcz8Us/yQtaxNnKJtX8v0ZPpd8="
+    },
+    "tg-ws-proxy-rs": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "gerasti",
+      "repo": "tg-ws-proxy-pc",
+      "branch": "nix-flake",
+      "revision": "eac34a8bb3bbe9ded759eb49b3fe0ec017636ed6",
+      "url": "https://github.com/gerasti/tg-ws-proxy-pc/archive/eac34a8bb3bbe9ded759eb49b3fe0ec017636ed6.tar.gz",
+      "hash": "sha256-hokn/YbsBXGSR9GDM9XdVCbZCmQ20u3sK/jitWOH/U4="
     },
     "tinted-kitty": {
       "type": "GitHub",
