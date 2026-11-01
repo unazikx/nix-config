@@ -13,9 +13,21 @@ let
       extension = "jpg";
     };
 
+    "Arkham Knight: Envy" = {
+      page = "https://wallhaven.cc/w/73lprv";
+      hash = "sha256-Kd6FmQ2sNfGy1rt0lwmxcMvgb3aUDI72GWfpYA6RXTo=";
+      extension = "jpg";
+    };
+
     "Assasins Creed: Black Flag Sea" = {
       page = "https://wallhaven.cc/w/6lyop6";
       hash = "sha256-20iKJrblZuFBIf8mXDK6Q6c516uqOrVFIjJ21gi9DH4=";
+      extension = "jpg";
+    };
+
+    "BTAS: Joker Vs Batman" = {
+      page = "https://wallhaven.cc/w/p91k2e";
+      hash = "sha256-eEDDvGYibzy4mD3vT0UiWbK4HDFaypTSNUvYWKqsVLE=";
       extension = "jpg";
     };
 
@@ -28,6 +40,12 @@ let
     "Dredger" = {
       page = "https://wallhaven.cc/w/6lyv5x";
       hash = "sha256-Odpiu2RrlXBZkDeKtU4X0UKP9cW9RuPGZbaxhUdkJL4=";
+      extension = "png";
+    };
+
+    "Evening Vibes" = {
+      page = "https://wallhaven.cc/w/w5o7o7";
+      hash = "sha256-9sp+SMkQB9ZwnSOHkYlRD7JBUbwxKdI/v1Vm0i9Xhhk=";
       extension = "png";
     };
 
@@ -85,6 +103,18 @@ let
       extension = "jpg";
     };
 
+    "Mazda MX5 Ahegao" = {
+      page = "https://wallhaven.cc/w/k8jgkd";
+      hash = "sha256-iai53/5+1iUbalRdWPiuGd/wzcVJ2mSR+CiisM1etME=";
+      extension = "png";
+    };
+
+    "Mazda MX5 Many" = {
+      page = "https://wallhaven.cc/w/rqexj1";
+      hash = "sha256-qsa0ppTiC8xLLRc1Y3wbhu1v/ySoSMht+D+/L0iKMRI=";
+      extension = "png";
+    };
+
     "Mazda vocaloids" = {
       page = "https://wallhaven.cc/w/poyqx9";
       hash = "sha256-eX6Dp9MjmWoy/VwVmt1CJ16n4x4tz3MmbuIRJcKooqQ=";
@@ -101,6 +131,12 @@ let
       page = "https://wallhaven.cc/w/l36362";
       hash = "sha256-6ODl/fcSlGelTOj8uZgIceALFZzk/7vMS7A5CrYqqC0=";
       extension = "png";
+    };
+
+    "Night In The Woods" = {
+      page = "https://wallhaven.cc/w/og76qm";
+      hash = "sha256-MuGRe/VZBdhCgNjLZzelMa2APRR72GzbHcoMtCajMwA=";
+      extension = "jpg";
     };
 
     "Night palmas" = {
@@ -142,6 +178,12 @@ let
     "Silhouette" = {
       page = "https://wallhaven.cc/w/e86xlo";
       hash = "sha256-CaQLKhOLBoNd3AK4hysHVDSS8hb8o42F12tkeBBEJ7g=";
+      extension = "png";
+    };
+
+    "Snowing Vibes" = {
+      page = "https://wallhaven.cc/w/vpx6x8";
+      hash = "sha256-Zk3jce86mk56pYr/1OzEYjZddFTdhsfWnHrlD4+tBXk=";
       extension = "png";
     };
 

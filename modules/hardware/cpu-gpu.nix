@@ -16,7 +16,6 @@
     provides = {
       jetpure.nixos =
         {
-          pkgs,
           lib,
           config,
           ...
@@ -48,14 +47,7 @@
             };
           };
 
-          services = {
-            lact.enable = true;
-
-            cpupower-gui = {
-              enable = true;
-              package = pkgs._fixed.cpupower-gui;
-            };
-          };
+          services.lact.enable = true;
         };
 
       blackmamba.nixos =
@@ -91,7 +83,6 @@
 
       declaoke.nixos =
         {
-          pkgs,
           lib,
           config,
           ...
@@ -108,12 +99,7 @@
             };
           };
 
-          services = {
-            cpupower-gui = {
-              enable = true;
-              package = pkgs._fixed.cpupower-gui;
-            };
-          };
+          services.lact.enable = true;
         };
     };
   };
