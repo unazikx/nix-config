@@ -501,6 +501,26 @@
       "url": "https://github.com/unazikx/proxy-suite-flake/archive/a41fbc10e658312077a81ff685a736b61713f6e6.tar.gz",
       "hash": "sha256-FG2EA2Mwm1rH5wzgvtyHl4DK9LU1bGmoOhywbtW7dPU="
     },
+    "qutebrowser-adblocks": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "afreakk",
+      "repo": "greasemonkeyscripts",
+      "branch": "master",
+      "revision": "1ab9f20435cdc39c6551e940fb7788d3207161e6",
+      "url": "https://github.com/afreakk/greasemonkeyscripts/archive/1ab9f20435cdc39c6551e940fb7788d3207161e6.tar.gz",
+      "hash": "sha256-5LFik21mynOU6ueV0JCNe9/Gswe7NiqLyShf4yqdy50="
+    },
+    "qutebrowser-hdrezkaplus": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "chebaku",
+      "repo": "hdrezkaplus",
+      "branch": "master",
+      "revision": "ca0d7ad8f7ae54af2e8b3ee1815098154813bbda",
+      "url": "https://github.com/chebaku/hdrezkaplus/archive/ca0d7ad8f7ae54af2e8b3ee1815098154813bbda.tar.gz",
+      "hash": "sha256-OVuChSUuVTEhT1k0HeGkEfyRFzldBmi+QF05lC6zSZg="
+    },
     "rbw-forked": {
       "type": "GitHub",
       "fetchType": "tarball",

@@ -66,6 +66,8 @@
             engine = "zapret2";
 
             zapret2 = {
+              strategySource = "z2k";
+
               inherit (meta)
                 domains
                 excludeDomains
