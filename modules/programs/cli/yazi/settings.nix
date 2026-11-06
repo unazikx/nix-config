@@ -378,7 +378,7 @@
               colors = config.lib.stylix.colors.withHashtag;
             in
             ''
-              require("full-border"):setup { type = ui.Border.ROUNDED, }
+              require("full-border"):setup { set = ui.Border.ROUNDED, }
 
               require("git"):setup()
               th.git = th.git or {}
