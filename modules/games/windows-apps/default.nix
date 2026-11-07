@@ -11,6 +11,7 @@
       type = "github";
       owner = "emmanuelrosa";
       repo = "erosanix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

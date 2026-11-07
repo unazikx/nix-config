@@ -10,6 +10,8 @@
   #     type = "github";
   #     owner = "mangowm";
   #     repo = "mango";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-parts.follows = "flake-parts";
   #   };
   #   # keep-sorted end
   # };

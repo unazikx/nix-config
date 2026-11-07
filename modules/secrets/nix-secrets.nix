@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "unnamed-systems";
   #     repo = "nix-secrets";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

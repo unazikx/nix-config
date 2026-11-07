@@ -9,6 +9,8 @@
   #     type = "gitlab";
   #     owner = "ntgn";
   #     repo = "helium-flake";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-parts.follows = "flake-parts";
   #   };
   #   # keep-sorted end
   # };

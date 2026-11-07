@@ -15,12 +15,15 @@
       type = "github";
       owner = "xddxdd";
       repo = "nix-math";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
 
     nixos-hardware = {
       type = "github";
       owner = "NixOS";
       repo = "nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

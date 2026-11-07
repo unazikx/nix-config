@@ -10,6 +10,7 @@
       owner = "gerasti";
       repo = "tg-ws-proxy-pc";
       ref = "nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

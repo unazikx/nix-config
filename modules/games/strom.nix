@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "kraftwerk-gaming";
   #     repo = "strom";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

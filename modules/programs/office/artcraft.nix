@@ -9,6 +9,7 @@
       type = "github";
       owner = "Devitek";
       repo = "artcraft-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

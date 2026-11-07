@@ -10,6 +10,8 @@
   #     type = "github";
   #     owner = "daaboulex";
   #     repo = "occt-nix";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-parts.follows = "flake-parts";
   #   };
   #   # keep-sorted end
   # };

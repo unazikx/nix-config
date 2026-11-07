@@ -9,6 +9,7 @@
   #     type = "github";
   #     owner = "vicinaehq";
   #     repo = "extensions";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

@@ -9,6 +9,7 @@
       type = "github";
       owner = "karaolidis";
       repo = "nix-obsidian-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

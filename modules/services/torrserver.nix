@@ -9,6 +9,7 @@
       type = "github";
       owner = "yourok";
       repo = "torrserver";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

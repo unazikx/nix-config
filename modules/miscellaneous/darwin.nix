@@ -9,6 +9,7 @@
       type = "github";
       owner = "nix-darwin";
       repo = "nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

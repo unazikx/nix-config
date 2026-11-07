@@ -9,7 +9,6 @@
   #     type = "github";
   #     owner = "chaotic-cx";
   #     repo = "nyx";
-  #     ref = "nyxpkgs-unstable";
   #   };
   #   # keep-sorted end
   # };

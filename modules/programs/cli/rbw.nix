@@ -9,6 +9,8 @@
       type = "github";
       owner = "pschmitt";
       repo = "rbw";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
     # keep-sorted end
   };

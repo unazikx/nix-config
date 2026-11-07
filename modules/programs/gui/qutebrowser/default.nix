@@ -10,12 +10,14 @@
       type = "github";
       owner = "afreakk";
       repo = "greasemonkeyscripts";
+      flake = false;
     };
 
     qutebrowser-hdrezkaplus = {
       type = "github";
       owner = "chebaku";
       repo = "hdrezkaplus";
+      flake = false;
     };
     # keep-sorted end
   };

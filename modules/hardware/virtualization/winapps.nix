@@ -24,6 +24,8 @@
       type = "github";
       owner = "winapps-org";
       repo = "winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
     # keep-sorted end
   };

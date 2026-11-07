@@ -10,13 +10,14 @@
   #     type = "github";
   #     owner = "jovian-experiments";
   #     repo = "jovian-nixos";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
 
   #   steamix = {
   #     type = "github";
   #     owner = "arunoruto";
   #     repo = "steamix";
-  #     ref = "main";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

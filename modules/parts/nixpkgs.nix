@@ -4,15 +4,6 @@
 }:
 
 {
-  # flake-file.tack = {
-  #   allFollow = {
-  #     nixpkgs-unstable = [
-  #       "nixpkgs"
-  #       "nixpkgs-lib"
-  #     ];
-  #   };
-  # };
-
   flake-file.inputs = {
     nixpkgs.follows = "nixpkgs-unstable";
 

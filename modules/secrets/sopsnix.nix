@@ -10,6 +10,7 @@
       type = "github";
       owner = "mic92";
       repo = "sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

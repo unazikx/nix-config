@@ -9,6 +9,7 @@
       type = "github";
       owner = "andreashgk";
       repo = "hytale-nix";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

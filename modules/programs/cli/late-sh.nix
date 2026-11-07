@@ -9,6 +9,8 @@
   #     type = "github";
   #     owner = "mpiorowski";
   #     repo = "late-sh";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-utils.follows = "flake-utils";
   #   };
   #   # keep-sorted end
   # };

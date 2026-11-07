@@ -10,6 +10,7 @@
       type = "github";
       owner = "noctalia-dev";
       repo = "umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

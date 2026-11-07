@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "mystiafin";
   #     repo = "amane";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

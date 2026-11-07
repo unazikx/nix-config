@@ -4,16 +4,6 @@
 }:
 
 {
-  # flake-file.inputs = {
-  #   # keep-sorted start block=yes newline_separated=yes
-  #   spotifast = {
-  #     type = "github";
-  #     owner = "crmne";
-  #     repo = "spotifast";
-  #   };
-  #   # keep-sorted end
-  # };
-
   zen.programs.gui.spotifast = {
     description = ''
       egui spotify client

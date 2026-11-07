@@ -9,6 +9,8 @@
       type = "github";
       owner = "unazikx";
       repo = "proxy-suite-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.disko.follows = "disko";
     };
     # keep-sorted end
   };

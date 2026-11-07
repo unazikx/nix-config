@@ -3,17 +3,6 @@
 }:
 
 {
-  # flake-file.inputs = {
-  #   # keep-sorted start block=yes newline_separated=yes
-  #   cachyos-kernel-nix = {
-  #     type = "github";
-  #     owner = "xddxdd";
-  #     repo = "nix-cachyos-kernel";
-  #     ref = "release";
-  #   };
-  #   # keep-sorted end
-  # };
-
   zen.hardware.boot.kernel = {
     description = ''
       boot settings

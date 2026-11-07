@@ -9,6 +9,7 @@
   #     type = "github";
   #     owner = "ryantm";
   #     repo = "agenix";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

@@ -16,7 +16,7 @@
   };
 
   imports = [
-    inputs.flake-file.flakeModules.lon
+    inputs.flake-file.flakeModules.flake
   ];
 
   flake-file = {
@@ -26,22 +26,28 @@
       # nix
       ''
         inputs:
-        inputs.flake-parts.lib.mkFlake
+        (inputs.flake-parts.lib.mkFlake
           {
             inherit inputs;
           }
           (
-            inputs.import-tree [
+            [
               ./configurations
               ./modules
             ]
+            |> inputs.import-tree
           )
+        )
       '';
 
-    lon.lockDir = ".lon";
-
-    prune-lock.enable = true;
-    trackPinUrls = false;
+    nixConfig = {
+      accept-flake-config = true;
+      extra-experimental-features = [
+        "flakes"
+        "nix-command"
+        "pipe-operators"
+      ];
+    };
 
     style = {
       sep.inputs = "
@@ -63,19 +69,11 @@
     packages =
       {
         pkgs,
-        lib,
         ...
       }:
-      let
-        unset =
-          exec:
-          pkgs.writeShellScriptBin "write-lon" ''
-            LON_DIRECTORY= ; ${exec pkgs |> lib.getExe}
-          '';
-      in
       {
-        write-lon = config.flake-file.apps.write-lon |> unset;
-        write-lock = config.flake-file.apps.write-lock |> unset;
+        write-flake = config.flake-file.apps.write-flake pkgs;
+        write-lock = config.flake-file.apps.write-lock pkgs;
       };
   };
 }

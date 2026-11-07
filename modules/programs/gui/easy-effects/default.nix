@@ -10,7 +10,7 @@
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      ref = "nixos-25.05";
+      ref = "nixos-25.05"; # https://github.com/NixOS/nixpkgs/pull/427617.diff
     };
     # keep-sorted end
   };

@@ -6,21 +6,23 @@
 {
   # flake-file.inputs = {
   #   # keep-sorted start block=yes newline_separated=yes
-  #   dms = {
+  #   dux-shell = {
   #     type = "github";
-  #     owner = "avengemedia";
-  #     repo = "dankmaterialshell";
+  #     owner = "duxlabs-dev";
+  #     repo = "dux-shell";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
 
-  #   dms-plugins = {
+  #   dux-plugins = {
   #     type = "github";
-  #     owner = "avengemedia";
-  #     repo = "dms-plugin-registry";
+  #     owner = "duxlabs-dev";
+  #     repo = "dux-plugin-registry";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };
 
-  zen.programs.desktop.dank-material-shell = {
+  zen.programs.desktop.dux-shell = {
     description = ''
       modern clipboard with tofi frontend
       clipboard entries are in ~/.cache/clapboard
@@ -40,9 +42,9 @@
       }:
       {
         imports = [
-          inputs.dms.homeModules.dank-material-shell
-          inputs.dms-plugins.homeModules.dms-plugin-registry
-          inputs.dms.homeModules.niri
+          inputs.dux-plugins.homeModules.dms-plugin-registry
+          inputs.dux-shell.homeModules.dank-material-shell
+          inputs.dux-shell.homeModules.niri
         ];
 
         programs.dank-material-shell = {

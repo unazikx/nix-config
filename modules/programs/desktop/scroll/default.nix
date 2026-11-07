@@ -10,6 +10,7 @@
   #     type = "github";
   #     owner = "diax170";
   #     repo = "scroll-flake";
+  #     inputs.nixpkgs.follows = "nixpkgs";
   #   };
   #   # keep-sorted end
   # };

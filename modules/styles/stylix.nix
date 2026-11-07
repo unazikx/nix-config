@@ -6,17 +6,12 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    gnome-shell = {
-      type = "github";
-      owner = "gnome";
-      repo = "gnome-shell";
-      flake = false;
-    };
-
     stylix = {
       type = "github";
       owner = "nix-community";
       repo = "stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
 
     # https://tinted-theming.github.io/tinted-gallery

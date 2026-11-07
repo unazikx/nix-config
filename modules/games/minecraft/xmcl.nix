@@ -10,6 +10,7 @@
       type = "github";
       owner = "x45iq";
       repo = "xmcl-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

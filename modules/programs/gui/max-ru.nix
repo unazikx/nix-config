@@ -9,6 +9,8 @@
   #     type = "github";
   #     owner = "spiage";
   #     repo = "max-messenger";
+  #     inputs.nixpkgs.follows = "nixpkgs";
+  #     inputs.flake-utils.follows = "flake-utils";
   #   };
   #   # keep-sorted end
   # };

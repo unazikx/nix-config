@@ -10,12 +10,14 @@
       type = "github";
       owner = "numtide";
       repo = "devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-wrapper-modules = {
       type = "github";
       owner = "nix-community";
       repo = "nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
   };

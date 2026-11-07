@@ -9,6 +9,7 @@
       type = "github";
       owner = "microvm-nix";
       repo = "microvm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spectrum = {
