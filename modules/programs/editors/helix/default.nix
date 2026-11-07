@@ -20,6 +20,7 @@
     homeManager =
       {
         pkgs,
+        lib,
         ...
       }:
       {
@@ -28,12 +29,13 @@
         programs.helix = {
           enable = true;
 
-          defaultEditor = true;
           extraPackages = [
             # keep-sorted start
             pkgs.black
+            pkgs.gdtoolkit_4
             pkgs.go
             pkgs.gopls
+            pkgs.libressl # nc
             pkgs.marksman
             pkgs.netcat
             pkgs.nixd
@@ -51,6 +53,15 @@
             # keep-sorted end
           ];
         };
+
+        programs.fish.shellInitLast =
+          {
+            EDITOR = "hx";
+            VISUAL = "hx";
+          }
+          |> lib.generators.toKeyValue {
+            mkKeyValue = key: value: "export ${key}='${value}'";
+          };
 
         stylix.targets = {
           helix.enable = false;
