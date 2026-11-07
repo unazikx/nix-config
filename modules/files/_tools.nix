@@ -6,7 +6,7 @@
       nix_path = "nixpkgs=channel:nixos-unstable";
       extra_nix_config = ''
         accept-flake-config = true
-        experimental-features = nix-command flakes
+        experimental-features = nix-command flakes pipe-operators
       '';
     };
   };

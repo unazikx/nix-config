@@ -403,6 +403,7 @@
 
   nixConfig = {
     accept-flake-config = true;
+    warn-dirty = false;
     extra-experimental-features = [
       "flakes"
       "nix-command"

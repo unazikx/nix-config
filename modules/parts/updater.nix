@@ -22,7 +22,6 @@
 
             text = ''
               nix run .#update-packages
-              nix run .#hytale-fetcher
               nix run .#firefox-fetcher -- \
                 ./packages/firefox-addons/registry.jsonc \
                 -o ./packages/firefox-addons/output.nix
@@ -41,11 +40,6 @@
 
         firefox-fetcher = rec {
           program = config.packages.firefox-fetcher;
-          meta = program.meta;
-        };
-
-        hytale-fetcher = rec {
-          program = config.packages.hytale-fetcher;
           meta = program.meta;
         };
       };

@@ -63,9 +63,6 @@
         # pkgs,
         ...
       }:
-      let
-        # toml = pkgs.formats.toml { };
-      in
       {
         # https://gist.github.com/unazikx/0e1c4c838c897946f39e2f94ae64444e
         # xdg.configFile = {
