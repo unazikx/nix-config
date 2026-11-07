@@ -5,7 +5,7 @@
 
 stdenvNoCC.mkDerivation (_final: {
   pname = "horizon-launcher-unwrapped";
-  version = "0.2.16";
+  version = "launcher@0.2.49";
 
   src = fetchzip {
     url = "https://github.com/horizon-rust/horizon/releases/download/launcher%40${_final.version}/horizon-launcher-linux-x86_64.tar.gz";

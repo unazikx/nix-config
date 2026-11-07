@@ -7,11 +7,11 @@
 
 stdenv.mkDerivation (_final: {
   pname = "duck-game-rebuilt-unwrapped";
-  version = "1.4.7";
+  version = "1.4.8.4";
 
   src = fetchurl {
     url = "https://github.com/TheFlyingFoool/DuckGameRebuilt/releases/download/v${_final.version}/DuckGameRebuilt.zip";
-    sha256 = "1idnca210wdvlq6224i1961hqk72cxhljg9myfacccq7bkl997fw";
+    sha256 = "sha256-YwmRyhxwzauotsd0seQ/0/M5TUO82veXC5J0QFVmzv8=";
   };
 
   nativeBuildInputs = [

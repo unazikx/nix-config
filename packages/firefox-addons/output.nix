@@ -3,19 +3,19 @@ buildFirefoxXpiAddon:
 {
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "2026.10.0";
+    version = "2026.10.2";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5125667/bitwarden_password_manager-2026.10.0.xpi";
-    sha256 = "a25e02e961f4ffcecda12584f32f1993102ad7509e9ca84582e5287109f5bd20";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5198653/bitwarden_password_manager-2026.10.2.xpi";
+    sha256 = "abf9d7273dd55ac0583ecc6997f7f7ae3d29de11e2ad0a4838b80e2b941daa73";
     meta = { };
   };
 
   "darkreader" = buildFirefoxXpiAddon {
     pname = "darkreader";
-    version = "4.9.133";
+    version = "4.9.135";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5055786/darkreader-4.9.133.xpi";
-    sha256 = "eb06c5096d761616c7f1d954c11524ca4bff4fe7229044dc1fce288a8c0853ab";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5216111/darkreader-4.9.135.xpi";
+    sha256 = "bfed4591d6cc69857f5ed33a2d3cbfbc5811d5b92c4323d0735d2f1757e2dce4";
     meta = { };
   };
 
@@ -39,19 +39,19 @@ buildFirefoxXpiAddon:
 
   "libredirect" = buildFirefoxXpiAddon {
     pname = "libredirect";
-    version = "3.4.0";
+    version = "3.5.1";
     addonId = "7esoorv3@alefvanoon.anonaddy.me";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4916828/libredirect-3.4.0.xpi";
-    sha256 = "c0fa9a5c2302eb734b1b614284371061330cf2e7b3519ee96c53e8be58ae298f";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5207393/libredirect-3.5.1.xpi";
+    sha256 = "cd0796cbcaf9f7eb2643e9b937dc735526605e6eae925eda2a28b2e703bff234";
     meta = { };
   };
 
   "mal-sync" = buildFirefoxXpiAddon {
     pname = "mal-sync";
-    version = "0.12.5";
+    version = "0.13.0";
     addonId = "{c84d89d9-a826-4015-957b-affebd9eb603}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4999907/mal_sync-0.12.5.xpi";
-    sha256 = "5ee3c2a032d4605ec884ef7f9dee62716cb33bf467b8f03640d3610ce63190a1";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5211961/mal_sync-0.13.0.xpi";
+    sha256 = "fc249ab022b91f08846be13d5ff7a12178f293db158bdb37365194296a92b88f";
     meta = { };
   };
 
@@ -102,10 +102,10 @@ buildFirefoxXpiAddon:
 
   "torrserver-adder" = buildFirefoxXpiAddon {
     pname = "torrserver-adder";
-    version = "2.0.6.3";
+    version = "2.0.7";
     addonId = "84z74tXJKt8OUrTD@TSA";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5009268/torrserver_adder-2.0.6.3.xpi";
-    sha256 = "eeed6c3187cb2de2bd5d2f00310f4431b1897b452bdc5e23aa85e8618edd5475";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5219824/torrserver_adder-2.0.7.xpi";
+    sha256 = "47f77032f5a0699f5c18c5290588be1551ea4299c757da72936df8a1e121ffb6";
     meta = { };
   };
 
@@ -120,10 +120,10 @@ buildFirefoxXpiAddon:
 
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.75.0";
+    version = "1.75.4";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5034826/ublock_origin-1.75.0.xpi";
-    sha256 = "5b74415860456370644bd80f16125e865b0e6c356bb5dfcfb84069967eaa5287";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5203014/ublock_origin-1.75.4.xpi";
+    sha256 = "e2df503cce7cf5069130618c349695f62bdddb9eb8c189156d027269ae4ae267";
     meta = { };
   };
 
@@ -138,10 +138,10 @@ buildFirefoxXpiAddon:
 
   "youtube-addon" = buildFirefoxXpiAddon {
     pname = "youtube-addon";
-    version = "4.2081";
+    version = "4.2402";
     addonId = "{3c6bf0cc-3ae2-42fb-9993-0d33104fdcaf}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/4884091/youtube_addon-4.2081.xpi";
-    sha256 = "18e34f9e811caaa94517f1746d41b34e72a4b2aa5d44b9eda6f6d952ca60d0b4";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5201248/youtube_addon-4.2402.xpi";
+    sha256 = "2fad9d5e3248e448eddbe8bf19f1aa08e59a37aeb14c4c92f0cd44410758c360";
     meta = { };
   };
 

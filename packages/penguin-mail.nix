@@ -13,11 +13,11 @@
 
 stdenv.mkDerivation (_final: {
   pname = "penguin-mail";
-  version = "1.0.3";
+  version = "1.0.12";
 
   src = fetchzip {
     url = "https://github.com/c9dev/penguin-mail/releases/download/v${_final.version}/penguin-mail-${_final.version}-x86_64.zip";
-    sha256 = "sha256-xREUzw7eR/AugLhwdIwgnu2t1yZxbJ+QAdWHhdLj528=";
+    sha256 = "sha256-kvIcj94ql1F2oMWPkEvnZtaQnmcoipxJF+kiBVxjVzs=";
   };
 
   dontConfigure = true;

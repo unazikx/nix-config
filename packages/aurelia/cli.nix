@@ -12,16 +12,16 @@
 
 rustPlatform.buildRustPackage (_final: {
   pname = "aurelia";
-  version = "0.1.38";
+  version = "0.1.43";
 
   src = fetchFromGitHub {
     owner = "Drackrath";
     repo = "Aurelia";
     tag = "v${_final.version}";
-    hash = "sha256-J+YhWK1MX9VsWchk0j1xkmlxiBdehaOoSxtrzSAt1X4=";
+    hash = "sha256-4Qli+SJbj4RlECvxUktwfPwSWhA93wfzFLXe/I/1Kl8=";
   };
 
-  cargoHash = "sha256-YT7muzNjxFAMwxqEPfTSK1+LHNAjbineXmsOGE9fgMU=";
+  cargoHash = "sha256-QO4OLlgK97SLxPqnn3utw/MTNHKMigewOQqr09yggQI=";
 
   nativeBuildInputs = [
     cmake

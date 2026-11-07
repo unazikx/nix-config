@@ -9,7 +9,7 @@ proton-ge-bin.overrideAttrs (
     steamDisplayName = "Proton GDK";
 
     pname = "proton-gdk-patched";
-    version = "release-11-7";
+    version = "release-11-12";
 
     src = fetchzip {
       url = "https://github.com/LukasPAH/GDK-Proton-Custom/releases/download/${_final.version}/GDK-Proton${_final.version}-x86_64.tar.gz";

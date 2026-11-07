@@ -6,11 +6,11 @@
 
 stdenv.mkDerivation (_final: {
   pname = "terra-firma-greg";
-  version = "0.13.10";
+  version = "0.13.17";
 
   src = fetchzip {
     url = "https://github.com/TerraFirmaGreg-Team/Modpack-Modern/releases/download/${_final.version}/TerraFirmaGreg-Modern-${_final.version}-serverpack.zip";
-    sha256 = "sha256-Clath+ieGgFnL96y+aI5qnC0oN5/RbgbtGjnksPBudU=";
+    sha256 = "sha256-ZE3u2D4jiIKzVo7PcfYSE2gc4dGpzVXhZrh9VeLTO/4=";
     stripRoot = false;
   };
 

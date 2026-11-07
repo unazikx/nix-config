@@ -10,13 +10,13 @@
 
 rustPlatform.buildRustPackage (_final: {
   pname = "steam-tui";
-  version = "2.1.0";
+  version = "0.4.6";
 
   src = fetchFromGitHub {
     owner = "vanyapoker";
     repo = "steam-tui";
     tag = "v${_final.version}";
-    hash = "sha256-iw4yZfkCynKq2gK39w82oPbGbNC5CZRpYSHNyNW/ogY=";
+    hash = "sha256-l03JUXkSm795R45O++ZzXnWMeOLGTaDuMseJQYmvdFs=";
   };
 
   cargoLock.lockFile = "${_final.src}/Cargo.lock";

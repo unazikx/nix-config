@@ -6,7 +6,7 @@
 
 python3Packages.buildPythonApplication (_final: {
   pname = "anicli_api";
-  version = "git";
+  version = "0.12.0";
   pyproject = true;
 
   src = fetchPypi {

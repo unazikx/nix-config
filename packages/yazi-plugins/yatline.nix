@@ -6,7 +6,7 @@
 
 yaziPlugins.mkYaziPlugin {
   pname = "yatline.yazi";
-  version = "git";
+  version = "0.5.1";
 
   src = fetchFromGitHub {
     owner = "imsi32";

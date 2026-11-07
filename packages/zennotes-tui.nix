@@ -6,13 +6,13 @@
 
 buildGoModule (_final: {
   pname = "zennotes-tui";
-  version = "0.6.2";
+  version = "0.17.1";
 
   src = fetchFromGitHub {
     owner = "zennotes";
     repo = "tui";
     tag = "v${_final.version}";
-    hash = "sha256-wSFAsnMkBlQtk3nz34es7xl6BbhbOhlDSvreqpDEdF0=";
+    hash = "sha256-PscDWiku6iO+UXGZDWFmyf+0ieU86GZfyGgK/RMCdFU=";
   };
 
   vendorHash = "sha256-sGHO+48ghb14bx0R8aT1lrYuG85h2MP7ZtIhwL/tzfY=";

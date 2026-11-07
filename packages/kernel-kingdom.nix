@@ -6,7 +6,7 @@
 
 python3Packages.buildPythonApplication (_final: {
   pname = "kernel-kingdom";
-  version = "git";
+  version = "0.6.2";
   pyproject = true;
 
   src = fetchFromGitHub {

@@ -6,14 +6,14 @@
 
 python3Packages.buildPythonPackage (_final: {
   pname = "wayswitch";
-  version = "1.1.1";
+  version = "2.0.0a4";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "Wetoshkin";
     repo = "WaySwitch";
     tag = "v${_final.version}";
-    hash = "sha256-wEHANJb8u7BrgY9GzEi14bgNkOamILOrYycW/NRYF+E=";
+    hash = "sha256-menuOYHW9Vz9jBfEoZcaTuLak7OZiS2aWDPQ/90WQUI=";
   };
 
   build-system = [

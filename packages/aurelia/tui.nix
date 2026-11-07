@@ -8,16 +8,16 @@
 
 rustPlatform.buildRustPackage (_final: {
   pname = "aurelia-tui";
-  version = "0.1.3";
+  version = "0.1.4";
 
   src = fetchFromGitHub {
     owner = "Drackrath";
     repo = "Aurelia-TUI";
     rev = "v${_final.version}";
-    hash = "sha256-+kk+sczxwCk7N33wVM32n4tl3G+Jt5AWMF3tcK/vT8Y=";
+    hash = "sha256-fwKXnZfBJa0gk/d3InMagztNodcjkjPOUNyfhw3TExY=";
   };
 
-  cargoHash = "sha256-roOxtWQDk9BSo44z62uWQi/yrZVu5bZUL4+UKkehEIk=";
+  cargoHash = "sha256-HK4ICimMjaZI4yQAeYKXOOgURhhMIQpC/lyn3R0H0EE=";
 
   nativeBuildInputs = [ pkg-config ];
 

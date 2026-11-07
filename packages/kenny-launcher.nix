@@ -54,7 +54,7 @@
 
 stdenv.mkDerivation (_final: {
   pname = "kenny-launcher";
-  version = "9.6.1-dev";
+  version = "9.6.1-dev-ubuntu-r1";
 
   src = fetchzip {
     url = "https://github.com/Tuxeodoman/kenny-launcher-ubuntu/releases/download/v${_final.version}-ubuntu-r1/kenny-launcher-${_final.version}-ubuntu-x86_64.tar.xz";
