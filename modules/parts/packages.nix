@@ -54,8 +54,7 @@
                 system = system;
                 local = config.packages;
               })
-            ]
-            ++ config.overlayPkgs;
+            ];
           };
         };
       };
