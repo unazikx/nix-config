@@ -34,7 +34,7 @@
       zen.hardware.compression.zram
       zen.hardware.cpu-gpu
       zen.hardware.mounting
-      zen.hardware.networking.geohide-dns
+      zen.hardware.networking.dns-malw-link
       zen.hardware.security.yubikey
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager

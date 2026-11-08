@@ -6,7 +6,7 @@
 {
   zen.services.proxy-suite.tg-ws-proxy = {
     includes = [
-      zen.services.proxy-suite.tg-ws-proxy
+      zen.services.proxy-suite
     ];
 
     nixos =
