@@ -73,21 +73,21 @@
                   "Shift+Right" = "window-swap-next";
                   "Shift+Left" = "window-swap-previous";
 
-                  "Minus" = "window-modify-primary-extent:-0.1";
-                  "Equal" = "window-modify-primary-extent:+0.1";
-                  "Shift+Minus" = "window-modify-secondary-extent:-0.1";
-                  "Shift+Equal" = "window-modify-secondary-extent:+0.1";
+                  "Minus" = "window-modify-primary-extent -0.1";
+                  "Equal" = "window-modify-primary-extent +0.1";
+                  "Shift+Minus" = "window-modify-secondary-extent -0.1";
+                  "Shift+Equal" = "window-modify-secondary-extent +0.1";
 
                   "R" = norepeat "window-cycle-primary-extent";
                   "Shift+R" = norepeat "window-cycle-secondary-extent";
                 }
                 // (lib.genAttrs (map (n: toString n) (lib.range 1 meta.workspaceCount)) (
-                  n: "workspace-switch:${n}"
+                  n: "workspace-switch ${n}"
                 ))
                 // (lib.listToAttrs (
                   map (n: {
                     name = "Shift+${toString n}";
-                    value = "window-move-to-workspace:${toString n}";
+                    value = "window-move-to-workspace ${toString n}";
                   }) (lib.range 1 meta.workspaceCount)
                 ))
               )
@@ -104,7 +104,7 @@
               }
               |> lib.concatMapAttrs (
                 key: command: {
-                  "Mod+${key}" = "spawn:${command}";
+                  "Mod+${key}" = "spawn ${command}";
                 }
               )
             )
@@ -133,7 +133,7 @@
               }
               |> lib.concatMapAttrs (
                 key: command: {
-                  "${key}" = norepeat "spawn:noctalia msg ${command}";
+                  "${key}" = norepeat "spawn noctalia msg ${command}";
                 }
               )
             ))

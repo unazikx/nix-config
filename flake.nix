@@ -362,6 +362,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    wayswitch = {
+      type = "github";
+      owner = "wetoshkin";
+      repo = "wayswitch";
+      flake = false;
+    };
+
     winapps = {
       type = "github";
       owner = "winapps-org";
@@ -403,11 +410,11 @@
 
   nixConfig = {
     accept-flake-config = true;
-    warn-dirty = false;
     extra-experimental-features = [
       "flakes"
       "nix-command"
       "pipe-operators"
     ];
+    warn-dirty = false;
   };
 }

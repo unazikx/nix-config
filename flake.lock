@@ -1126,6 +1126,7 @@
         "tinted-schemes": "tinted-schemes_2",
         "torrserver": "torrserver",
         "umbriel": "umbriel",
+        "wayswitch": "wayswitch",
         "winapps": "winapps",
         "with-inputs": "with-inputs",
         "xmcl": "xmcl"
@@ -1496,6 +1497,22 @@
       "original": {
         "owner": "noctalia-dev",
         "repo": "umbriel",
+        "type": "github"
+      }
+    },
+    "wayswitch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794183581,
+        "narHash": "sha256-hzlVviU4Jf9eKTzYs1JiSGj5fZQoAI07NLa1BOtLfNQ=",
+        "owner": "wetoshkin",
+        "repo": "wayswitch",
+        "rev": "94b3ea03829cd5b51a813e219291c00ffd47381e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "wetoshkin",
+        "repo": "wayswitch",
         "type": "github"
       }
     },

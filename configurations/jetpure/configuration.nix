@@ -90,6 +90,7 @@
       zen.programs.cli.ssh
       zen.programs.cli.yazi
       zen.programs.desktop.umbriel
+      zen.programs.desktop.wayswitch
       zen.programs.editors.helix
       zen.programs.editors.obsidian.personal
       zen.programs.gui._64gram
