@@ -23,9 +23,13 @@
   zen.users.hackerx = {
     user =
       {
+        config,
+        user,
         ...
       }:
       {
+        hashedPasswordFile = config.sops.secrets."password/${user.userName}".path;
+
         extraGroups = [
           # keep-sorted start
           "audio"

@@ -17,7 +17,6 @@
 
   zen.secrets.sopsnix = {
     includes = [
-      zen.hardware.security.yubikey
       zen.secrets
     ];
 

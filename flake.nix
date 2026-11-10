@@ -260,7 +260,7 @@
 
     proxy-suite-flake = {
       type = "github";
-      owner = "unazikx";
+      owner = "fufsob";
       repo = "proxy-suite-flake";
       inputs = {
         disko.follows = "disko";

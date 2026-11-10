@@ -71,14 +71,7 @@
             };
           };
 
-          services = {
-            lact.enable = true;
-
-            cpupower-gui = {
-              enable = true;
-              package = pkgs._fixed.cpupower-gui;
-            };
-          };
+          services.lact.enable = true;
         };
 
       declaoke.nixos =

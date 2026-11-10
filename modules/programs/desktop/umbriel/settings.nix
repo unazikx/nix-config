@@ -197,6 +197,7 @@
             lib.genAttrs
               [
                 "HDMI-A-1"
+                "eDP-1"
               ]
               (_: {
                 workspaces = meta.workspaceCount;

@@ -13,24 +13,29 @@
       {
         file."secrets/config.yaml" =
           let
+            defaultKeys = lib.attrValues {
+              personal = "age1yubikey1q2nd6ngwjcdkzw8yars7vsa7ljvy4x73xuev69cncwa9rjqvcy4zjgqfzms";
+            };
+
             clean = lib.filterAttrs (name: _: !lib.hasPrefix "_" name);
 
-            toEntry =
-              name: conf:
-              lib.optional (conf ? age) {
+            toEntry = defaultKeys: name: conf: [
+              {
                 inherit name;
-                keys = [ conf.age ];
-              };
+                keys = lib.unique (defaultKeys ++ lib.optional (conf ? age) conf.age);
+              }
+            ];
 
-            toCombinedEntry =
-              hostName: hostConf: userName: userConf:
-              lib.optional (userConf ? age) {
+            toCombinedEntry = defaultKeys: hostName: hostConf: userName: userConf: [
+              {
                 name = "${userName}-${hostName}";
-                keys = [
-                  (lib.optionalString (hostConf ? age) hostConf.age)
-                  userConf.age
-                ];
-              };
+                keys = lib.unique (
+                  defaultKeys
+                  ++ lib.optional (hostConf ? age) hostConf.age
+                  ++ lib.optional (userConf ? age) userConf.age
+                );
+              }
+            ];
 
             keysFrom =
               byArch:
@@ -42,9 +47,11 @@
                 |> clean
                 |> lib.mapAttrsToList (
                   name: conf:
-                  toEntry name conf
-                  ++ lib.mapAttrsToList toEntry (clean (conf.users or { }))
-                  ++ lib.mapAttrsToList (toCombinedEntry name conf) (clean (conf.users or { }))
+                  toEntry defaultKeys name conf
+                  ++ lib.mapAttrsToList (userName: userConf: toEntry defaultKeys userName userConf) (
+                    clean (conf.users or { })
+                  )
+                  ++ lib.mapAttrsToList (toCombinedEntry defaultKeys name conf) (clean (conf.users or { }))
                 )
               )
               |> lib.flatten;
@@ -62,6 +69,7 @@
               |> map (c: c.keys)
               |> lib.flatten
               |> lib.unique;
+
           in
           {
             yaml.creation_rules =
@@ -69,7 +77,7 @@
                 (
                   allConfigurations
                   |> map (configuration: {
-                    path_regex = "${configuration.name}/[^/]+\.*$";
+                    path_regex = "${configuration.name}/[^/]+\\.*$";
                     key_groups = [
                       {
                         age = configuration.keys;
@@ -79,7 +87,7 @@
                 )
 
                 {
-                  path_regex = "shared/[^/]+\.(yaml|json|env|ini)$";
+                  path_regex = "shared/[^/]+\\.(yaml|json|env|ini)$";
                   key_groups = [
                     {
                       age = sharedKeys;

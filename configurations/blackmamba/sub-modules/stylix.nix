@@ -7,7 +7,6 @@
     nixos =
       {
         self',
-        inputs,
         pkgs,
         lib,
         config,
@@ -20,12 +19,28 @@
         stylix = {
           polarity = "dark";
 
-          base16Scheme = lib.mkForce "${inputs.tinted-theming}/base16/classic-dark.yaml";
+          base16Scheme = lib.mkForce {
+            name = "Paradise";
+            author = "https://github.com/manas140";
+            base00 = "#151515";
+            base01 = "#1f1f1f";
+            base02 = "#2e2e2e";
+            base03 = "#424242";
+            base04 = "#bbb6b6";
+            base05 = "#e8e3e3";
+            base06 = "#e8e3e3";
+            base07 = "#e8e3e3";
+            base08 = "#b66467";
+            base09 = "#d9bc8c";
+            base0A = "#d9bc8c";
+            base0B = "#8c977d";
+            base0C = "#8aa6a2";
+            base0D = "#8da3b9";
+            base0E = "#a988b0";
+            base0F = "#bbb6b6";
+          };
 
-          image = lib.stylix.mkImage pkgs (pkgs.fetchurl {
-            url = "https://w.wallhaven.cc/full/w5/wallhaven-w5x65p.jpg";
-            sha256 = "sha256-aUTvlXBCEwi6gPmosh4vgTzbcr3YyJllFm0E5lLW5ks=";
-          }) colors.toList;
+          image = config.stylix.images.pepe-xp;
 
           icons = {
             enable = true;

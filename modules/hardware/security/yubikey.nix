@@ -50,14 +50,13 @@
       {
         pkgs,
         lib,
-        config,
         ...
       }:
       {
         environment.systemPackages = [
           pkgs.age-plugin-yubikey
           pkgs.libfido2
-          pkgs.nur.repos.jetcookies.picoforge
+          # pkgs.nur.repos.jetcookies.picoforge
           pkgs.opensc
           pkgs.pcsc-tools
           pkgs.yubikey-manager
@@ -87,28 +86,37 @@
             pkgs.yubikey-personalization
           ];
         };
+      };
 
-        security.pam = {
-          u2f = {
-            enable = true;
+    provides.jetpure = {
+      nixos =
+        {
+          config,
+          ...
+        }:
+        {
+          security.pam = {
+            u2f = {
+              enable = true;
 
-            settings = {
-              authfile = config.sops.secrets."password/authfile".path;
-              cue = true;
+              settings = {
+                authfile = config.sops.secrets."password/authfile".path;
+                cue = true;
+              };
+            };
+
+            services = {
+              login.u2fAuth = true;
+              polkit-1.u2fAuth = true;
+              sudo.u2fAuth = true;
+              su.u2fAuth = true;
             };
           };
 
-          services = {
-            login.u2fAuth = true;
-            polkit-1.u2fAuth = true;
-            sudo.u2fAuth = true;
-            su.u2fAuth = true;
+          sops.secrets = {
+            "password/authfile" = { };
           };
         };
-
-        sops.secrets = {
-          "password/authfile" = { };
-        };
-      };
+    };
   };
 }
