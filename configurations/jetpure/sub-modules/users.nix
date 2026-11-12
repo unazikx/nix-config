@@ -6,15 +6,10 @@
   zen.hosts.jetpure = {
     nixos =
       {
-        config,
         ...
       }:
       {
         users.mutableUsers = false;
-
-        users.users.root = {
-          hashedPasswordFile = config.sops.secrets."password/root".path;
-        };
 
         sops.secrets = {
           "password/nixzoid" = {
@@ -25,6 +20,28 @@
             neededForUsers = true;
           };
         };
+
+        security.nix-secrets.secrets = {
+          "password/nixzoid" = {
+            neededForUsers = true;
+          };
+
+          "password/root" = {
+            neededForUsers = true;
+          };
+        };
+      };
+  };
+
+  zen.users.root = {
+    user =
+      {
+        config,
+        user,
+        ...
+      }:
+      {
+        hashedPasswordFile = config.sops.secrets."password/${user.userName}".path;
       };
   };
 

@@ -701,6 +701,26 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793717226,
+        "narHash": "sha256-WCcx6veQ5yrOUYA9MTXXbMb4ZpwpbV9EIV0zRIZw+u0=",
+        "owner": "unnamed-systems",
+        "repo": "nix-secrets",
+        "rev": "857a7594bc4cd65533bc9fcdd056dc843e10e441",
+        "type": "github"
+      },
+      "original": {
+        "owner": "unnamed-systems",
+        "repo": "nix-secrets",
+        "type": "github"
+      }
+    },
     "nix-wrapper-modules": {
       "inputs": {
         "nixpkgs": [
@@ -1100,6 +1120,7 @@
         "nix-math": "nix-math",
         "nix-minecraft": "nix-minecraft",
         "nix-obsidian-extensions": "nix-obsidian-extensions",
+        "nix-secrets": "nix-secrets",
         "nix-wrapper-modules": "nix-wrapper-modules",
         "nixcraft": "nixcraft",
         "nixos-cli": "nixos-cli",

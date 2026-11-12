@@ -40,10 +40,10 @@
       zen.miscellaneous.nix.substituters
       zen.miscellaneous.nur
       zen.miscellaneous.time
-      zen.miscellaneous.users.accounts
       zen.miscellaneous.version
       zen.programs.cli.nh
       zen.programs.cli.rusted-tools
+      zen.secrets.nix-secrets
       zen.secrets.sopsnix
       zen.services.caddy
       zen.services.greetd
@@ -76,6 +76,7 @@
       zen.miscellaneous.canvas-commons
       zen.miscellaneous.nix
       zen.miscellaneous.users
+      zen.miscellaneous.users.accounts
       zen.miscellaneous.xdg
       zen.programs.cli.fastfetch
       zen.programs.cli.gdu

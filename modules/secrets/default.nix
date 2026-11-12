@@ -4,18 +4,17 @@
 }:
 
 {
-  zen.secrets =
-    let
-      meta = zen.secrets.meta;
-    in
-    {
-      meta = {
-        dir = "/var/lib";
-        yubikey = "${meta.dir}/yubikey";
-      };
+  zen.secrets = {
+    meta = {
+      yubikey = "/var/lib/yubikey";
 
-      includes = [
-        zen.custom.secrets
-      ];
+      defaultKeys = {
+        personal = "age1yubikey1q2nd6ngwjcdkzw8yars7vsa7ljvy4x73xuev69cncwa9rjqvcy4zjgqfzms";
+      };
     };
+
+    includes = [
+      zen.custom.secrets
+    ];
+  };
 }

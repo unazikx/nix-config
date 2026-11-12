@@ -42,6 +42,7 @@
       zen.miscellaneous.version
       zen.programs.cli.nh
       zen.programs.cli.rusted-tools
+      zen.secrets.nix-secrets
       zen.secrets.sopsnix
       zen.services.caddy
       zen.services.greetd

@@ -48,6 +48,7 @@
 
     nixos =
       {
+        self',
         pkgs,
         lib,
         ...
@@ -56,10 +57,10 @@
         environment.systemPackages = [
           pkgs.age-plugin-yubikey
           pkgs.libfido2
-          # pkgs.nur.repos.jetcookies.picoforge
           pkgs.opensc
           pkgs.pcsc-tools
           pkgs.yubikey-manager
+          self'.packages.picoforge
         ];
 
         programs = {

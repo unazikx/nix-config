@@ -40,9 +40,14 @@
                   ${lib.getExe pkgs.age-plugin-yubikey} --identity > $DEST
                 '';
             };
-
+          }
+          // lib.optionalAttrs (host.hasAspect zen.secrets.sopsnix) {
             setupSecrets.deps = [ "setupPcscd" ];
             setupSecretsForUsers.deps = [ "setupPcscd" ];
+          }
+          // lib.optionalAttrs (host.hasAspect zen.secrets.nix-secrets) {
+            nixSecretsActivate.deps = [ "setupPcscd" ];
+            nixSecretsActivateBeforeUsers.deps = [ "setupPcscd" ];
           };
         };
       };

@@ -1,4 +1,5 @@
 {
+  zen,
   lib,
   config,
   ...
@@ -13,9 +14,9 @@
       {
         file."secrets/config.yaml" =
           let
-            defaultKeys = lib.attrValues {
-              personal = "age1yubikey1q2nd6ngwjcdkzw8yars7vsa7ljvy4x73xuev69cncwa9rjqvcy4zjgqfzms";
-            };
+            meta = zen.secrets.meta;
+
+            defaultKeys = lib.attrValues meta.defaultKeys;
 
             clean = lib.filterAttrs (name: _: !lib.hasPrefix "_" name);
 
