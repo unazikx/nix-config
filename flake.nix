@@ -14,12 +14,6 @@
       flake = false;
     };
 
-    dag = {
-      type = "github";
-      owner = "denful";
-      repo = "dag";
-    };
-
     den = {
       type = "github";
       owner = "denful";
@@ -288,16 +282,6 @@
       repo = "hdrezkaplus";
       ref = "TEST";
       flake = false;
-    };
-
-    rbw-forked = {
-      type = "github";
-      owner = "pschmitt";
-      repo = "rbw";
-      inputs = {
-        home-manager.follows = "home-manager";
-        nixpkgs.follows = "nixpkgs";
-      };
     };
 
     remove-edge = {

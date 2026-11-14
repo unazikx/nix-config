@@ -1,18 +1,11 @@
 {
   inputs,
-  lib,
   ...
 }:
 
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    dag = {
-      type = "github";
-      owner = "denful";
-      repo = "dag";
-    };
-
     files = {
       type = "github";
       owner = "sini";
@@ -25,18 +18,29 @@
     inputs.files.flakeModules.default
   ];
 
-  _module.args.dag = inputs.dag.lib {
-    inherit lib;
-  };
-
   zen.flake-parts.default = {
-    files =
+    apps =
       {
+        pkgs,
+        config,
         ...
       }:
       {
-        generateApp = true;
-        treefmt.enable = false;
+        write-files.program = pkgs.writeShellApplication {
+          name = "write-files-fmt";
+
+          runtimeInputs = [
+            config.files.writer.drv
+            config.formatter
+          ];
+
+          derivationArgs = {
+            allowSubstitutes = false;
+            preferLocalBuild = true;
+          };
+
+          text = "write-files && treefmt";
+        };
       };
   };
 }

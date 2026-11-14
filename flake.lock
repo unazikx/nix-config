@@ -104,36 +104,6 @@
         "type": "github"
       }
     },
-    "crane": {
-      "locked": {
-        "lastModified": 1793585954,
-        "narHash": "sha256-tXvzytP+yKObBT9UpMoqA8AINfq62ZzeOcGFiCJ8ouo=",
-        "owner": "ipetkov",
-        "repo": "crane",
-        "rev": "8782adaf7e415975d2737b41ccca93b08a8f7d9f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ipetkov",
-        "repo": "crane",
-        "type": "github"
-      }
-    },
-    "dag": {
-      "locked": {
-        "lastModified": 1786636402,
-        "narHash": "sha256-RI2Elc4c9SZt11z10bUeNirFF20vH0cAkIyLfr38Bjw=",
-        "owner": "denful",
-        "repo": "dag",
-        "rev": "81620ad3bcc943a4ac140d52b09812de8fea4394",
-        "type": "github"
-      },
-      "original": {
-        "owner": "denful",
-        "repo": "dag",
-        "type": "github"
-      }
-    },
     "den": {
       "locked": {
         "lastModified": 1793993828,
@@ -1053,30 +1023,6 @@
         "type": "github"
       }
     },
-    "rbw-forked": {
-      "inputs": {
-        "crane": "crane",
-        "home-manager": [
-          "home-manager"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794035537,
-        "narHash": "sha256-vaDhPhNejZiEeLT3KgsljaDeS0811CAl2K4RqwiuryA=",
-        "owner": "pschmitt",
-        "repo": "rbw",
-        "rev": "4972bb780081a9614ebfe09b2b8868ed870a07eb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pschmitt",
-        "repo": "rbw",
-        "type": "github"
-      }
-    },
     "remove-edge": {
       "flake": false,
       "locked": {
@@ -1097,7 +1043,6 @@
       "inputs": {
         "artcraft-nix": "artcraft-nix",
         "betterfox": "betterfox",
-        "dag": "dag",
         "den": "den",
         "devshells": "devshells",
         "disko": "disko",
@@ -1138,7 +1083,6 @@
         "proxy-suite-flake": "proxy-suite-flake",
         "qutebrowser-adblocks": "qutebrowser-adblocks",
         "qutebrowser-hdrezkaplus": "qutebrowser-hdrezkaplus",
-        "rbw-forked": "rbw-forked",
         "remove-edge": "remove-edge",
         "sopsnix": "sopsnix",
         "spectrum": "spectrum_2",

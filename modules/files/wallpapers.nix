@@ -252,40 +252,47 @@ in
 
     files =
       {
+        pkgs,
+        lib,
         config,
         ...
       }:
       {
-        file."wallpapers.md" =
-          let
-            formatEntry = name: entry: ''
-              [__${name}__](${entry.page}) -> (_${entry.full}_)
-
-              ![${name}](${entry.small})
-            '';
-
-            formatTag = name: url: ''
-              __${name}__ -> (${url})
-            '';
-          in
+        files =
           {
-            text = ''
-              # Wallpapers
+            path = "wallpapers.md";
+            drv =
+              let
+                formatEntry = name: entry: ''
+                  [__${name}__](${entry.page}) -> (_${entry.full}_)
 
-              ${config.wallpapers |> lib.mapAttrsToList formatEntry |> lib.concatStringsSep "\n\n"}
+                  ![${name}](${entry.small})
+                '';
 
-              ## Tags
+                formatTag = name: url: ''
+                  __${name}__ -> (${url})
+                '';
+              in
+              pkgs.writers.writeText "wallpapers.md"
+                # markdown
+                ''
+                  # Wallpapers
 
-              ${listOfTags |> lib.mapAttrsToList formatTag |> lib.concatStringsSep "\n\n"}
+                  ${config.wallpapers |> lib.mapAttrsToList formatEntry |> lib.concatStringsSep "\n\n"}
 
-              ## Total: ${
-                config.wallpapers
-                |> lib.attrNames
-                |> lib.length
-                |> toString
-              } wallpapers from https://wallhaven.cc
-            '';
-          };
+                  ## Tags
+
+                  ${listOfTags |> lib.mapAttrsToList formatTag |> lib.concatStringsSep "\n\n"}
+
+                  ## Total: ${
+                    config.wallpapers
+                    |> lib.attrNames
+                    |> lib.length
+                    |> toString
+                  } wallpapers from https://wallhaven.cc
+                '';
+          }
+          |> lib.singleton;
       };
 
     legacyPackages =

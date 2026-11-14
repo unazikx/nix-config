@@ -1,0 +1,27 @@
+%YAML 1.1
+---
+jobs:
+  update-flake:
+    name: Run update-flake
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v7
+    - name: Install Nix
+      uses: cachix/install-nix-action@v31
+      with:
+        extra_nix_config: "accept-flake-config = true\nexperimental-features = nix-command
+          flakes pipe-operators\n"
+        nix_path: nixpkgs=channel:nixos-unstable
+    - name: Run flake#update-packages
+      run: "nix run .#fetch-all\nnix fmt\n"
+    - name: Commit changes
+      run: "git config user.name \"github-actions[bot]\"\ngit config user.email \"\
+        github-actions[bot]@users.noreply.github.com\"\ngit add -A\n\nif ! git diff
+        --cached --quiet; then\n  git commit -m \"flake: updated nix-packages [automated]\"\
+        \n  git push\nelse\n  echo \"No changes from updater\"\nfi\n"
+name: Update own packages
+'on':
+  workflow_dispatch: {}
+permissions:
+  contents: write
