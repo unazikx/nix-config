@@ -147,21 +147,6 @@
 
                 language-servers = [ "typescript-language-server" ];
 
-                language-id = "typescriptreact";
-                file-types = [ "tsx" ];
-
-                workspace-lsp-roots = [
-                  "tsconfig.json"
-                  "package.json"
-                  "."
-                ];
-
-                roots = [
-                  "tsconfig.json"
-                  "package.json"
-                  "."
-                ];
-
                 formatter = {
                   command = "prettier";
                   args = [
