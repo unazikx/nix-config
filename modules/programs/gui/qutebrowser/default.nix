@@ -17,6 +17,7 @@
       type = "github";
       owner = "chebaku";
       repo = "hdrezkaplus";
+      ref = "TEST";
       flake = false;
     };
     # keep-sorted end
@@ -82,7 +83,7 @@
                 "${inputs.qutebrowser-adblocks}/youtube_adblock.js"
                 "${inputs.qutebrowser-adblocks}/youtube_shorts_block.js"
                 "${inputs.qutebrowser-adblocks}/youtube_sponsorblock.js"
-                "${inputs.qutebrowser-hdrezkaplus}/HdRezkaPlus.user.js"
+                "${inputs.qutebrowser-hdrezkaplus}/HdRezkaPlus.qtfix.user.js"
                 # keep-sorted end
               ];
             in

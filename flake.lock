@@ -1039,15 +1039,16 @@
     "qutebrowser-hdrezkaplus": {
       "flake": false,
       "locked": {
-        "lastModified": 1793378120,
-        "narHash": "sha256-OVuChSUuVTEhT1k0HeGkEfyRFzldBmi+QF05lC6zSZg=",
+        "lastModified": 1794474478,
+        "narHash": "sha256-skkR20eFUq5mJ9Ina2gnDUGHkQ/od/BDNVP0rOGo2Bk=",
         "owner": "chebaku",
         "repo": "hdrezkaplus",
-        "rev": "ca0d7ad8f7ae54af2e8b3ee1815098154813bbda",
+        "rev": "a144ff8d5a0f6f76038c41ef106818bcdd9756df",
         "type": "github"
       },
       "original": {
         "owner": "chebaku",
+        "ref": "TEST",
         "repo": "hdrezkaplus",
         "type": "github"
       }

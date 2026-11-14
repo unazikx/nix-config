@@ -46,7 +46,7 @@
 
     homeManagerNixos =
       {
-        self',
+        # self',
         # lib,
         # config,
         # host,
@@ -61,7 +61,7 @@
         programs.spotifast = {
           enable = true;
 
-          package = self'.packages.spotifast; # appimage
+          # package = self'.packages.spotifast; # appimage
 
           generate = false;
 

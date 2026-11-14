@@ -3,63 +3,41 @@
 }:
 
 {
-  flake-file.inputs = {
-    # keep-sorted start block=yes newline_separated=yes
-    rbw-forked = {
-      type = "github";
-      owner = "pschmitt";
-      repo = "rbw";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-    # keep-sorted end
-  };
-
   zen.programs.cli.rbw = {
     description = ''
       bitwarden cli client
-      rbw-fzf is frontend for rbw
     '';
 
     homeManager =
       {
-        inputs,
-        inputs',
         pkgs,
         lib,
         config,
         ...
       }:
       {
-        imports = [
-          inputs.rbw-forked.homeManagerModules.default
-        ];
-
         programs.rbw = {
           enable = true;
-
-          package = inputs'.rbw-forked.packages.rbw;
-
-          settings = {
-            # keep-sorted start block=yes
-            accounts.personal = {
-              email.file = config.sops.secrets."programs/rbw/email".path;
-              baseUrl.file = config.sops.secrets."programs/rbw/url".path;
-            };
-            agent = {
-              lockTimeout = 86400;
-              syncInterval = 10;
-            };
-            passwordGen.length = 32;
-            pinentry.command = lib.getExe pkgs.pinentry-gnome3;
-            primaryAccount = "personal";
-            # keep-sorted end
-          };
         };
+
+        dbus.packages = [ pkgs.gcr_3 ];
 
         sops.secrets = {
           "programs/rbw/email" = { };
           "programs/rbw/url" = { };
+        };
+
+        sops.templates = {
+          "rbw-config" = {
+            path = "${config.xdg.configHome}/rbw/config.json";
+            content = lib.toJSON {
+              email = config.sops.placeholder."programs/rbw/email";
+              base_url = config.sops.placeholder."programs/rbw/url";
+              lock_timeout = 60 * 30;
+              sync_interval = 4;
+              pinentry = pkgs.pinentry-curses;
+            };
+          };
         };
       };
   };

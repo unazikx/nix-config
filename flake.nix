@@ -286,6 +286,7 @@
       type = "github";
       owner = "chebaku";
       repo = "hdrezkaplus";
+      ref = "TEST";
       flake = false;
     };
 
