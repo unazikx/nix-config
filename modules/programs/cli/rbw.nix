@@ -35,7 +35,7 @@
               base_url = config.sops.placeholder."programs/rbw/url";
               lock_timeout = 60 * 30;
               sync_interval = 4;
-              pinentry = pkgs.pinentry-curses;
+              pinentry = lib.getExe pkgs.pinentry-curses;
             };
           };
         };

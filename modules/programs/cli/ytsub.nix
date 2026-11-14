@@ -4,25 +4,36 @@
 }:
 
 {
-  zen.programs.cli.youtube-cli = {
+  zen.programs.cli.ytsub = {
     description = ''
-      various tools for youtube
+      subscribes viewer for youtube
+      https://github.com/sarowish/ytsub#from-youtube--google-takeout
     '';
 
     includes = [
       zen.custom.ytsub
     ];
 
+    wiki = {
+      ytsub.links = [
+        {
+          name = "guide-for-importing";
+          link = "https://github.com/sarowish/ytsub#importing-subscriptions";
+          logo = "https://avatars.githubusercontent.com/u/20581722";
+        }
+        {
+          name = "google-takeout";
+          link = "https://takeout.google.com/takeout/custom/youtube";
+          logo = "https://avatars.githubusercontent.com/u/20581722";
+        }
+      ];
+    };
+
     homeManager =
       {
-        self',
         ...
       }:
       {
-        home.packages = [
-          self'.packages.xytz
-        ];
-
         programs.ytsub = {
           enable = true;
 
@@ -56,8 +67,6 @@
             vlc_path = "vlc";
             # keep-sorted end
 
-            # INFO:
-            # keybinds
             # keep-sorted start block=yes
             key_bindings = {
               "1" = "set_mode_subs";
@@ -136,8 +145,6 @@
             };
             # keep-sorted end
 
-            # INFO:
-            # themes settings
             # keep-sorted start block=yes
             error = {
               fg = "Red";

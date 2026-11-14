@@ -86,6 +86,7 @@
       zen.programs.cli.rezka-fzf
       zen.programs.cli.ssh
       zen.programs.cli.yazi
+      zen.programs.cli.ytsub
       zen.programs.desktop.umbriel
       zen.programs.desktop.wayswitch
       zen.programs.editors.helix
