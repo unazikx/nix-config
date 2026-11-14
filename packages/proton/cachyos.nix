@@ -9,7 +9,7 @@ proton-ge-bin.overrideAttrs (
     steamDisplayName = "Proton CachyOS SLR";
 
     pname = "proton-cachyos-patched";
-    version = "cachyos-11.0-20261015-slr";
+    version = "cachyos-11.0-20261107-base";
 
     src = fetchzip {
       url = "https://github.com/CachyOS/proton-cachyos/releases/download/${_final.version}/proton-${_final.version}-x86_64_v3.tar.xz";

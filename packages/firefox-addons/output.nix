@@ -120,19 +120,19 @@ buildFirefoxXpiAddon:
 
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.75.4";
+    version = "1.76.2";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5203014/ublock_origin-1.75.4.xpi";
-    sha256 = "e2df503cce7cf5069130618c349695f62bdddb9eb8c189156d027269ae4ae267";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5250345/ublock_origin-1.76.2.xpi";
+    sha256 = "36320e4735818f4f9b5ac1506610590233f4b201ca50196c2834e30f3e808a1e";
     meta = { };
   };
 
   "vicinae" = buildFirefoxXpiAddon {
     pname = "vicinae";
-    version = "1.1";
+    version = "1.2.0";
     addonId = "firefox@vicinae.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5154581/vicinae-1.1.xpi";
-    sha256 = "0015b61e3e5716c0512729ed380a0332d0ca1330b1cc84221d1d786e87d9b3e8";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5224510/vicinae-1.2.0.xpi";
+    sha256 = "a0ef790a2d1e749510ab953e65b34a8e8e04244cc4f84e47d0028882872b2280";
     meta = { };
   };
 
