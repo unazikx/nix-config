@@ -4,12 +4,17 @@
 
 {
   zen.hosts.jetpure = {
-    disko =
+    nixos =
       {
+        inputs,
         host,
         ...
       }:
       {
+        imports = [
+          inputs.disko.nixosModules.default
+        ];
+
         disko.devices.disk = {
           "${baseNameOf host.device}" = {
             device = host.device;

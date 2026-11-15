@@ -65,7 +65,7 @@
 
     nixos =
       {
-        self',
+        # self',
         pkgs,
         lib,
         ...
@@ -75,7 +75,7 @@
           steam = {
             enable = true;
 
-            package = pkgs.steam.override {
+            package = pkgs.steamWithMillennium.override {
               extraProfile =
                 {
                   PROTON_ENABLE_WAYLAND = 1;
@@ -86,7 +86,7 @@
             };
 
             extraCompatPackages = lib.attrValues {
-              "GE-Proton" = self'.packages.proton-ge;
+              # "GE-Proton" = self'.packages.proton-ge;
             };
 
             remotePlay.openFirewall = true;

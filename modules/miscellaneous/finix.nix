@@ -7,8 +7,9 @@
     # keep-sorted start block=yes newline_separated=yes
     finix = {
       type = "github";
-      owner = "finix-community";
+      owner = "fixeqd";
       repo = "finix";
+      ref = "vm-variant";
     };
 
     finix-community = {

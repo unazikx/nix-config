@@ -103,8 +103,13 @@
           pkgs.monocraft
           pkgs.noto-fonts
           pkgs.noto-fonts-cjk-sans
-          self'.packages.fonts-gost
-          self'.packages.fonts-segoe
+
+          # ❯ ping stroydocs.com
+          # PING stroydocs.com (127.0.0.1) 56(84) bytes of data.
+          # 64 bytes from localhost (127.0.0.1): icmp_seq=1 ttl=64 time=0.037 ms
+          # 64 bytes from localhost (127.0.0.1): icmp_seq=2 ttl=64 time=0.042 ms
+          # self'.packages.fonts-gost
+          # self'.packages.fonts-segoe
           # keep-sorted end
         ];
       };

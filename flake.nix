@@ -56,14 +56,21 @@
 
     finix = {
       type = "github";
-      owner = "finix-community";
+      owner = "fixeqd";
       repo = "finix";
+      ref = "vm-variant";
     };
 
     finix-community = {
       type = "github";
       owner = "finix-community";
       repo = "community-modules";
+    };
+
+    flake-compat = {
+      type = "github";
+      owner = "nixos";
+      repo = "flake-compat";
     };
 
     flake-file = {
@@ -208,7 +215,7 @@
 
     nixos-hardware = {
       type = "github";
-      owner = "NixOS";
+      owner = "nixos";
       repo = "nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
     };

@@ -136,6 +136,10 @@
           "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
           "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
         };
+
+        nixpkgs.config.permittedInsecurePackages = [
+          "qutebrowser-3.7.0"
+        ];
       };
   };
 }

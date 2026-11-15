@@ -44,8 +44,10 @@
       den.batteries.host-aspects
       den.batteries.hostname
       den.batteries.inputs'
+      den.batteries.mutual-provider
       den.batteries.primary-user
       den.batteries.self'
+      den.batteries.user-aspects
       # keep-sorted end
     ];
   };

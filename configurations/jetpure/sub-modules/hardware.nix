@@ -20,7 +20,7 @@
         ];
 
         boot = {
-          kernelPackages = pkgs.linuxPackages_zen;
+          kernelPackages = pkgs.linuxPackages_xanmod;
           # kernelPackages =
           #   (pkgs.linuxKernel.packagesFor (
           #     let
