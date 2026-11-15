@@ -16,24 +16,9 @@
   zen.hosts.phenix = {
     includes = [
       zen.miscellaneous.nix
+      zen.miscellaneous.minimal
+      zen.hardware.security.sudo
     ];
-
-    finix =
-      {
-        inputs,
-        ...
-      }:
-      {
-        imports = [
-          inputs.finix-community.nixosModules.minimal
-        ];
-
-        profiles.minimal = {
-          enable = true;
-          withFlakes = true;
-          deviceManager = "udev";
-        };
-      };
   };
 
   zen.users.jeensgrys = {

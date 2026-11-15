@@ -39,5 +39,16 @@
           };
         };
       };
+
+    finix =
+      {
+        inputs,
+        ...
+      }:
+      {
+        imports = [
+          "${inputs.finix}/modules/programs/sudo"
+        ];
+      };
   };
 }

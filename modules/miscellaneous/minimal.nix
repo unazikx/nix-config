@@ -4,7 +4,7 @@
 
 {
   zen.miscellaneous.minimal = {
-    os =
+    nixos =
       {
         lib,
         ...
@@ -34,6 +34,23 @@
         systemd.generators.systemd-ssh-generator = "/dev/null";
         systemd.sockets.sshd-unix-local.enable = lib.mkForce false;
         systemd.sockets.sshd-vsock.enable = lib.mkForce false;
+      };
+
+    finix =
+      {
+        inputs,
+        ...
+      }:
+      {
+        imports = [
+          inputs.finix-community.nixosModules.minimal
+        ];
+
+        profiles.minimal = {
+          enable = true;
+          withFlakes = true;
+          deviceManager = "udev";
+        };
       };
 
     homeManager =

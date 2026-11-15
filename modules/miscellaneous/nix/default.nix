@@ -61,9 +61,14 @@
     finix =
       {
         self,
+        inputs,
         ...
       }:
       {
+        imports = [
+          "${inputs.finix}/modules/services/nix-daemon"
+        ];
+
         services.nix-daemon = {
           enable = true;
         };
