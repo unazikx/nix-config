@@ -1,38 +1,39 @@
 {
-  rustPlatform,
-  fetchFromGitHub,
-  cmake,
-  perl,
-  pkg-config,
-  zlib,
+  stdenv,
+  fetchzip,
+  autoPatchelfHook,
   lib,
 }:
 
-rustPlatform.buildRustPackage (_final: {
+stdenv.mkDerivation (_final: {
   pname = "steam-tui";
   version = "0.5.0";
 
-  src = fetchFromGitHub {
-    owner = "vanyapoker";
-    repo = "steam-tui";
-    tag = "v${_final.version}";
-    hash = "sha256-EMFziOai03Q1khJAWnxEWkCab8DQ6AkotbxcrqYRoQY=";
+  src = fetchzip {
+    url = "https://github.com/vanyapoker/steam-tui/releases/download/v${_final.version}/steam-tui-x86_64-linux.tar.gz";
+    sha256 = "sha256-PVYOFy30g6/HX1bafeC2LLZd2Z4HU3ziw3Vr+WIYZ7Q=";
+    stripRoot = false;
   };
 
-  cargoLock.lockFile = "${_final.src}/Cargo.lock";
-
-  doCheck = false;
-
   nativeBuildInputs = [
-    cmake
-    perl
-    pkg-config
+    autoPatchelfHook
   ];
 
   buildInputs = [
-    perl
-    zlib
+    stdenv.cc.cc.lib
   ];
+
+  dontBuild = true;
+
+  installPhase = ''
+    runHook preInstall
+    mkdir -p $out
+    cp -r * $out
+    runHook postInstall
+  '';
+
+  allowSubstitutes = false;
+  preferLocalBuild = true;
 
   meta = {
     description = "TUI Steam launcher";

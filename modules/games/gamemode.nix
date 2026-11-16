@@ -10,6 +10,8 @@
 
     nixos =
       {
+        pkgs,
+        lib,
         ...
       }:
       {
@@ -17,12 +19,12 @@
           enable = true;
           enableRenice = true;
 
-          # settings = {
-          #   custom = {
-          #     start = "${lib.getExe pkgs.libnotify} 'GameMode started'";
-          #     end = "${lib.getExe pkgs.libnotify} 'GameMode stopped'";
-          #   };
-          # };
+          settings = {
+            custom = {
+              start = "${lib.getExe pkgs.libnotify} 'GameMode started'";
+              end = "${lib.getExe pkgs.libnotify} 'GameMode stopped'";
+            };
+          };
         };
       };
   };

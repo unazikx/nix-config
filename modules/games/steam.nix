@@ -68,6 +68,7 @@
         # self',
         pkgs,
         lib,
+        config,
         ...
       }:
       {
@@ -75,7 +76,9 @@
           steam = {
             enable = true;
 
-            package = pkgs.steamWithMillennium.override {
+            package = pkgs.steam.override {
+              extraPkgs = _: config.programs.steam.fontPackages;
+
               extraProfile =
                 {
                   PROTON_ENABLE_WAYLAND = 1;
@@ -112,14 +115,6 @@
             enable = true;
           };
         };
-
-        environment.systemPackages = [
-          # WARN:
-          # idk it isnt works
-          (pkgs.writeShellScriptBin "steamos-session-select" ''
-            setsid steam steam://close/bigpicture
-          '')
-        ];
       };
 
     homeManagerNixos =
