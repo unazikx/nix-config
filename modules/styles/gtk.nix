@@ -4,7 +4,15 @@
 
 {
   zen.styles.gtk = {
-    homeManager =
+    nixos =
+      {
+        ...
+      }:
+      {
+        gtk.iconCache.enable = true;
+      };
+
+    homeManagerNixos =
       {
         lib,
         config,
@@ -15,7 +23,7 @@
       in
       {
         gtk =
-          lib.genAttrs
+          (lib.genAttrs
             [
               "gtk3"
               "gtk4"
@@ -29,7 +37,11 @@
                 gtk-enable-primary-paste = false;
                 gtk-menu-images = 0;
               };
-            });
+            })
+          )
+          // {
+            colorScheme = polarity;
+          };
 
         dconf.settings = {
           "org/gnome/desktop/wm/preferences" = {

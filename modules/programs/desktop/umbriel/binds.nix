@@ -9,6 +9,7 @@
       {
         lib,
         config,
+        user,
         ...
       }:
       let
@@ -134,6 +135,17 @@
               |> lib.concatMapAttrs (
                 key: command: {
                   "${key}" = norepeat "spawn noctalia msg ${command}";
+                }
+              )
+            ))
+
+            (lib.mkIf (user.hasAspect zen.games.heronite) (
+              {
+                "Mod+Shift+Tab" = "heronite --quick-launch";
+              }
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "${key}" = norepeat "spawn ${command}";
                 }
               )
             ))
