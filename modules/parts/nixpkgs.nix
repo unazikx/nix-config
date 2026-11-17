@@ -1,4 +1,5 @@
 {
+  self,
   inputs,
   ...
 }:
@@ -61,6 +62,16 @@
             };
           }
         );
+      };
+
+    root-system =
+      {
+        ...
+      }:
+      {
+        overlayPkgs = [
+          self.overlays.nixpkgs-branches
+        ];
       };
   };
 }

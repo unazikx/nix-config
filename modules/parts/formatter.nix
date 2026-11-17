@@ -4,7 +4,7 @@
 
 {
   zen.flake-parts.default = {
-    root =
+    root-parts =
       {
         pkgs,
         ...

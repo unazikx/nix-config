@@ -71,4 +71,8 @@
       ]
       |> lib.mkMerge;
   };
+
+  zen.flake-parts.default = {
+    includes = [ zen.games.srb2 ];
+  };
 }

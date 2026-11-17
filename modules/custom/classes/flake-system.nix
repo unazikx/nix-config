@@ -11,7 +11,7 @@
     actions = { };
     diskoUSB = { };
     overlays = { };
-    root = { };
+    root-system = { };
     wrappers = { };
     # keep-sorted end
   };
@@ -70,13 +70,13 @@
         })
       ];
 
-    root-to-flake-system =
+    root-system-to-flake-system =
       {
         ...
       }:
       [
         (den.lib.policy.route {
-          fromClass = "root";
+          fromClass = "root-system";
           intoClass = "flake";
           path = [
             "flake"
@@ -112,7 +112,7 @@
     den.policies.actions-to-flake-system
     den.policies.disko-other-to-flake-system
     den.policies.overlays-to-flake-system
-    den.policies.root-to-flake-system
+    den.policies.root-system-to-flake-system
     zen.flake-system.default
     # keep-sorted end
   ];

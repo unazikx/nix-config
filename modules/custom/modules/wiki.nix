@@ -1,6 +1,6 @@
 {
   zen.custom.wiki = {
-    root =
+    root-parts =
       {
         lib,
         ...

@@ -103,12 +103,6 @@
           '';
         };
       };
-
-    wrappers = { };
-  };
-
-  zen.flake-system.default = {
-    includes = [ zen.miscellaneous.canvas-commons ];
   };
 
   zen.flake-parts.default = {

@@ -12,7 +12,7 @@
     files = { };
     legacyPackages = { };
     packages = { };
-    root = { };
+    root-parts = { };
     wallpapers = { };
     wiki = { };
     # keep-sorted end
@@ -100,13 +100,13 @@
         })
       ];
 
-    root-to-flake-parts =
+    root-parts-to-flake-parts =
       {
         ...
       }:
       [
         (den.lib.policy.route {
-          fromClass = "root";
+          fromClass = "root-parts";
           intoClass = "flake-parts";
           path = [ ];
           adaptArgs =
@@ -167,7 +167,7 @@
     den.policies.files-to-flake-parts
     den.policies.legacyPackages-to-flake-parts
     den.policies.packages-to-flake-parts
-    den.policies.root-to-flake-parts
+    den.policies.root-parts-to-flake-parts
     den.policies.wallpapers-to-flake-parts
     den.policies.wiki-to-flake-parts
     zen.flake-parts.default

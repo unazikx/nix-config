@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -52,5 +53,9 @@
         ...
       }:
       { };
+  };
+
+  zen.flake-parts.default = {
+    includes = [ zen.miscellaneous.finix ];
   };
 }

@@ -74,4 +74,8 @@
         };
       };
   };
+
+  zen.flake-parts.default = {
+    includes = [ zen.programs.desktop.noctalia ];
+  };
 }

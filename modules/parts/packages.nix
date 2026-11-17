@@ -21,11 +21,7 @@
   ];
 
   zen.flake-parts.default = {
-    includes = [
-      zen.custom.overlays
-    ];
-
-    root =
+    root-parts =
       {
         config,
         system,
@@ -43,20 +39,19 @@
 
             config.allowUnfree = true;
             overlays = [
-              inputs.nur.overlays.default
-
-              self.overlays.nixpkgs-branches
-              self.overlays.npins-sources
-              self.overlays.system-backport
-
               (_new: _prev: {
                 self = self;
                 system = system;
                 local = config.packages;
               })
-            ];
+            ]
+            ++ self.overlayPkgs;
           };
         };
       };
+  };
+
+  zen.flake-system.default = {
+    includes = [ zen.custom.overlays ];
   };
 }

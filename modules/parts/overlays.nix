@@ -1,4 +1,5 @@
 {
+  self,
   ...
 }:
 
@@ -16,6 +17,16 @@
               ;
           }
         );
+      };
+
+    root-system =
+      {
+        ...
+      }:
+      {
+        overlayPkgs = [
+          self.overlays.system-backport
+        ];
       };
   };
 }

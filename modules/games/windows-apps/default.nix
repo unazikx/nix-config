@@ -28,7 +28,7 @@
         ];
       };
 
-    root =
+    root-system =
       {
         system,
         ...
@@ -44,7 +44,7 @@
       };
   };
 
-  zen.flake-parts.default = {
+  zen.flake-system.default = {
     includes = [ zen.games.windows-apps ];
   };
 }

@@ -60,4 +60,8 @@
         #   );
       };
   };
+
+  zen.flake-parts = {
+    includes = [ zen.services.proxy-suite.warp ];
+  };
 }

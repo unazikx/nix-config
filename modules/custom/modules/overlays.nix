@@ -1,6 +1,6 @@
 {
   zen.custom.overlays = {
-    root =
+    root-system =
       {
         lib,
         ...

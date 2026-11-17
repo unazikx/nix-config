@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -51,5 +52,9 @@
           };
         };
       };
+  };
+
+  zen.flake-parts.default = {
+    includes = [ zen.games.hytale ];
   };
 }

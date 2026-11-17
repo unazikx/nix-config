@@ -1,6 +1,6 @@
 {
   zen.custom.wallpapers = {
-    root =
+    root-parts =
       {
         lib,
         ...

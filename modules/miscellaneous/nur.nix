@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -37,5 +38,20 @@
           inputs.nur.overlays.default
         ];
       };
+
+    root-system =
+      {
+        inputs,
+        ...
+      }:
+      {
+        overlayPkgs = [
+          inputs.nur.overlays.default
+        ];
+      };
+  };
+
+  zen.flake-system.default = {
+    includes = [ zen.miscellaneous.nur ];
   };
 }
