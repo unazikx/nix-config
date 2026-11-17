@@ -20,9 +20,12 @@
           enable = true;
         };
 
+        home.packages = [
+          pkgs.pinentry-curses
+        ];
+
         dbus.packages = [
           pkgs.gcr_3
-          pkgs.pinentry-curses
         ];
 
         security.nix-secrets.secrets = {
