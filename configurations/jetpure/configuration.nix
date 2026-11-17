@@ -78,6 +78,7 @@
       zen.miscellaneous.users
       zen.miscellaneous.users.accounts
       zen.miscellaneous.xdg
+      zen.programs.cli.appimage
       zen.programs.cli.fastfetch
       zen.programs.cli.gdu
       zen.programs.cli.git
