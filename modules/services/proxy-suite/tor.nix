@@ -21,12 +21,12 @@
             enable = true;
             asOutbound = true;
 
-            bridges.file = config.sops.secrets."services/tor-bridges".path;
+            bridges.file = config.security.nix-secrets.secrets."services-tor-bridges".path;
           };
         };
 
-        sops.secrets = {
-          "services/tor-bridges" = { };
+        security.nix-secrets.secrets = {
+          "services-tor-bridges" = { };
         };
       };
   };

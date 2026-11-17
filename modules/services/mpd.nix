@@ -84,19 +84,19 @@
         services.mpdscribble = {
           endpoints = {
             "last.fm" = {
-              passwordFile = config.sops.secrets."services/mpd".path;
+              passwordFile = config.security.nix-secrets.secrets."services-mpd".path;
               username = "azikx6"; # cause azikx was taken already... eh...
             };
 
             "libre.fm" = {
-              passwordFile = config.sops.secrets."services/mpd".path;
+              passwordFile = config.security.nix-secrets.secrets."services-mpd".path;
               username = "_azikx";
             };
           };
         };
 
-        sops.secrets = {
-          "services/mpd" = { };
+        security.nix-secrets.secrets = {
+          "services-mpd" = { };
         };
       };
   };

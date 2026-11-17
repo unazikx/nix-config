@@ -63,21 +63,23 @@
           };
 
           includes = [
-            { path = config.sops.templates."git-user".path; }
+            { path = config.security.nix-secrets.templates."git-user".path; }
           ];
         };
 
-        sops.secrets = {
-          "programs/git/mail" = { };
-          "programs/git/user" = { };
+        security.nix-secrets.secrets = {
+          "programs-git-mail" = { };
+          "programs-git-user" = { };
         };
 
-        sops.templates."git-user" = {
-          content = ''
-            [user]
-              name = ${config.sops.placeholder."programs/git/user"}
-              email = ${config.sops.placeholder."programs/git/mail"}
-          '';
+        security.nix-secrets.templates = {
+          "git-user" = {
+            content = ''
+              [user]
+                name = ${config.security.nix-secrets.secrets."programs-git-user"}
+                email = ${config.security.nix-secrets.secrets."programs-git-mail"}
+            '';
+          };
         };
       };
   };

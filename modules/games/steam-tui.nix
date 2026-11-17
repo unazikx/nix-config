@@ -33,14 +33,10 @@
           };
         };
 
-        xdg.configFile = {
-          "steam-tui/account".source =
-            config.lib.file.mkOutOfStoreSymlink
-              config.sops.secrets."programs/steam-tui".path;
-        };
-
-        sops.secrets = {
-          "programs/steam-tui" = { };
+        security.nix-secrets.secrets = {
+          "programs/steam-tui" = {
+            path = "${config.xdg.configHome}/steam-tui/account";
+          };
         };
       };
   };

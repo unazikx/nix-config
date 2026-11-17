@@ -101,7 +101,7 @@
               enable = true;
 
               settings = {
-                authfile = config.sops.secrets."password/authfile".path;
+                authfile = config.security.nix-secrets.secrets."password-authfile".path;
                 cue = true;
               };
             };
@@ -114,8 +114,8 @@
             };
           };
 
-          sops.secrets = {
-            "password/authfile" = { };
+          security.nix-secrets.secrets = {
+            "password-authfile" = { };
           };
         };
     };

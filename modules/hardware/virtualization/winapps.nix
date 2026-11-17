@@ -126,7 +126,7 @@
 
             # why not environmentFiles
             environmentFile = [
-              config.sops.templates."winapps-env".path
+              config.security.nix-secrets.templates."winapps-env".path
             ];
           };
 
@@ -136,19 +136,19 @@
           };
         };
 
-        sops.secrets = {
-          "windows/username" = { };
-          "windows/password" = { };
+        security.nix-secrets.secrets = {
+          "windows-username" = { };
+          "windows-password" = { };
         };
 
-        sops.templates = {
+        security.nix-secrets.templates = {
           "winapps-env" = {
             path = "${config.xdg.configHome}/winapps/winapps.env";
             content =
               # env
               ''
-                USERNAME=${config.sops.placeholder."windows/username"}
-                PASSWORD=${config.sops.placeholder."windows/password"}
+                USERNAME=${config.security.nix-secrets.secrets."windows-username"}
+                PASSWORD=${config.security.nix-secrets.secrets."windows-password"}
               '';
           };
 
@@ -158,8 +158,8 @@
               # https://github.com/winapps-org/winapps/discussions/972#discussioncomment-18421216
               # conf
               ''
-                RDP_USER="${config.sops.placeholder."windows/username"}"
-                RDP_PASS="${config.sops.placeholder."windows/password"}"
+                RDP_USER="${config.security.nix-secrets.secrets."windows-username"}"
+                RDP_PASS="${config.security.nix-secrets.secrets."windows-password"}"
                 WAFLAVOR="manual"
                 VM_NAME="RDPWindows"
                 REMOVABLE_MEDIA="/run/media"

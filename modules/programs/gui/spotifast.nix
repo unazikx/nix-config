@@ -10,7 +10,7 @@
       not electron, faster
 
       cause i use custom client id
-      it stored in sops
+      it stored in nix-secrets
       then goes to templates and then links
 
       but WHY SPOTIFAST OVERRIDES SETTINGS
@@ -134,7 +134,7 @@
           #   tracklist_compact = false;
           #   vis = "bars";
           #   volume = 26214;
-          #   web_client_id = config.sops.placeholder."programs/spotifast";
+          #   web_client_id = config.security.nix-secrets.secrets."programs-spotifast";
           #   winamp_on_top = false;
           #   winamp_shaded = false;
           #   winamp_show_taskbar = true;
@@ -144,11 +144,11 @@
           # };
         };
 
-        # sops.secrets = {
-        #   "programs/spotifast" = { };
+        # security.nix-secrets.secrets = {
+        #   "programs-spotifast" = { };
         # };
 
-        # sops.templates = {
+        # security.nix-secrets.templates = {
         #   "spotifast-config" = {
         #     path = "${config.xdg.configHome}/spotifast/settings.json";
         #     content = lib.readFile (json.generate "spotifast-config.json" cfg.settings);

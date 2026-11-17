@@ -38,13 +38,15 @@
             };
 
             script = ''
-              TIMEZONE=$(${lib.getExe' pkgs.coreutils "cat"} ${config.sops.secrets."timezone".path})
+              TIMEZONE=$(${lib.getExe' pkgs.coreutils "cat"} ${
+                config.security.nix-secrets.secrets."timezone".path
+              })
               ${lib.getExe' config.systemd.package "timedatectl"} set-timezone "$TIMEZONE"
             '';
           };
         };
 
-        sops.secrets = {
+        security.nix-secrets.secrets = {
           "timezone" = { };
         };
       };

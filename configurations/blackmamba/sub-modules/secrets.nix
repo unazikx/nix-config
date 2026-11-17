@@ -11,47 +11,24 @@
 
     nixos =
       {
-        self,
-        host,
+        # self,
+        # host,
         ...
       }:
       {
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
-
-        sops.secrets = {
-          "password/hackerx" = {
-            neededForUsers = true;
-          };
-
-          "password/root" = {
-            neededForUsers = true;
-          };
-        };
+        # sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
       };
   };
 
   zen.users.hackerx = {
     homeManager =
       {
-        self,
-        config,
-        host,
+        # self,
+        # host,
         ...
       }:
       {
-        nix.extraOptions = ''
-          !include ${config.sops.templates."nix-access-tokens".path}
-        '';
-
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
-
-        sops.templates = {
-          "nix-access-tokens" = {
-            content = ''
-              access-tokens = github.com=${config.sops.placeholder."programs/github"}
-            '';
-          };
-        };
+        # sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
       };
   };
 }

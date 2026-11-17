@@ -35,11 +35,11 @@
           enable = true;
 
           port = 1444;
-          secret = config.sops.secrets."services/telegram-ws".path;
+          secret = config.security.nix-secrets.secrets."services-telegramws".path;
         };
 
-        sops.secrets = {
-          "services/telegram-ws" = { };
+        security.nix-secrets.secrets = {
+          "services-telegramws" = { };
         };
       };
   };

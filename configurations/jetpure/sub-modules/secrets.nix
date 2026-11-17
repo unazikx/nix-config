@@ -11,24 +11,24 @@
 
     nixos =
       {
-        self,
-        host,
+        # self,
+        # host,
         ...
       }:
       {
-        sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
+        # sops.defaultSopsFile = "${self}/secrets/${host.hostName}/sops.yaml";
       };
   };
 
   zen.users.nixzoid = {
     homeManager =
       {
-        self,
-        user,
+        # self,
+        # user,
         ...
       }:
       {
-        sops.defaultSopsFile = "${self}/secrets/${user.userName}/sops.yaml";
+        # sops.defaultSopsFile = "${self}/secrets/${user.userName}/sops.yaml";
       };
   };
 }

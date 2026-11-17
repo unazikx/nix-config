@@ -71,7 +71,7 @@
           library.boilr = {
             enable = false;
 
-            steamGridDbKeyFile = config.sops.secrets."services/boilr".path;
+            steamGridDbKeyFile = config.security.nix-secrets.secrets."services/boilr".path;
 
             settings = {
               steam.create_collections = true;
@@ -79,7 +79,7 @@
           };
         };
 
-        sops.secrets = {
+        security.nix-secrets.secrets = {
           "services/boilr" = { };
         };
       };

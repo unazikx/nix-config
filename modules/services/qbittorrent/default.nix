@@ -90,29 +90,29 @@
             [
               # password
               "${lib.getExe pkgs.replace-secret} '@PASSWORD@' ${
-                config.sops.secrets."services/qbittorrent/password".path
+                config.security.nix-secrets.secrets."services-qbittorrent-password".path
               } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
               # username
               "${lib.getExe pkgs.replace-secret} '@USERNAME@' ${
-                config.sops.secrets."services/qbittorrent/username".path
+                config.security.nix-secrets.secrets."services-qbittorrent-username".path
               } ${cfg.profileDir}/qBittorrent/config/qBittorrent.conf"
             ]
             |> lib.mkAfter;
         };
 
-        sops.secrets = {
-          "services/qbittorrent/password" = { };
-          "services/qbittorrent/username" = { };
+        security.nix-secrets.secrets = {
+          "services-qbittorrent-password" = { };
+          "services-qbittorrent-username" = { };
         };
 
-        sops.secrets."services/qbittorrent/username" = {
+        security.nix-secrets.secrets."services-qbittorrent-username" = {
           owner = cfg.user;
-          reloadUnits = [ "qbittorrent.service" ];
+          # reloadUnits = [ "qbittorrent.service" ];
         };
 
-        sops.secrets."services/qbittorrent/password" = {
+        security.nix-secrets.secrets."services-qbittorrent-password" = {
           owner = cfg.user;
-          reloadUnits = [ "qbittorrent.service" ];
+          # reloadUnits = [ "qbittorrent.service" ];
         };
       };
   };

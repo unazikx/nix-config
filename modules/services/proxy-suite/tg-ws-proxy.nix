@@ -34,12 +34,12 @@
 
             # WARN: generate via
             # nix run nixpkgs#openssl -- rand -hex 16
-            secretFile = config.sops.secrets."services/telegram-ws".path;
+            secretFile = config.security.nix-secrets.secrets."services-telegramws".path;
           };
         };
 
-        sops.secrets = {
-          "services/telegram-ws" = { };
+        security.nix-secrets.secrets = {
+          "services-telegramws" = { };
         };
       };
   };

@@ -52,23 +52,24 @@
           dataDir = dir;
 
           # password=yourawesomepass
-          environmentFile = config.sops.secrets."services/minecraft/environment".path;
+          environmentFile = config.security.nix-secrets.secrets."services-minecraft-environment".path;
           # just a plain file ^^^
         };
 
-        sops.secrets = {
-          "services/minecraft/environment" = { };
-        };
+        security.nix-secrets.secrets = {
+          "services-minecraft-environment" = {
+            owner = cfg.user |> lib.mkForce;
 
-        sops.secrets."services/minecraft/environment" = {
-          owner = cfg.user |> lib.mkForce;
-
-          # when u change password
-          # servers will be restarted
-          reloadUnits = lib.concatMap (name: [
-            "minecraft-server-${name}.socket"
-            "minecraft-server-${name}.service"
-          ]) (lib.attrNames cfg.servers);
+            # waiting for realization in security.nix-secrets
+            #
+            # when u change password
+            # servers will be restarted
+            #
+            # reloadUnits = lib.concatMap (name: [
+            #   "minecraft-server-${name}.socket"
+            #   "minecraft-server-${name}.service"
+            # ]) (lib.attrNames cfg.servers);
+          };
         };
       };
   };

@@ -39,7 +39,7 @@
             dataFolder = "/var/lib/vaultwarden" |> lib.mkDefault;
           };
 
-          environmentFile = config.sops.secrets."services/vaultwarden".path;
+          environmentFile = config.security.nix-secrets.secrets."services-vaultwarden".path;
         };
 
         systemd.services.vaultwarden.serviceConfig = {
@@ -60,12 +60,14 @@
               '';
             });
 
-        sops.secrets = {
-          "services/vaultwarden" = { };
+        security.nix-secrets.secrets = {
+          "services-vaultwarden" = { };
         };
 
-        sops.secrets."services/vaultwarden" = {
-          reloadUnits = [ "vaultwarden.service" ];
+        security.nix-secrets.secrets."services-vaultwarden" = {
+          # waiting for rezlization security.nix-secrets
+          #
+          # reloadUnits = [ "vaultwarden.service" ];
         };
       };
   };

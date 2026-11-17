@@ -11,22 +11,12 @@
       {
         users.mutableUsers = false;
 
-        sops.secrets = {
-          "password/nixzoid" = {
-            neededForUsers = true;
-          };
-
-          "password/root" = {
-            neededForUsers = true;
-          };
-        };
-
         security.nix-secrets.secrets = {
-          "password/nixzoid" = {
+          "password-nixzoid" = {
             neededForUsers = true;
           };
 
-          "password/root" = {
+          "password-root" = {
             neededForUsers = true;
           };
         };
@@ -41,7 +31,7 @@
         ...
       }:
       {
-        hashedPasswordFile = config.sops.secrets."password/${user.userName}".path;
+        hashedPasswordFile = config.security.nix-secrets.secrets."password-${user.userName}".path;
       };
   };
 
@@ -53,7 +43,7 @@
         ...
       }:
       {
-        hashedPasswordFile = config.sops.secrets."password/${user.userName}".path;
+        hashedPasswordFile = config.security.nix-secrets.secrets."password-${user.userName}".path;
 
         extraGroups = [
           # keep-sorted start

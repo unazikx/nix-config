@@ -14,7 +14,7 @@
       }:
       {
         files =
-          {
+          lib.mkIf false {
             path = "secrets/config.yaml";
             drv = pkgs.writers.writeYAML "secrets.yaml" {
               creation_rules =

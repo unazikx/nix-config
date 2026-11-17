@@ -183,6 +183,7 @@
       type = "github";
       owner = "unnamed-systems";
       repo = "nix-secrets";
+      ref = "dev";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

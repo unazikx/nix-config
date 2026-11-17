@@ -45,7 +45,7 @@
             inherit settings;
 
             extraOptions = ''
-              !include ${config.sops.templates."nix-access-tokens".path}
+              !include ${config.security.nix-secrets.templates."nix-access-tokens".path}
             '';
           };
 
@@ -53,22 +53,24 @@
           # WHY IS FIX IS RED????
           programs.fish.shellInitLast =
             {
-              CACHIX_AUTH_TOKEN = config.sops.secrets."programs/cachix".path;
-              GITHUB_TOKEN = config.sops.secrets."programs/github".path;
+              CACHIX_AUTH_TOKEN = config.security.nix-secrets.secrets."programs-cachix".path;
+              GITHUB_TOKEN = config.security.nix-secrets.secrets."programs-github".path;
             }
             |> lib.generators.toKeyValue {
               mkKeyValue = key: value: "export ${key}=$(cat ${toString value})";
             };
 
-          sops.secrets = {
-            "programs/cachix" = { };
-            "programs/github" = { };
+          security.nix-secrets.secrets = {
+            "programs-cachix" = { };
+            "programs-github" = { };
           };
 
-          sops.templates = {
-            "nix-access-tokens".content = ''
-              access-tokens = github.com=${config.sops.placeholder."programs/github"}
-            '';
+          security.nix-secrets.templates = {
+            "nix-access-tokens" = {
+              content = ''
+                access-tokens = github.com=${config.security.nix-secrets.secrets."programs-github"}
+              '';
+            };
           };
         };
     };

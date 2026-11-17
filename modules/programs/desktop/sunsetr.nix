@@ -25,7 +25,9 @@
         services.sunsetr = {
           enable = true;
 
-          geoLocation = config.lib.file.mkOutOfStoreSymlink config.sops.secrets."services/sunsetr".path;
+          geoLocation =
+            config.lib.file.mkOutOfStoreSymlink
+              config.security.nix-secrets.secrets."services-sunsetr".path;
 
           settings = {
             backend = "auto";
@@ -85,8 +87,8 @@
           };
         };
 
-        sops.secrets = {
-          "services/sunsetr" = { };
+        security.nix-secrets.secrets = {
+          "services-sunsetr" = { };
         };
       };
   };

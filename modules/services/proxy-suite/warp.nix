@@ -28,10 +28,10 @@
 
     nixos =
       {
-        self,
-        lib,
-        config,
-        host,
+        # self,
+        # lib,
+        # config,
+        # host,
         ...
       }:
       {
@@ -40,22 +40,24 @@
             enable = true;
 
             profiles = {
-              llimonix.configFile = config.sops.secrets."llimonix".path;
+              # llimonix.configFile = config.security.nix-secrets.secrets."llimonix".path;
             };
           };
         };
 
-        sops.secrets =
-          [
-            "llimonix"
-          ]
-          |> (
-            list:
-            lib.genAttrs list (name: {
-              sopsFile = "${self}/secrets/${host.hostName}/${name}.conf";
-              format = "binary";
-            })
-          );
+        # needs to adapt for security.nix-secrets
+        #
+        # security.nix-secrets.secrets =
+        #   [
+        #     "llimonix"
+        #   ]
+        #   |> (
+        #     list:
+        #     lib.genAttrs list (name: {
+        #       sopsFile = "${self}/secrets/${host.hostName}/${name}.conf";
+        #       format = "binary";
+        #     })
+        #   );
       };
   };
 }

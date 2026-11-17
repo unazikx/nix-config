@@ -31,11 +31,11 @@
           enable = true;
           openFirewall = true;
 
-          environmentFile = config.sops.secrets."services/glance".path;
+          environmentFile = config.security.nix-secrets.secrets."services-glance".path;
         };
 
-        sops.secrets = {
-          "services/glance" = { };
+        security.nix-secrets.secrets = {
+          "services-glance" = { };
         };
 
         services.caddy.virtualHosts =

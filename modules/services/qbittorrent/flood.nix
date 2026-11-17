@@ -50,7 +50,7 @@
           # PASSWORD=...
           # USERNAME=...
           serviceConfig = {
-            EnvironmentFile = config.sops.secrets."services/qbittorrent/flood".path;
+            EnvironmentFile = config.security.nix-secrets.secrets."services-qbittorrent-flood".path;
             User = qbCfg.user;
             Group = qbCfg.group;
           };
@@ -70,15 +70,16 @@
               '';
             });
 
-        sops.secrets = {
-          "services/qbittorrent/flood" = { };
-        };
+        security.nix-secrets.secrets = {
+          "services-qbittorrent-flood" = {
 
-        sops.secrets."services/qbittorrent/flood" = {
-          reloadUnits = [
-            "qbittorrent.service"
-            "flood.service"
-          ];
+            # waiting for security.nix-secrets
+            #
+            # reloadUnits = [
+            #   "qbittorrent.service"
+            #   "flood.service"
+            # ];
+          };
         };
       };
   };

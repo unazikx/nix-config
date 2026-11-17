@@ -28,11 +28,11 @@
 
           guiCredentials = {
             username = user.userName;
-            passwordFile = config.sops.secrets."services/syncthing/gui".path;
+            passwordFile = config.security.nix-secrets.secrets."services-syncthing-gui".path;
           };
 
-          cert = config.sops.secrets."services/syncthing/cert".path or null;
-          key = config.sops.secrets."services/syncthing/key".path or null;
+          cert = config.security.nix-secrets.secrets."services-syncthing-cert".path or null;
+          key = config.security.nix-secrets.secrets."services-syncthing-key".path or null;
 
           settings.options = {
             relaysEnabled = true;
@@ -42,10 +42,10 @@
           };
         };
 
-        sops.secrets = {
-          "services/syncthing/gui" = { };
-          "services/syncthing/cert" = { };
-          "services/syncthing/key" = { };
+        security.nix-secrets.secrets = {
+          "services-syncthing-gui" = { };
+          "services-syncthing-cert" = { };
+          "services-syncthing-key" = { };
         };
       };
   };
