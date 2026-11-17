@@ -9,22 +9,26 @@ stdenv.mkDerivation {
   name = "gost-fonts";
   version = "latest";
 
-  srcs = [
-    (fetchurl {
-      url = "http://stroydocs.com/web/info/gost_fonts/files/GOST_type_A.zip";
-      hash = "sha256-R6JxAeUi4JNUNdLqqebmg4Lc0QRf3OcaZU6gmC7gkYQ=";
-    })
+  srcs =
+    let
+      archive = "https://web.archive.org/web/20260513003902";
+    in
+    [
+      (fetchurl {
+        url = "${archive}/https://stroydocs.com/web/info/gost_fonts/files/GOST_type_A.zip";
+        hash = "sha256-R6JxAeUi4JNUNdLqqebmg4Lc0QRf3OcaZU6gmC7gkYQ=";
+      })
 
-    (fetchurl {
-      url = "http://stroydocs.com/web/info/gost_fonts/files/GOST_type_B.zip";
-      hash = "sha256-XLADDt2gW0wxaZbJJd/J7Y27hv8DkG9FZPDwJI79myg=";
-    })
+      (fetchurl {
+        url = "${archive}/http://stroydocs.com/web/info/gost_fonts/files/GOST_type_B.zip";
+        hash = "sha256-XLADDt2gW0wxaZbJJd/J7Y27hv8DkG9FZPDwJI79myg=";
+      })
 
-    (fetchurl {
-      url = "https://stroydocs.com/web/info/gost_fonts/files/isocpeur.zip";
-      hash = "sha256-RbkrLkOySqICXuB/BkW+EbVckm8tYbUrPztiYU5G9bI=";
-    })
-  ];
+      (fetchurl {
+        url = "${archive}/https://stroydocs.com/web/info/gost_fonts/files/isocpeur.zip";
+        hash = "sha256-RbkrLkOySqICXuB/BkW+EbVckm8tYbUrPztiYU5G9bI=";
+      })
+    ];
 
   dontBuild = true;
 
