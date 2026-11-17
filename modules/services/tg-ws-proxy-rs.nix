@@ -40,9 +40,8 @@
 
         security.nix-secrets.secrets = {
           "services-telegramws" = {
-            generator.random = {
-              length = 32;
-              charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+            generator.openssl = {
+              numbers = 16;
             };
           };
         };

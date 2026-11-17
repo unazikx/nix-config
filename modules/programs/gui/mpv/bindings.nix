@@ -13,6 +13,8 @@
       in
       {
         programs.mpv.bindings = {
+          MBTN_RIGHT = "cycle pause";
+
           WHEEL_UP = "add volume 2";
           WHEEL_DOWN = "add volume -2";
           "Shift+Wheel_Up" = "add volume 5";

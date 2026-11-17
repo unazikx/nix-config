@@ -26,6 +26,7 @@
       }:
       {
         networking.extraHosts =
+          # https://github.com/Flowseal/zapret-discord-youtube/issues/1136
           # hosts
           ''
             37.221.93.141 gew1-spclient.spotify.com
