@@ -58,6 +58,11 @@
 
         security.nix-secrets.secrets = {
           "services-minecraft-environment" = {
+            generator.password = {
+              length = 16;
+              numbers = false;
+            };
+
             owner = cfg.user |> lib.mkForce;
 
             # waiting for realization in security.nix-secrets

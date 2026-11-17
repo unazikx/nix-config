@@ -13,10 +13,12 @@
 
         security.nix-secrets.secrets = {
           "password-nixzoid" = {
+            generator = "hashed-password";
             neededForUsers = true;
           };
 
           "password-root" = {
+            generator = "hashed-password";
             neededForUsers = true;
           };
         };

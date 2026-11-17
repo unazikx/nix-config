@@ -53,6 +53,20 @@
           identityPaths = secretsMeta.yubikey |> lib.singleton;
           recipientAliases = secretsMeta.defaultKeys;
           defaultRecipients = lib.attrNames config.security.nix-secrets.recipientAliases;
+
+          generators = {
+            hashed-password =
+              { }:
+              pkgs.writeShellScript "password-generator" ''
+                ${lib.getExe pkgs.mkpasswd} -m yescrypt
+              '';
+
+            openssl =
+              { numbers }:
+              pkgs.writeShellScript "password-generator" ''
+                ${lib.getExe pkgs.openssl} rand -hex ${toString numbers}
+              '';
+          };
         };
       };
 
@@ -61,16 +75,11 @@
         self,
         inputs,
         pkgs,
-        lib,
-        config,
         osConfig,
         host,
         user,
         ...
       }:
-      let
-        secretsMeta = zen.secrets.meta;
-      in
       {
         imports = [
           inputs.nix-secrets.homeManagerModules.nix-secrets
@@ -79,14 +88,16 @@
         security.nix-secrets = {
           enable = true;
 
-          extraPackages = osConfig.security.nix-secrets.extraPackages;
+          inherit (osConfig.security.nix-secrets)
+            extraPackages
+            generators
+            identityPaths
+            recipientAliases
+            defaultRecipients
+            ;
 
           storage = "${self}/secrets/${user.userName}";
           storagePath = "${host.flakeDir}/secrets/${user.userName}";
-
-          identityPaths = secretsMeta.yubikey |> lib.singleton;
-          recipientAliases = secretsMeta.defaultKeys;
-          defaultRecipients = lib.attrNames config.security.nix-secrets.recipientAliases;
         };
 
         home.packages = [

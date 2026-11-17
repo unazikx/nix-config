@@ -34,12 +34,18 @@
 
             # WARN: generate via
             # nix run nixpkgs#openssl -- rand -hex 16
+            # or
+            # nix-secrets regenerate "services-telegramws"
             secretFile = config.security.nix-secrets.secrets."services-telegramws".path;
           };
         };
 
         security.nix-secrets.secrets = {
-          "services-telegramws" = { };
+          "services-telegramws" = {
+            generator.openssl = {
+              numbers = 16;
+            };
+          };
         };
       };
   };

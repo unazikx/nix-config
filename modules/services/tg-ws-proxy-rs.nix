@@ -39,7 +39,12 @@
         };
 
         security.nix-secrets.secrets = {
-          "services-telegramws" = { };
+          "services-telegramws" = {
+            generator.random = {
+              length = 32;
+              charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+            };
+          };
         };
       };
   };
