@@ -6,7 +6,6 @@
   zen.hosts.phenix = {
     finix =
       {
-        inputs,
         pkgs,
         ...
       }:
