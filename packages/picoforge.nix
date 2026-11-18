@@ -32,6 +32,13 @@ appimageTools.wrapAppImage (_final: {
     _pkgs.libxcb
   ];
 
+  extraInstallCommands =
+    # bash
+    ''
+      install -Dm444 ${_final.src}/in.suyogtandel.picoforge.desktop -t $out/share/applications
+      cp -r ${_final.src}/usr/share/icons $out/share
+    '';
+
   meta = {
     description = "Open source commissioning tool for Pico FIDO security keys";
     homepage = "https://github.com/librekeys/picoforge";
