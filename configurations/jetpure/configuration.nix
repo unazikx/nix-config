@@ -66,6 +66,7 @@
       # keep-sorted start
       zen.games.gale
       zen.games.heroic
+      zen.games.heronite
       zen.games.hytale
       zen.games.minecraft.prismlauncher
       zen.games.minecraft.xmcl

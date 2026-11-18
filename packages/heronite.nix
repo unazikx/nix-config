@@ -36,7 +36,10 @@ appimageTools.wrapAppImage (_final: {
     # bash
     ''
       install -Dm444 ${_final.src}/app.heronite.Heronite.desktop -t $out/share/applications
-      install -Dm444 ${_final.src}/app.heronite.Heronite.png -t $out/share/icons
+      substituteInPlace $out/share/applications/app.heronite.Heronite.desktop \
+        --replace-fail 'Exec=heronite-rs' 'Exec=heronite'
+
+      cp -r ${_final.src}/usr/share/icons $out/share
     '';
 
   meta = {
