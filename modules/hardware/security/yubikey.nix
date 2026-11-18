@@ -102,6 +102,7 @@
 
               settings = {
                 authfile = config.security.nix-secrets.secrets."password-authfile".path;
+                control = "required";
                 cue = true;
               };
             };

@@ -14,6 +14,17 @@
       };
     in
     {
+      os =
+        {
+          host,
+          ...
+        }:
+        {
+          environment.variables = {
+            FLAKE = host.flakeDir;
+          };
+        };
+
       nixos =
         {
           ...

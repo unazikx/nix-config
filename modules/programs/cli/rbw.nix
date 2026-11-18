@@ -8,8 +8,20 @@
       bitwarden cli client
     '';
 
+    nixos =
+      {
+        self',
+        ...
+      }:
+      {
+        environment.systemPackages = [
+          self'.packages.rbw-fork
+        ];
+      };
+
     homeManager =
       {
+        self',
         pkgs,
         lib,
         config,
@@ -18,6 +30,8 @@
       {
         programs.rbw = {
           enable = true;
+
+          package = self'.packages.rbw-fork;
         };
 
         home.packages = [
