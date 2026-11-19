@@ -23,6 +23,13 @@
         programs.gale = {
           enable = true;
         };
+
+        xdg.mimeApps = {
+          defaultApplications = {
+            "x-scheme-handler/gale" = "Gale.desktop";
+            "x-scheme-handler/ror2mm" = "Gale.desktop";
+          };
+        };
       };
   };
 }

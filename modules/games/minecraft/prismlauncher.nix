@@ -77,7 +77,6 @@
             JavaPath = lib.getExe pkgs.temurin-jre-bin;
             LastHostname = user.userName;
             LaunchMaximized = false;
-            MainWindowState = "@ByteArray(AAAA/wAAAAD9AAAAAAAAAssAAAQCAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAAAAAAEAAAAeAGkAbgBzAHQAYQBuAGMAZQBUAG8AbwBsAEIAYQByAwAAAAD/////AAAAAAAAAAAAAAACAAAAAQAAABYAbQBhAGkAbgBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAAAAAADAAAAAQAAABYAbgBlAHcAcwBUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAA=)";
             MenuBarInsteadOfToolBar = true;
             MinMemAlloc = 512;
             ModDependenciesDisabled = false;
@@ -102,12 +101,21 @@
             TechnicClientID = "";
             ToolbarsLocked = true;
             UseDiscreteGpu = false;
-            UseNativeGLFW = false;
+            CustomGLFWPath = "${pkgs.glfw3-minecraft}/lib/libglfw.so";
+            UseNativeGLFW = true;
             UseNativeOpenAL = false;
             UseZink = false;
             UserAgentOverride = "";
             UserAskedAboutAutomaticJavaDownload = true;
             # keep-sorted end
+          };
+        };
+
+        xdg.mimeApps = {
+          defaultApplications = {
+            "application/x-modrinth-modpack+zip" = "org.prismlauncher.PrismLauncher.desktop";
+            "x-scheme-handler/curseforge" = "org.prismlauncher.PrismLauncher.desktop";
+            "x-scheme-handler/prismlauncher" = "org.prismlauncher.PrismLauncher.desktop";
           };
         };
       };

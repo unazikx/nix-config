@@ -19,5 +19,17 @@
           tunMode.enable = true;
         };
       };
+
+    homeManager =
+      {
+        ...
+      }:
+      {
+        xdg.mimeApps = {
+          defaultApplications = {
+            "x-scheme-handler/throne" = "throne-url-handler.desktop";
+          };
+        };
+      };
   };
 }

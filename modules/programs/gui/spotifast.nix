@@ -145,6 +145,12 @@
           # };
         };
 
+        xdg.mimeApps = {
+          defaultApplications = {
+            "x-scheme-handler/spotify" = "spotifast.desktop";
+          };
+        };
+
         # security.nix-secrets.secrets = {
         #   "programs-spotifast" = { };
         # };

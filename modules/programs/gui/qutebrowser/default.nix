@@ -103,38 +103,14 @@
             ];
         };
 
-        xdg.mimeApps.associations.removed = lib.genAttrs [
-          "image/avif"
-          "image/gif"
-          "image/heif"
-          "image/jpg"
-          "image/jpeg"
-          "image/jxl"
-          "image/png"
-          "image/bmp"
-          "image/x-eps"
-          "image/x-icns"
-          "image/x-ico"
-          "image/x-portable-bitmap"
-          "image/x-portable-graymap"
-          "image/x-portable-swayimgmap"
-          "image/x-xbitmap"
-          "image/x-xswayimgmap"
-          "image/tiff"
-          "image/x-psd"
-          "image/x-webp"
-          "image/webp"
-          "image/x-tga"
-          "image/svg+xml"
-        ] (_: [ "org.qutebrowser.qutebrowser.desktop" ]);
-
-        xdg.mimeApps.defaultApplications = {
-          "text/html" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/chrome" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+        xdg.mimeApps = {
+          defaultApplications = {
+            "application/xhtml+xml" = "org.qutebrowser.qutebrowser.desktop";
+            "text/html" = "org.qutebrowser.qutebrowser.desktop";
+            "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
+            "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
+            "x-scheme-handler/qute" = "org.qutebrowser.qutebrowser.desktop";
+          };
         };
 
         nixpkgs.config.permittedInsecurePackages = [

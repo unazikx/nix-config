@@ -23,6 +23,13 @@
             ];
           })
         ];
+
+        xdg.mimeApps = {
+          defaultApplications = {
+            "image/svg+xml" = "org.inkscape.Inkscape.desktop";
+            "image/svg+xml-compressed" = "org.inkscape.Inkscape.desktop";
+          };
+        };
       };
   };
 }

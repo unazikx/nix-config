@@ -35,6 +35,12 @@
             ]
             |> lib.concatLines;
         };
+
+        xdg.mimeApps = {
+          defaultApplications = {
+            "application/x-blender" = "blender.desktop";
+          };
+        };
       };
   };
 }

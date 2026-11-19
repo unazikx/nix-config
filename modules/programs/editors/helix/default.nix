@@ -67,6 +67,26 @@
             mkKeyValue = key: value: "export ${key}='${value}'";
           };
 
+        xdg.mimeApps = {
+          defaultApplications = {
+            "application/x-shellscript" = "Helix.desktop";
+            "text/english" = "Helix.desktop";
+            "text/plain" = "Helix.desktop";
+            "text/x-c++hdr" = "Helix.desktop";
+            "text/x-chdr" = "Helix.desktop";
+            "text/x-c" = "Helix.desktop";
+            "text/x-c++" = "Helix.desktop";
+            "text/x-c++src" = "Helix.desktop";
+            "text/x-csrc" = "Helix.desktop";
+            "text/x-java" = "Helix.desktop";
+            "text/x-makefile" = "Helix.desktop";
+            "text/x-moc" = "Helix.desktop";
+            "text/x-pascal" = "Helix.desktop";
+            "text/x-tcl" = "Helix.desktop";
+            "text/x-tex" = "Helix.desktop";
+          };
+        };
+
         stylix.targets = {
           helix.enable = false;
         };

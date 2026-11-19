@@ -129,6 +129,12 @@
           "Steam/package/beta".text = "publicbeta";
         };
 
+        xdg.mimeApps = {
+          defaultApplications = {
+            "x-scheme-handler/steam" = "steam.desktop";
+          };
+        };
+
         systemd.user.services = {
           steam-autostart = {
             Unit = {

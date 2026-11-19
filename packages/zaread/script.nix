@@ -1,7 +1,7 @@
 {
   writeShellApplication,
   fetchurl,
-  libreoffice,
+  libreoffice-stable,
   md2pdf,
   zathura,
   lib,
@@ -11,7 +11,7 @@ writeShellApplication {
   name = "zaread";
 
   runtimeInputs = [
-    libreoffice
+    libreoffice-stable
     md2pdf
     zathura
   ];

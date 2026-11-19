@@ -133,6 +133,12 @@
           };
         };
 
+        xdg.mimeApps = {
+          defaultApplications = {
+            "x-scheme-handler/spotify" = "spotify.desktop";
+          };
+        };
+
         stylix.targets = {
           spicetify.enable = false;
         };

@@ -178,6 +178,13 @@
               # keep-sorted end
             ];
         };
+
+        xdg.mimeApps = {
+          defaultApplications = {
+            "x-scheme-handler/tg" = "com.ayugram.desktop.desktop";
+            "x-scheme-handler/tonsite" = "com.ayugram.desktop.desktop";
+          };
+        };
       };
   };
 }

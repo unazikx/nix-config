@@ -24,5 +24,17 @@
             |> pkgs.appimage-run.override;
         };
       };
+
+    homeManager =
+      {
+        ...
+      }:
+      {
+        xdg.mimeApps = {
+          defaultApplications = {
+            "application/vnd.appimage" = "appimage-run.desktop";
+          };
+        };
+      };
   };
 }

@@ -99,6 +99,12 @@
             "48619f5656da446abccb727b78cda644" = { };
           };
         };
+
+        xdg.mimeApps = {
+          defaultApplications = {
+            "x-scheme-handler/heroic" = "com.heroicgameslauncher.hgl.desktop";
+          };
+        };
       };
   };
 }

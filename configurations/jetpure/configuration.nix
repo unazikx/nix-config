@@ -102,7 +102,6 @@
       zen.programs.gui.vesktop
       zen.programs.office.artcraft
       zen.programs.office.blender
-      zen.programs.office.libreoffice
       zen.programs.office.zathura
       zen.programs.terminal.fish
       zen.programs.terminal.translate-shell
