@@ -56,6 +56,13 @@
               lock_timeout = 60 * 30;
               sync_interval = 4;
 
+              # fork specified
+              auto_unlock = true;
+              lock_on_idle = false;
+              lock_on_sleep = false;
+              saved_password = "systemd-creds";
+              system_auth = true;
+
               # https://github.com/unnamed-systems/nix-secrets/issues/38
               # pinentry = lib.getExe pkgs.pinentry-curses;
             };
