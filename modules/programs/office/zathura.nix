@@ -75,25 +75,6 @@
             "application/x-eps" = "org.pwmt.zathura-ps.desktop";
             "image/eps" = "org.pwmt.zathura-ps.desktop";
             "image/x-eps" = "org.pwmt.zathura-ps.desktop";
-
-            "application/msword" = "zaread.desktop";
-            "application/vnd.ms-excel.sheet.binary.macroEnabled.12" = "zaread.desktop";
-            "application/vnd.ms-excel.sheet.macroEnabled.12" = "zaread.desktop";
-            "application/vnd.ms-excel" = "zaread.desktop";
-            "application/vnd.ms-powerpoint.presentation.macroEnabled.12" = "zaread.desktop";
-            "application/vnd.ms-powerpoint" = "zaread.desktop";
-            "application/vnd.ms-word.document.macroEnabled.12" = "zaread.desktop";
-            "application/vnd.oasis.opendocument.presentation" = "zaread.desktop";
-            "application/vnd.oasis.opendocument.spreadsheet" = "zaread.desktop";
-            "application/vnd.oasis.opendocument.text" = "zaread.desktop";
-            "application/vnd.openxmlformats-officedocument.presentationml.presentation" = "zaread.desktop";
-            "application/vnd.openxmlformats-officedocument.presentationml.slideshow" = "zaread.desktop";
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "zaread.desktop";
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "zaread.desktop";
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.template" = "zaread.desktop";
-            "text/csv" = "zaread.desktop";
-            "text/markdown" = "zaread.desktop";
-            "text/rtf" = "zaread.desktop";
           };
         };
       };

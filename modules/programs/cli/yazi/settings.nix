@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -10,6 +11,7 @@
         pkgs,
         lib,
         config,
+        user,
         ...
       }:
       {
@@ -88,36 +90,7 @@
             };
 
             opener = {
-              play = [
-                {
-                  run = "mpv --fs %s";
-                  desc = "Open video in MPV";
-                }
-              ];
-
-              image = [
-                {
-                  run = "swayimg %s";
-                  desc = "Open image in swayimg";
-                }
-              ];
-
-              pdf = [
-                {
-                  run = "zathura %s";
-                  desc = "Open pdf in Zathura";
-                }
-              ];
-
-              msoffice = [
-                {
-                  run = "libreoffice %s";
-                  desc = "Open document in Libreoffice";
-                  orphan = true;
-                }
-              ];
-
-              msoffice-pdf = [
+              msoffice-pdf = lib.mkIf (user.hasAspect zen.programs.office.zathura) [
                 {
                   run = "zaread %s";
                   desc = "Open document in Zathura";
@@ -131,178 +104,38 @@
                   desc = "Extract files via ouch";
                 }
               ];
-
-              keepassdb-open = [
-                {
-                  run = "keepassxc %s";
-                  desc = "Open keepass password db";
-                }
-              ];
-
-              prism-import = [
-                {
-                  run = "prismlauncher %s";
-                  desc = "Import modpack to Prismlauncher";
-                }
-              ];
-
-              umu-run = [
-                {
-                  run = "umu-run %s";
-                  desc = "Open windows exe via umu-run";
-                  block = true;
-                }
-              ];
-
-              uwu-run = [
-                {
-                  run = "uwu-run %s";
-                  desc = "Open windows exe via uwu-run";
-                  block = true;
-                }
-              ];
-
-              xdg-open = [
-                {
-                  run = "xdg-open %s";
-                  desc = "Open via xdg-open";
-                }
-              ];
             };
 
             open = {
-              prepend_rules =
-                [
-                  (lib.yazi.mkRuleUrl
-                    [
-                      "*.kdbx"
-                    ]
-                    [
-                      "keepassdb"
-                    ]
-                  )
-                  (lib.yazi.mkRuleUrl
-                    [
-                      "*.exe"
-                      "*.msi"
-                    ]
-                    [
-                      "uwu-run"
-                      "umu-run"
-                    ]
-                  )
-                  (lib.yazi.mkRuleUrl
-                    [
-                      "*.csv"
-                      "*.tsv"
-                      "*.tab"
-                      "*.psv"
-                      "*.odt"
-                      "*.doc"
-                      "*.docx"
-                      "*.rtf"
-                      "*.xls"
-                      "*.xlsx"
-                      "*.xlsm"
-                      "*.xlsb"
-                      "*.ods"
-                      "*.odp"
-                      "*.pptx"
-                      "*.odf"
-                      "*.odb"
-                    ]
-                    [
-                      "msoffice-pdf"
-                      "msoffice"
-                    ]
-                  )
-                  (lib.yazi.mkRuleMime
-                    [
-                      "application/zip"
-                    ]
-                    [
-                      "extract-archive"
-                    ]
-                  )
-                  (lib.yazi.mkRuleMime
-                    [
-                      "application/bittorrent"
-                    ]
-                    [
-                      "edit"
-                      "qbttorrent-add"
-                    ]
-                  )
-                ]
-                |> lib.mkMerge;
-
-              rules =
-                [
-                  (lib.yazi.mkRuleMime
-                    [
-                      "image/*"
-                    ]
-                    [
-                      "image"
-                      "xdg-open"
-                    ]
-                  )
-                  (lib.yazi.mkRuleMime
-                    [
-                      "{audio,video}/*"
-                    ]
-                    [
-                      "play"
-                      "xdg-open"
-                    ]
-                  )
-                  (lib.yazi.mkRuleMime
-                    [
-                      "application/pdf"
-                      "application/zip"
-                      "application/cbt"
-                      "application/cbr"
-                      "application/cbz"
-                      "application/x-cbt"
-                      "application/x-cbr"
-                      "application/x-cbz"
-                      "application/epub+zip"
-                      "application/vnd.comicbook-rar"
-                      "application/vnd.comicbook+zip"
-                    ]
-                    [
-                      "pdf"
-                    ]
-                  )
-                  (lib.yazi.mkRuleMime
-                    [
-                      "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}"
-                    ]
-                    [
-                      "extract-archive"
-                    ]
-                  )
-                  (lib.yazi.mkRuleMime
-                    [
-                      "inode/empty"
-                      "application/*"
-                      "text/*"
-                    ]
-                    [
-                      "edit"
-                      "native-run"
-                    ]
-                  )
-                  (lib.yazi.mkRuleMime
-                    [
-                      "*/"
-                    ]
-                    [
-                      "xdg-open"
-                    ]
-                  )
-                ]
-                |> lib.mkMerge;
+              rules = [
+                {
+                  mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}";
+                  use = [
+                    "extract-archive"
+                  ];
+                }
+                {
+                  mime = "text/*";
+                  use = [
+                    "edit"
+                  ];
+                }
+                {
+                  mime = "application/{epub+zip,json,ndjson,javascript,wine-extension-ini}";
+                  use = "edit";
+                }
+                {
+                  mime = "inode/empty";
+                  use = "edit";
+                }
+                {
+                  url = "*";
+                  use = [
+                    "open"
+                    "edit"
+                  ];
+                }
+              ];
             };
 
             tasks.image_bound = [

@@ -73,6 +73,7 @@
       zen.games.srb2
       zen.games.steam
       zen.games.supertuxkart
+      zen.miscellaneous.bookmarks
       zen.miscellaneous.canvas-commons
       zen.miscellaneous.nix
       zen.miscellaneous.users
@@ -95,6 +96,7 @@
       zen.programs.gui._64gram
       zen.programs.gui.easy-effects
       zen.programs.gui.librewolf
+      zen.programs.gui.nemo
       zen.programs.gui.obs-studio
       zen.programs.gui.qutebrowser
       zen.programs.gui.spotifast

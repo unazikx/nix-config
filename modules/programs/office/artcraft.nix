@@ -83,11 +83,6 @@
               "ai.storyteller.deckcraft.desktop";
           }
           {
-            # pdfcraft
-            "application/pdf" = "ai.storyteller.pdfcraft.desktop";
-            "application/x-pdf" = "ai.storyteller.pdfcraft.desktop";
-          }
-          {
             # photocraft
             "application/x-photocraft" = "ai.storyteller.photocraft.desktop";
             "image/vnd.adobe.photoshop" = "ai.storyteller.photocraft.desktop";
@@ -96,34 +91,17 @@
             "image/openraster" = "ai.storyteller.photocraft.desktop";
             "application/x-krita" = "ai.storyteller.photocraft.desktop";
             "image/x-paintnet" = "ai.storyteller.photocraft.desktop";
-            "image/png" = "ai.storyteller.photocraft.desktop";
+
             "image/jpeg" = "ai.storyteller.photocraft.desktop";
-            "image/tiff" = "ai.storyteller.photocraft.desktop";
-            "image/webp" = "ai.storyteller.photocraft.desktop";
-            "image/gif" = "ai.storyteller.photocraft.desktop";
-            "image/bmp" = "ai.storyteller.photocraft.desktop";
-            "image/x-tga" = "ai.storyteller.photocraft.desktop";
-            "image/x-icon" = "ai.storyteller.photocraft.desktop";
-            "image/vnd.microsoft.icon" = "ai.storyteller.photocraft.desktop";
-            "image/x-portable-anymap" = "ai.storyteller.photocraft.desktop";
-            "image/x-portable-bitmap" = "ai.storyteller.photocraft.desktop";
-            "image/x-portable-graymap" = "ai.storyteller.photocraft.desktop";
-            "image/x-portable-pixmap" = "ai.storyteller.photocraft.desktop";
-            "image/x-exr" = "ai.storyteller.photocraft.desktop";
-            "image/vnd.radiance" = "ai.storyteller.photocraft.desktop";
-            "image/avif" = "ai.storyteller.photocraft.desktop";
-            "image/qoi" = "ai.storyteller.photocraft.desktop";
+            "image/jpg" = "ai.storyteller.photocraft.desktop";
           }
           {
             # vectorcraft
             "application/x-vectorcraft" = "ai.storyteller.vectorcraft.desktop";
             "application/x-vectorcraft-template" = "ai.storyteller.vectorcraft.desktop";
-            "image/svg+xml" = "ai.storyteller.vectorcraft.desktop";
-            "image/svg+xml-compressed" = "ai.storyteller.vectorcraft.desktop";
             "application/illustrator" = "ai.storyteller.vectorcraft.desktop";
             "application/x-ai-template" = "ai.storyteller.vectorcraft.desktop";
             "application/x-affinity" = "ai.storyteller.vectorcraft.desktop";
-            "image/x-eps" = "ai.storyteller.vectorcraft.desktop";
             "image/emf" = "ai.storyteller.vectorcraft.desktop";
             "image/wmf" = "ai.storyteller.vectorcraft.desktop";
           }
@@ -134,8 +112,6 @@
           }
           {
             # lightcraft
-            "image/heic" = "ai.storyteller.lightcraft.desktop";
-            "image/heif" = "ai.storyteller.lightcraft.desktop";
             "image/x-adobe-dng" = "ai.storyteller.lightcraft.desktop";
             "image/x-sony-arw" = "ai.storyteller.lightcraft.desktop";
             "image/x-canon-cr2" = "ai.storyteller.lightcraft.desktop";
@@ -150,29 +126,11 @@
           {
             # filmcraft
             "application/x-filmcraft" = "ai.storyteller.filmcraft.desktop";
-            "video/mp4" = "ai.storyteller.filmcraft.desktop";
-            "video/x-m4v" = "ai.storyteller.filmcraft.desktop";
-            "video/quicktime" = "ai.storyteller.filmcraft.desktop";
-            "video/x-matroska" = "ai.storyteller.filmcraft.desktop";
-            "video/webm" = "ai.storyteller.filmcraft.desktop";
-            "video/vnd.avi" = "ai.storyteller.filmcraft.desktop";
-            "video/x-msvideo" = "ai.storyteller.filmcraft.desktop";
             "application/mxf" = "ai.storyteller.filmcraft.desktop";
-            "video/mp2t" = "ai.storyteller.filmcraft.desktop";
-            "video/mpeg" = "ai.storyteller.filmcraft.desktop";
-            "video/3gpp" = "ai.storyteller.filmcraft.desktop";
           }
           {
             # soundcraft
             "application/x-soundcraft-session" = "ai.storyteller.soundcraft.desktop";
-            "audio/x-wav" = "ai.storyteller.soundcraft.desktop";
-            "audio/wav" = "ai.storyteller.soundcraft.desktop";
-            "audio/vnd.wave" = "ai.storyteller.soundcraft.desktop";
-            "audio/x-aiff" = "ai.storyteller.soundcraft.desktop";
-            "audio/aiff" = "ai.storyteller.soundcraft.desktop";
-            "audio/flac" = "ai.storyteller.soundcraft.desktop";
-            "audio/x-flac" = "ai.storyteller.soundcraft.desktop";
-            "audio/mpeg" = "ai.storyteller.soundcraft.desktop";
             "audio/midi" = "ai.storyteller.soundcraft.desktop";
             "audio/x-midi" = "ai.storyteller.soundcraft.desktop";
           }
