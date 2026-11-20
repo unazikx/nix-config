@@ -58,6 +58,7 @@
             CloseAfterLaunch = false;
             ConfigVersion = "1.2";
             ConsoleOverflowStop = true;
+            CustomGLFWPath = "${pkgs.glfw3-minecraft}/lib/libglfw.so";
             DownloadsDir = config.xdg.userDirs.download;
             DownloadsDirWatchRecursive = false;
             EnableMangoHud = config.programs.mangohud.enable;
@@ -101,7 +102,6 @@
             TechnicClientID = "";
             ToolbarsLocked = true;
             UseDiscreteGpu = false;
-            CustomGLFWPath = "${pkgs.glfw3-minecraft}/lib/libglfw.so";
             UseNativeGLFW = true;
             UseNativeOpenAL = false;
             UseZink = false;

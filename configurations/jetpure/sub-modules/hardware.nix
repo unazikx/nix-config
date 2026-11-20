@@ -8,6 +8,7 @@
       {
         inputs,
         pkgs,
+        lib,
         ...
       }:
       {
@@ -20,7 +21,8 @@
         ];
 
         boot = {
-          kernelPackages = pkgs.linuxPackages_xanmod_latest;
+          kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod;
+
           # kernelPackages =
           #   (pkgs.linuxKernel.packagesFor (
           #     let

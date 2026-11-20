@@ -17,7 +17,7 @@
       }:
       {
         boot = {
-          kernelPackages = lib.mkDefault pkgs.linuxPackages_zen;
+          kernelPackages = lib.mkDefault pkgs.linuxPackages_xanmod;
 
           tmp = {
             cleanOnBoot = true;
