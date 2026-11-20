@@ -49,6 +49,9 @@
         config,
         ...
       }:
+      let
+        cfg = config.programs.qutebrowser;
+      in
       {
         programs.qutebrowser = {
           enable = true;
@@ -57,22 +60,19 @@
           # package = self'.packages.qutebrowser-fido2;
 
           searchEngines =
-            let
-              marks = config.programs.qutebrowser.quickmarks;
-            in
             # PLEASE SORRY FOR REC
             rec # OOOOOOHHHH NOOOOO FUUUUUUUCCCCKKKK
             # PLEEEEEASEEEESESE SSSSOOOOORRRRRYYYYY
             {
               DEFAULT = google;
               # keep-sorted start
-              anilist = "${marks.anilist}/search?search={}";
-              forget = "${marks.forget}/web?s={}";
-              github = "${marks.github}/search?q={}";
-              google = "${marks.google}/search?q={}";
-              nixpkgs = "${marks.nixpkgs}&query={}";
-              nixsearch = "${marks.nixSearch}/?q={}";
-              youtube = "${marks.youtube}/results?search_query={}";
+              anilist = "${cfg.quickmarks.anilist}/search?search={}";
+              forget = "${cfg.quickmarks.forget}/web?s={}";
+              github = "${cfg.quickmarks.github}/search?q={}";
+              google = "${cfg.quickmarks.google}/search?q={}";
+              nixpkgs = "${cfg.quickmarks.nixpkgs}&query={}";
+              nixsearch = "${cfg.quickmarks.nixSearch}/?q={}";
+              youtube = "${cfg.quickmarks.youtube}/results?search_query={}";
               # keep-sorted end
             };
 
@@ -104,13 +104,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "application/xhtml+xml" = "org.qutebrowser.qutebrowser.desktop";
-            "text/html" = "org.qutebrowser.qutebrowser.desktop";
-            "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-            "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-            "x-scheme-handler/qute" = "org.qutebrowser.qutebrowser.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         nixpkgs.config.permittedInsecurePackages = [

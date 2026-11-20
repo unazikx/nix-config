@@ -25,8 +25,8 @@
         lib,
         ...
       }:
-      {
-        home.packages =
+      let
+        artcraft-programs =
           {
             # Adobe Suite
             "Photoshop" = inputs'.artcraft-nix.packages.photocraft;
@@ -46,102 +46,13 @@
             "Audacity" = inputs'.artcraft-nix.packages.soundcraft;
           }
           |> lib.attrValues;
+      in
+      {
+        home.packages = artcraft-programs;
 
-        xdg.mimeApps.defaultApplications = lib.mkMerge [
-          {
-            # wordcraft
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.document" =
-              "ai.storyteller.wordcraft.desktop";
-            "application/vnd.openxmlformats-officedocument.wordprocessingml.template" =
-              "ai.storyteller.wordcraft.desktop";
-            "application/vnd.ms-word.document.macroEnabled.12" = "ai.storyteller.wordcraft.desktop";
-            "application/vnd.ms-word.template.macroEnabled.12" = "ai.storyteller.wordcraft.desktop";
-            "application/msword" = "ai.storyteller.wordcraft.desktop";
-            "application/msword-template" = "ai.storyteller.wordcraft.desktop";
-            "application/vnd.oasis.opendocument.text" = "ai.storyteller.wordcraft.desktop";
-            "application/rtf" = "ai.storyteller.wordcraft.desktop";
-            "text/rtf" = "ai.storyteller.wordcraft.desktop";
-          }
-          {
-            # gridcraft
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" =
-              "ai.storyteller.gridcraft.desktop";
-            "application/vnd.ms-excel.sheet.macroEnabled.12" = "ai.storyteller.gridcraft.desktop";
-            "application/vnd.ms-excel.sheet.binary.macroEnabled.12" = "ai.storyteller.gridcraft.desktop";
-            "application/vnd.oasis.opendocument.spreadsheet" = "ai.storyteller.gridcraft.desktop";
-            "text/csv" = "ai.storyteller.gridcraft.desktop";
-            "text/tab-separated-values" = "ai.storyteller.gridcraft.desktop";
-          }
-          {
-            # deckcraft
-            "application/x-deckcraft" = "ai.storyteller.deckcraft.desktop";
-            "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
-              "ai.storyteller.deckcraft.desktop";
-            "application/vnd.openxmlformats-officedocument.presentationml.template" =
-              "ai.storyteller.deckcraft.desktop";
-            "application/vnd.openxmlformats-officedocument.presentationml.slideshow" =
-              "ai.storyteller.deckcraft.desktop";
-          }
-          {
-            # photocraft
-            "application/x-photocraft" = "ai.storyteller.photocraft.desktop";
-            "image/vnd.adobe.photoshop" = "ai.storyteller.photocraft.desktop";
-            "image/x-psd" = "ai.storyteller.photocraft.desktop";
-            "image/x-psb" = "ai.storyteller.photocraft.desktop";
-            "image/openraster" = "ai.storyteller.photocraft.desktop";
-            "application/x-krita" = "ai.storyteller.photocraft.desktop";
-            "image/x-paintnet" = "ai.storyteller.photocraft.desktop";
-
-            "image/jpeg" = "ai.storyteller.photocraft.desktop";
-            "image/jpg" = "ai.storyteller.photocraft.desktop";
-          }
-          {
-            # vectorcraft
-            "application/x-vectorcraft" = "ai.storyteller.vectorcraft.desktop";
-            "application/x-vectorcraft-template" = "ai.storyteller.vectorcraft.desktop";
-            "application/illustrator" = "ai.storyteller.vectorcraft.desktop";
-            "application/x-ai-template" = "ai.storyteller.vectorcraft.desktop";
-            "application/x-affinity" = "ai.storyteller.vectorcraft.desktop";
-            "image/emf" = "ai.storyteller.vectorcraft.desktop";
-            "image/wmf" = "ai.storyteller.vectorcraft.desktop";
-          }
-          {
-            # designcraft
-            "application/x-designcraft" = "ai.storyteller.designcraft.desktop";
-            "application/vnd.adobe.indesign-idml-package" = "ai.storyteller.designcraft.desktop";
-          }
-          {
-            # lightcraft
-            "image/x-adobe-dng" = "ai.storyteller.lightcraft.desktop";
-            "image/x-sony-arw" = "ai.storyteller.lightcraft.desktop";
-            "image/x-canon-cr2" = "ai.storyteller.lightcraft.desktop";
-            "image/x-canon-cr3" = "ai.storyteller.lightcraft.desktop";
-            "image/x-nikon-nef" = "ai.storyteller.lightcraft.desktop";
-            "image/x-fuji-raf" = "ai.storyteller.lightcraft.desktop";
-            "image/x-olympus-orf" = "ai.storyteller.lightcraft.desktop";
-            "image/x-panasonic-rw2" = "ai.storyteller.lightcraft.desktop";
-            "image/x-panasonic-rw" = "ai.storyteller.lightcraft.desktop";
-            "image/x-pentax-pef" = "ai.storyteller.lightcraft.desktop";
-          }
-          {
-            # filmcraft
-            "application/x-filmcraft" = "ai.storyteller.filmcraft.desktop";
-            "application/mxf" = "ai.storyteller.filmcraft.desktop";
-          }
-          {
-            # soundcraft
-            "application/x-soundcraft-session" = "ai.storyteller.soundcraft.desktop";
-            "audio/midi" = "ai.storyteller.soundcraft.desktop";
-            "audio/x-midi" = "ai.storyteller.soundcraft.desktop";
-          }
-          {
-            # cadcraft
-            "image/vnd.dxf" = "ai.storyteller.cadcraft.desktop";
-            "image/vnd.dwg" = "ai.storyteller.cadcraft.desktop";
-            "application/x-dxf" = "ai.storyteller.cadcraft.desktop";
-            "application/acad" = "ai.storyteller.cadcraft.desktop";
-          }
-        ];
+        xdg.mimeApps = {
+          defaultApplicationPackages = artcraft-programs;
+        };
       };
   };
 }

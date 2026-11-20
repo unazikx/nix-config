@@ -11,14 +11,22 @@
     homeManager =
       {
         pkgs,
+        lib,
         ...
       }:
+      let
+        winePackage = pkgs.wineWow64Packages;
+      in
       {
         home.packages = [
           pkgs.winetricks
-          pkgs.wineWow64Packages.fonts
-          pkgs.wineWow64Packages.staging
+          winePackage.fonts
+          winePackage.staging
         ];
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = winePackage.staging |> lib.singleton;
+        };
       };
   };
 }

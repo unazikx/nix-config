@@ -123,6 +123,9 @@
         osConfig,
         ...
       }:
+      let
+        cfg = osConfig.programs.steam;
+      in
       {
         xdg.dataFile = {
           # for beta steam client
@@ -130,9 +133,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/steam" = "steam.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         systemd.user.services = {
@@ -148,7 +149,7 @@
 
             Service = {
               ExecStart = lib.concatStringsSep " " [
-                (lib.getExe osConfig.programs.steam.package)
+                (lib.getExe cfg.package)
                 "-nochatui"
                 "-nofriendsui"
               ];

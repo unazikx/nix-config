@@ -29,11 +29,13 @@
       {
         inputs,
         inputs',
+        lib,
         config,
         ...
       }:
       let
         colors = config.lib.stylix.colors;
+        cfg = config.programs.spicetify;
         spicetify = inputs'.spicetify-nix.legacyPackages;
       in
       {
@@ -134,9 +136,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/spotify" = "spotify.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         stylix.targets = {

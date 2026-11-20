@@ -22,12 +22,21 @@
     homeManagerNixos =
       {
         inputs,
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.obsidian;
+      in
       {
         programs.obsidian = {
           enable = true;
           cli.enable = true;
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         nixpkgs.overlays = [

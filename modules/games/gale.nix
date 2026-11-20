@@ -17,18 +17,20 @@
 
     homeManager =
       {
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.gale;
+      in
       {
         programs.gale = {
           enable = true;
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/gale" = "Gale.desktop";
-            "x-scheme-handler/ror2mm" = "Gale.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

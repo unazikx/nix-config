@@ -83,6 +83,7 @@
       zen.programs.cli.fastfetch
       zen.programs.cli.gdu
       zen.programs.cli.git
+      zen.programs.cli.handlr
       zen.programs.cli.monitor
       zen.programs.cli.rbw
       zen.programs.cli.rezka-fzf

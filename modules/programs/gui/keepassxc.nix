@@ -12,11 +12,13 @@
     homeManager =
       {
         pkgs,
+        lib,
         config,
         ...
       }:
       let
         ini = pkgs.formats.ini { };
+        cfg = config.programs.keepassxc;
         pwdir = config.xdg.userDirs.publicShare;
       in
       {
@@ -98,6 +100,10 @@
             };
             # keep-sorted end
           };
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         xdg.cacheFile = {

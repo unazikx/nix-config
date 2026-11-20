@@ -28,9 +28,14 @@
 
     homeManager =
       {
+        lib,
+        config,
         user,
         ...
       }:
+      let
+        cfg = config.programs.firefox;
+      in
       {
         programs.firefox = {
           enable = true;
@@ -38,6 +43,10 @@
           languagePacks = [
             "ru-RU"
           ];
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         stylix.targets = {

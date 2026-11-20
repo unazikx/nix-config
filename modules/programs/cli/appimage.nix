@@ -25,15 +25,18 @@
         };
       };
 
-    homeManager =
+    homeManagerNixos =
       {
+        lib,
+        osConfig,
         ...
       }:
+      let
+        osCfg = osConfig.programs.appimage;
+      in
       {
         xdg.mimeApps = {
-          defaultApplications = {
-            "application/vnd.appimage" = "appimage-run.desktop";
-          };
+          defaultApplicationPackages = osCfg.package |> lib.singleton;
         };
       };
   };

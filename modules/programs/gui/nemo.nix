@@ -14,13 +14,15 @@
     homeManager =
       {
         pkgs,
+        lib,
         config,
         ...
       }:
+      let
+        package = pkgs.nemo-with-extensions;
+      in
       {
-        home.packages = [
-          pkgs.nemo-with-extensions
-        ];
+        home.packages = package |> lib.singleton;
 
         dconf.settings = {
           "org/nemo/icon-view" = {
@@ -71,6 +73,10 @@
             start-with-sidebar = true;
             start-with-status-bar = false;
           };
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = package |> lib.singleton;
         };
       };
   };

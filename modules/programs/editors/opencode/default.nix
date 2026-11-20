@@ -21,8 +21,13 @@
 
     homeManager =
       {
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.opencode;
+      in
       {
         programs.opencode = {
           enable = true;
@@ -82,6 +87,10 @@
             #   };
             # };
           };
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

@@ -18,8 +18,13 @@
 
     homeManager =
       {
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs._64gram;
+      in
       {
         programs._64gram = {
           enable = true;
@@ -151,10 +156,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/tg" = "io.github.tdesktop_x64.TDesktop.desktop";
-            "x-scheme-handler/tonsite" = "io.github.tdesktop_x64.TDesktop.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

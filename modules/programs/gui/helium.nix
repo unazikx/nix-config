@@ -25,10 +25,12 @@
       {
         inputs,
         lib,
+        config,
         osConfig,
         ...
       }:
       let
+        cfg = config.programs.helium;
         glanceCfg = osConfig.services.glance;
       in
       {
@@ -73,6 +75,10 @@
             browser.show_home_button = true;
             bookmark_bar.show_on_all_tabs = true;
           };
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

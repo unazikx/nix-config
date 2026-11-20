@@ -17,16 +17,24 @@
         config,
         ...
       }:
+      let
+        cfg = config.programs.zathura;
+        zaread = self'.packages.zaread-wrapped;
+      in
       {
-        home.packages = [
-          self'.packages.zaread-wrapped
-        ];
+        home.packages = zaread |> lib.singleton;
 
         programs.zathura = {
           enable = true;
 
           package = pkgs.zathura.override {
             useMupdf = true;
+            zathura_cb = pkgs.zathuraPkgs.zathura_cb.overrideAttrs (_: {
+              postInstall = ''
+                substituteInPlace $out/share/applications/org.pwmt.zathura-cb.desktop \
+                  --replace-fail "inode/directory;" ""
+              '';
+            });
           };
 
           options = {
@@ -55,27 +63,10 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "application/x-cbr" = "org.pwmt.zathura-cb.desktop";
-            "application/x-cbz" = "org.pwmt.zathura-cb.desktop";
-            "application/x-cb7" = "org.pwmt.zathura-cb.desktop";
-            "application/x-cbt" = "org.pwmt.zathura-cb.desktop";
-
-            "image/vnd.djvu" = "org.pwmt.zathura-djvu.desktop";
-            "image/vnd.djvu+multipage" = "org.pwmt.zathura-djvu.desktop";
-
-            "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
-            "application/oxps" = "org.pwmt.zathura-pdf-mupdf.desktop";
-            "application/epub+zip" = "org.pwmt.zathura-pdf-mupdf.desktop";
-            "application/x-fictionbook" = "org.pwmt.zathura-pdf-mupdf.desktop";
-            "application/x-mobipocket-ebook" = "org.pwmt.zathura-pdf-mupdf.desktop";
-
-            "application/postscript" = "org.pwmt.zathura-ps.desktop";
-            "application/eps" = "org.pwmt.zathura-ps.desktop";
-            "application/x-eps" = "org.pwmt.zathura-ps.desktop";
-            "image/eps" = "org.pwmt.zathura-ps.desktop";
-            "image/x-eps" = "org.pwmt.zathura-ps.desktop";
-          };
+          defaultApplicationPackages = [
+            cfg.package
+            zaread
+          ];
         };
       };
   };

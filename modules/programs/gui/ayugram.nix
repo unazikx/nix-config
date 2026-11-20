@@ -22,9 +22,13 @@
 
     homeManager =
       {
+        lib,
         config,
         ...
       }:
+      let
+        cfg = config.programs.ayugram-desktop;
+      in
       {
         programs.ayugram-desktop = {
           enable = true;
@@ -180,10 +184,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/tg" = "com.ayugram.desktop.desktop";
-            "x-scheme-handler/tonsite" = "com.ayugram.desktop.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

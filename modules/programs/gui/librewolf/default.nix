@@ -41,6 +41,9 @@
         user,
         ...
       }:
+      let
+        cfg = config.programs.librewolf;
+      in
       {
         programs.librewolf = {
           enable = true;
@@ -52,6 +55,10 @@
           nativeMessagingHosts = lib.flatten [
             (lib.optionals config.programs.keepassxc.enable pkgs.keepassxc)
           ];
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         stylix.targets = {

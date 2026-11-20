@@ -22,6 +22,7 @@
       }:
       let
         colors = config.lib.stylix.colors.withHashtag;
+        cfg = config.programs.vesktop;
       in
       {
         programs.vesktop = {
@@ -78,9 +79,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/discord" = "vesktop.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

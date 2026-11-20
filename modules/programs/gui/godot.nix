@@ -12,12 +12,18 @@
     homeManager =
       {
         pkgs,
+        lib,
         ...
       }:
+      let
+        package = pkgs.godot-mono;
+      in
       {
-        home.packages = [
-          pkgs.godot-mono
-        ];
+        home.packages = package |> lib.singleton;
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = package |> lib.singleton;
+        };
       };
   };
 }

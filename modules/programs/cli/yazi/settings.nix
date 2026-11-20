@@ -90,20 +90,29 @@
             };
 
             opener = {
-              msoffice-pdf = lib.mkIf (user.hasAspect zen.programs.office.zathura) [
+              msoffice-pdf = lib.mkIf (user.hasAspect zen.programs.office.zathura) (
                 {
                   run = "zaread %s";
                   desc = "Open document in Zathura";
                   orphan = true;
                 }
-              ];
+                |> lib.singleton
+              );
 
-              extract-archive = [
+              handlr = lib.mkIf (user.hasAspect zen.programs.cli.handlr) (
+                {
+                  run = "handlr open %s1";
+                  desc = "Open programs with...";
+                }
+                |> lib.singleton
+              );
+
+              extract-archive =
                 {
                   run = "ouch d -y %s";
                   desc = "Extract files via ouch";
                 }
-              ];
+                |> lib.singleton;
             };
 
             open = {
@@ -112,21 +121,37 @@
                   mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}";
                   use = [
                     "extract-archive"
+                    "open"
                   ];
                 }
                 {
                   mime = "text/*";
                   use = [
                     "edit"
+                    "open"
                   ];
                 }
                 {
                   mime = "application/{epub+zip,json,ndjson,javascript,wine-extension-ini}";
-                  use = "edit";
+                  use = [
+                    "edit"
+                    "open"
+                  ];
                 }
                 {
                   mime = "inode/empty";
-                  use = "edit";
+                  use = [
+                    "edit"
+                    "open"
+                  ];
+                }
+
+                {
+                  mime = "folder/*";
+                  use = [
+                    "open"
+                    "edit"
+                  ];
                 }
                 {
                   url = "*";

@@ -18,13 +18,22 @@
     homeManager =
       {
         pkgs,
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.zed-editor;
+      in
       {
         programs.zed-editor = {
           enable = true;
 
           extraPackages = pkgs.default-lsp;
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

@@ -15,8 +15,13 @@
 
     homeManager =
       {
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.foliate;
+      in
       {
         programs.foliate = {
           enable = true;
@@ -37,6 +42,10 @@
             }
             # keep-sorted end
           ];
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

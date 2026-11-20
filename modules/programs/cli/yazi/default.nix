@@ -20,8 +20,13 @@
     homeManager =
       {
         pkgs,
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.yazi;
+      in
       {
         programs.yazi = {
           enable = true;
@@ -46,19 +51,7 @@
         stylix.targets.yazi.enable = false;
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "application/gzip" = "yazi.desktop";
-            "application/vnd.rar" = "yazi.desktop";
-            "application/x-7z-compressed" = "yazi.desktop";
-            "application/x-compressed-tar" = "yazi.desktop";
-            "application/x-rar" = "yazi.desktop";
-            "application/x-tar" = "yazi.desktop";
-            "application/x-xz-compressed-tar" = "yazi.desktop";
-            "application/zip" = "yazi.desktop";
-            "application/zstd" = "yazi.desktop";
-            "inode/directory" = "yazi.desktop";
-            "inode/mount-point" = "yazi.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

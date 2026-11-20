@@ -22,8 +22,13 @@
     homeManager =
       {
         pkgs,
+        lib,
+        config,
         ...
       }:
+      let
+        cfg = config.programs.davinci-resolve;
+      in
       {
         programs.davinci-resolve = {
           enable = true;
@@ -42,6 +47,10 @@
             ''
               echo -e "LICENSE blackmagic davinciresolvestudio 999999 permanent uncounted\nhostid=ANY issuer=CGP customer=CGP issued=28-dec-2023\nakey=0000-0000-0000-0000 _ck=00 sig=\"00\"" > $out/.license/blackmagic.lic
             '';
+        };
+
+        xdg.mimeApps = {
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

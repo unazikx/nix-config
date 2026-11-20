@@ -24,7 +24,7 @@
         indent = string: "  " + ((lib.splitString "\n" string) |> lib.concatStringsSep "\n  ");
       in
       {
-        home.packages = lib.singleton package;
+        home.packages = package |> lib.singleton;
 
         xdg.configFile = {
           "blender/${version}/scripts/presets/interface_theme/Stylix.xml".text =
@@ -37,9 +37,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "application/x-blender" = "blender.desktop";
-          };
+          defaultApplicationPackages = package |> lib.singleton;
         };
       };
   };

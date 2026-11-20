@@ -19,9 +19,13 @@
     homeManager =
       {
         self',
+        lib,
         config,
         ...
       }:
+      let
+        cfg = config.programs.heroic;
+      in
       {
         programs.heroic = {
           enable = true;
@@ -101,9 +105,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/heroic" = "com.heroicgameslauncher.hgl.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
   };

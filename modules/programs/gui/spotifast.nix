@@ -48,16 +48,16 @@
     homeManagerNixos =
       {
         # self',
-        # lib,
-        # config,
+        lib,
+        config,
         # host,
         # user,
         ...
       }:
-      # let
-      #   cfg = config.programs.spotifast;
-      #   json = pkgs.formats.json { };
-      # in
+      let
+        cfg = config.programs.spotifast;
+        # json = pkgs.formats.json { };
+      in
       {
         programs.spotifast = {
           enable = true;
@@ -146,9 +146,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/spotify" = "spotifast.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
 
         # security.nix-secrets.secrets = {

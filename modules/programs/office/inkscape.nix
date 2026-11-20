@@ -12,23 +12,22 @@
     homeManager =
       {
         pkgs,
+        lib,
         ...
       }:
+      let
+        package = pkgs.inkscape.override {
+          inkscapeExtensions = [
+            pkgs.inkscape-extensions.textext
+            pkgs.inkscape-extensions.silhouette
+          ];
+        };
+      in
       {
-        home.packages = [
-          (pkgs.inkscape.override {
-            inkscapeExtensions = [
-              pkgs.inkscape-extensions.textext
-              pkgs.inkscape-extensions.silhouette
-            ];
-          })
-        ];
+        home.packages = package |> lib.singleton;
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "image/svg+xml" = "org.inkscape.Inkscape.desktop";
-            "image/svg+xml-compressed" = "org.inkscape.Inkscape.desktop";
-          };
+          defaultApplicationPackages = package |> lib.singleton;
         };
       };
   };

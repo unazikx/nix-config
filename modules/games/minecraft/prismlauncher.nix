@@ -35,6 +35,9 @@
         user,
         ...
       }:
+      let
+        cfg = config.programs.prismlauncher;
+      in
       {
         programs.prismlauncher = {
           enable = true;
@@ -112,11 +115,7 @@
         };
 
         xdg.mimeApps = {
-          defaultApplications = {
-            "application/x-modrinth-modpack+zip" = "org.prismlauncher.PrismLauncher.desktop";
-            "x-scheme-handler/curseforge" = "org.prismlauncher.PrismLauncher.desktop";
-            "x-scheme-handler/prismlauncher" = "org.prismlauncher.PrismLauncher.desktop";
-          };
+          defaultApplicationPackages = cfg.package |> lib.singleton;
         };
       };
 

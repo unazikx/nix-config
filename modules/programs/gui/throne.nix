@@ -22,13 +22,16 @@
 
     homeManager =
       {
+        lib,
+        osConfig,
         ...
       }:
+      let
+        osCfg = osConfig.programs.throne;
+      in
       {
         xdg.mimeApps = {
-          defaultApplications = {
-            "x-scheme-handler/throne" = "throne-url-handler.desktop";
-          };
+          defaultApplicationPackages = osCfg.package |> lib.singleton;
         };
       };
   };
