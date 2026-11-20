@@ -73,6 +73,10 @@
 
         xdg.mimeApps = {
           defaultApplicationPackages = cfg.package |> lib.singleton;
+
+          defaultApplications = {
+            "text/*" = "Helix.desktop";
+          };
         };
 
         stylix.targets = {
