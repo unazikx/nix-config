@@ -31,7 +31,7 @@
             pkgs.writeShellScriptBin "xdg-open" ''
               exec handlr open "$@"
             ''
-            |> pkgs.hiPrio
+            |> lib.hiPrio
           )
         ];
 
