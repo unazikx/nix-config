@@ -33,14 +33,14 @@
             userName = "xfalwa@gmail.com";
 
             flavor = "gmail.com";
-            passwordCommand = "cat ${config.security.nix-secrets.secrets."accounts-email-personal".path}";
+            passwordCommand = "cat ${config.security.nix-secrets.secrets."email-personal-password".path}";
 
             signature = {
               showSignature = "append";
 
               text = ''
                 Warm regards,
-                ${config.me.fullname}
+                ${_self.realName} / ${_self.address}
               '';
             };
 
@@ -140,13 +140,6 @@
 
               boxes = [ "INBOX" ];
 
-              extraConfig = {
-                new.ignore = [
-                  "[Gmail]/Spam"
-                  "[Gmail]/Trash"
-                ];
-              };
-
               onNotify = "${lib.getExe mbsync.package} 'Personal:%s'";
               onNotifyPost = "${lib.getExe notmuch.package} new";
             };
@@ -200,12 +193,11 @@
 
         services.mbsync = {
           enable = true;
-
           postExec = "${lib.getExe notmuch.package} new";
         };
 
         security.nix-secrets.secrets = {
-          "accounts-email-personal" = { };
+          "email-personal-password" = { };
         };
       };
   };

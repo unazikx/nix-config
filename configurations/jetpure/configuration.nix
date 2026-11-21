@@ -105,6 +105,7 @@
       zen.programs.gui.throne
       zen.programs.gui.vesktop
       zen.programs.office.artcraft
+      zen.programs.office.calendar
       zen.programs.office.blender
       zen.programs.office.email
       zen.programs.office.zathura
