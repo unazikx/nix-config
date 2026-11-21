@@ -1,22 +1,22 @@
 {
   "nodes": {
-    "artcraft-nix": {
+    "artcraft-flake": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1794519742,
-        "narHash": "sha256-YI41WSTM0UHbY1HqvUO2ZQ0hmwJn/XsibH4ZkBCsiW0=",
-        "owner": "Devitek",
-        "repo": "artcraft-nixos",
-        "rev": "7d7369245e30f5f0b997609773e0e4e7e4710b17",
+        "lastModified": 1795155219,
+        "narHash": "sha256-/3Q4y3ieh6a7SZzHB7KWx4FWRt2P4kTR9OAEtPMSTLc=",
+        "owner": "hy4ri",
+        "repo": "artcraft-flake",
+        "rev": "fb6a120230fcf5183643618bd8aafc45c17213fd",
         "type": "github"
       },
       "original": {
-        "owner": "Devitek",
-        "repo": "artcraft-nixos",
+        "owner": "hy4ri",
+        "repo": "artcraft-flake",
         "type": "github"
       }
     },
@@ -1073,7 +1073,7 @@
     },
     "root": {
       "inputs": {
-        "artcraft-nix": "artcraft-nix",
+        "artcraft-flake": "artcraft-flake",
         "betterfox": "betterfox",
         "den": "den",
         "devshells": "devshells",

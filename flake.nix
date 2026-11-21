@@ -1,9 +1,9 @@
 {
   inputs = {
-    artcraft-nix = {
+    artcraft-flake = {
       type = "github";
-      owner = "Devitek";
-      repo = "artcraft-nixos";
+      owner = "hy4ri";
+      repo = "artcraft-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

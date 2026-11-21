@@ -5,10 +5,10 @@
 {
   flake-file.inputs = {
     # keep-sorted start block=yes newline_separated=yes
-    artcraft-nix = {
+    artcraft-flake = {
       type = "github";
-      owner = "Devitek";
-      repo = "artcraft-nixos";
+      owner = "hy4ri";
+      repo = "artcraft-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # keep-sorted end
@@ -29,21 +29,21 @@
         artcraft-programs =
           {
             # Adobe Suite
-            "Photoshop" = inputs'.artcraft-nix.packages.photocraft;
-            "Lightroom" = inputs'.artcraft-nix.packages.lightcraft;
-            "AfterEffects" = inputs'.artcraft-nix.packages.effectcraft;
-            "PremierePro" = inputs'.artcraft-nix.packages.filmcraft;
-            "Illustrator" = inputs'.artcraft-nix.packages.vectorcraft;
+            "Photoshop" = inputs'.artcraft-flake.packages.photocraft;
+            "Lightroom" = inputs'.artcraft-flake.packages.lightcraft;
+            "AfterEffects" = inputs'.artcraft-flake.packages.effectcraft;
+            "PremierePro" = inputs'.artcraft-flake.packages.filmcraft;
+            "Illustrator" = inputs'.artcraft-flake.packages.vectorcraft;
 
             # Microsoft Office
-            "Word" = inputs'.artcraft-nix.packages.wordcraft;
-            "PowerPoint" = inputs'.artcraft-nix.packages.deckcraft;
-            "Excel" = inputs'.artcraft-nix.packages.gridcraft;
-            "PDF" = inputs'.artcraft-nix.packages.pdfcraft;
+            "Word" = inputs'.artcraft-flake.packages.wordcraft;
+            "PowerPoint" = inputs'.artcraft-flake.packages.deckcraft;
+            "Excel" = inputs'.artcraft-flake.packages.gridcraft;
+            "PDF" = inputs'.artcraft-flake.packages.pdfcraft;
 
             # other
-            "CAD" = inputs'.artcraft-nix.packages.cadcraft;
-            "Audacity" = inputs'.artcraft-nix.packages.soundcraft;
+            # "CAD" = inputs'.artcraft-flake.packages.cadcraft;
+            "Audacity" = inputs'.artcraft-flake.packages.soundcraft;
           }
           |> lib.attrValues;
       in
