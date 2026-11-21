@@ -41,7 +41,7 @@
                         coverCorners = "soft";
                         coverHover = "glow";
                         coverLabel = "none";
-                        coverStores = false;
+                        coverStores = true;
                         coverStoresAll = true;
                         coverStoresHideGrouped = false;
                         customPalette = {

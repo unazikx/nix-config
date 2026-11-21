@@ -2,6 +2,9 @@
   appimageTools,
   fetchurl,
   lib,
+
+  withGOG ? true,
+  withEGS ? true,
 }:
 
 appimageTools.wrapAppImage (_final: {
@@ -20,17 +23,21 @@ appimageTools.wrapAppImage (_final: {
     };
   };
 
-  extraPkgs = _pkgs: [
-    _pkgs.pcsclite
-    _pkgs.hidapi
-    _pkgs.udev
-    _pkgs.alsa-lib
-    _pkgs.libxkbcommon
-    _pkgs.wayland
-    _pkgs.vulkan-loader
-    _pkgs.libx11
-    _pkgs.libxcb
-  ];
+  extraPkgs =
+    _pkgs:
+    [
+      _pkgs.pcsclite
+      _pkgs.hidapi
+      _pkgs.udev
+      _pkgs.alsa-lib
+      _pkgs.libxkbcommon
+      _pkgs.wayland
+      _pkgs.vulkan-loader
+      _pkgs.libx11
+      _pkgs.libxcb
+    ]
+    ++ (lib.optional withEGS _pkgs.legendary-gl)
+    ++ (lib.optional withGOG _pkgs.gogdl);
 
   extraInstallCommands =
     # bash

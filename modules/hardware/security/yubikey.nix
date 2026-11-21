@@ -92,29 +92,28 @@
     provides.jetpure = {
       nixos =
         {
-          config,
           ...
         }:
         {
-          security.pam = {
-            u2f = {
-              enable = true;
+          # security.pam = {
+          #   u2f = {
+          #     enable = true;
 
-              settings = {
-                authfile = config.security.nix-secrets.secrets."password-authfile".path;
-                control = "required";
-                cue = true;
-              };
-            };
+          #     settings = {
+          #       authfile = config.security.nix-secrets.secrets."password-authfile".path;
+          #       control = "required";
+          #       cue = true;
+          #     };
+          #   };
 
-            services = {
-              login.u2fAuth = true;
-            };
-          };
+          #   services = {
+          #     login.u2fAuth = true;
+          #   };
+          # };
 
-          security.nix-secrets.secrets = {
-            "password-authfile" = { };
-          };
+          # security.nix-secrets.secrets = {
+          #   "password-authfile" = { };
+          # };
         };
     };
   };
