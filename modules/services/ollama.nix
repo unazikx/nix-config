@@ -19,7 +19,19 @@
             enable = true;
             package = pkgs.ollama-rocm;
 
-            loadModels = [ ];
+            loadModels = [
+              "deepseek-ocr:latest"
+              "mimo-v2.6:latest"
+            ];
+          };
+
+          ollaya = {
+            enable = true;
+            package = pkgs.ollama-rocm;
+
+            loadModels = [
+              "winnow:e4b"
+            ];
           };
 
           nextjs-ollama-llm-ui.enable = true;
