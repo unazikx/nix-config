@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -43,6 +44,8 @@
           ];
 
           kernelParams = [
+            "video=HDMI-A-1:1920x1080MR@78"
+
             "acpi.sleep_state=3"
             "amdgpu.runpm=0"
             "mem_sleep_default=deep"
@@ -50,6 +53,22 @@
             "acpi.ec_no_wakeup=1"
             "acpi_enforce_resources=lax"
           ];
+        };
+      };
+
+    homeManagerNixos =
+      {
+        ...
+      }:
+      let
+        metaUmbriel = zen.programs.desktop.umbriel.meta;
+      in
+      {
+        programs.umbriel.settings.output = {
+          "ViewSonic Corporation VX2270 SERIES TFA140226113" = {
+            mode = "1920x1080@77.950";
+            workspaces = metaUmbriel.workspaceCount;
+          };
         };
       };
   };

@@ -27,6 +27,7 @@
       # keep-sorted start block=yes
       zen.games.xbox.driver
       zen.hardware.boot.systemd-boot
+      zen.hardware.brightness
       zen.hardware.compression.zram
       zen.hardware.cpu-gpu
       zen.hardware.mounting

@@ -9,6 +9,7 @@
       {
         lib,
         config,
+        osConfig,
         user,
         ...
       }:
@@ -142,6 +143,18 @@
             (lib.mkIf (user.hasAspect zen.games.heronite) (
               {
                 "Mod+Shift+Tab" = "heronite --quick-launch";
+              }
+              |> lib.concatMapAttrs (
+                key: command: {
+                  "${key}" = norepeat "spawn ${command}";
+                }
+              )
+            ))
+
+            (lib.mkIf osConfig.hardware.i2c.enable (
+              {
+                "Mod+Prior" = "ddcutil setvcp 10 + 10";
+                "Mod+Next" = "ddcutil setvcp 10 - 10";
               }
               |> lib.concatMapAttrs (
                 key: command: {
