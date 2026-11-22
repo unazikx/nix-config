@@ -101,18 +101,17 @@
         };
 
         security.nix-secrets.secrets = {
-          "services-qbittorrent-password" = { };
-          "services-qbittorrent-username" = { };
-        };
+          "services-qbittorrent-username" = {
+            generator = "random-word";
+            owner = cfg.user;
+            # reloadUnits = [ "qbittorrent.service" ];
+          };
 
-        security.nix-secrets.secrets."services-qbittorrent-username" = {
-          owner = cfg.user;
-          # reloadUnits = [ "qbittorrent.service" ];
-        };
-
-        security.nix-secrets.secrets."services-qbittorrent-password" = {
-          owner = cfg.user;
-          # reloadUnits = [ "qbittorrent.service" ];
+          "services-qbittorrent-password" = {
+            generator = "qbittorrent-password";
+            owner = cfg.user;
+            # reloadUnits = [ "qbittorrent.service" ];
+          };
         };
       };
   };

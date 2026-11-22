@@ -34,23 +34,14 @@
           port = 8113;
 
           extraArgs = [
-            "--auth"
-            "none"
             "--qburl"
             "http://${qbCfg.serverConfig.Preferences.WebUI.Address}:${toString qbCfg.webuiPort}"
-            "--qbuser"
-            "$PASSWORD"
-            "--qbpass"
-            "$USERNAME"
           ];
         };
 
         systemd.services.flood = {
-          # INFO:
-          # PASSWORD=...
-          # USERNAME=...
           serviceConfig = {
-            EnvironmentFile = config.security.nix-secrets.secrets."services-qbittorrent-flood".path;
+            EnvironmentFile = config.security.nix-secrets.templates."services-qbittorrent-flood".path;
             User = qbCfg.user;
             Group = qbCfg.group;
           };
@@ -70,8 +61,14 @@
               '';
             });
 
-        security.nix-secrets.secrets = {
+        security.nix-secrets.templates = {
           "services-qbittorrent-flood" = {
+            content =
+              # env
+              ''
+                FLOOD_OPTION_QBUSER="${config.security.nix-secrets.secrets."services-qbittorrent-username"}"
+                FLOOD_OPTION_QBPASS="${config.security.nix-secrets.secrets."services-qbittorrent-password"}"
+              '';
 
             # waiting for security.nix-secrets
             #

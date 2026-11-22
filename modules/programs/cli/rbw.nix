@@ -48,7 +48,7 @@
         };
 
         security.nix-secrets.templates = {
-          "rbw-config" = {
+          "programs-rbw-config" = {
             path = "${config.xdg.configHome}/rbw/config.json";
             content = lib.toJSON {
               email = config.security.nix-secrets.secrets."programs-rbw-email";

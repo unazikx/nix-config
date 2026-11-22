@@ -126,7 +126,7 @@
 
             # why not environmentFiles
             environmentFile = [
-              config.security.nix-secrets.templates."winapps-env".path
+              config.security.nix-secrets.templates."programs-winapps-env".path
             ];
           };
 
@@ -137,29 +137,29 @@
         };
 
         security.nix-secrets.secrets = {
-          "windows-username" = { };
-          "windows-password" = { };
+          "programs-windows-username" = { };
+          "programs-windows-password" = { };
         };
 
         security.nix-secrets.templates = {
-          "winapps-env" = {
+          "programs-winapps-env" = {
             path = "${config.xdg.configHome}/winapps/winapps.env";
             content =
               # env
               ''
-                USERNAME=${config.security.nix-secrets.secrets."windows-username"}
-                PASSWORD=${config.security.nix-secrets.secrets."windows-password"}
+                USERNAME=${config.security.nix-secrets.secrets."programs-windows-username"}
+                PASSWORD=${config.security.nix-secrets.secrets."programs-windows-password"}
               '';
           };
 
-          "winapps-conf" = {
+          "programs-winapps-conf" = {
             path = "${config.xdg.configHome}/winapps/winapps.conf";
             content =
               # https://github.com/winapps-org/winapps/discussions/972#discussioncomment-18421216
               # conf
               ''
-                RDP_USER="${config.security.nix-secrets.secrets."windows-username"}"
-                RDP_PASS="${config.security.nix-secrets.secrets."windows-password"}"
+                RDP_USER="${config.security.nix-secrets.secrets."programs-windows-username"}"
+                RDP_PASS="${config.security.nix-secrets.secrets."programs-windows-password"}"
                 WAFLAVOR="manual"
                 VM_NAME="RDPWindows"
                 REMOVABLE_MEDIA="/run/media"

@@ -42,9 +42,7 @@
 
         security.nix-secrets.secrets = {
           "services-telegramws" = {
-            generator.openssl = {
-              numbers = 16;
-            };
+            generator = "openssl";
           };
         };
       };

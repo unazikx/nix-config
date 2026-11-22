@@ -56,7 +56,7 @@
             inherit settings;
 
             extraOptions = ''
-              !include ${config.security.nix-secrets.templates."nix-access-tokens".path}
+              !include ${config.security.nix-secrets.templates."programs-nix-config".path}
             '';
           };
 
@@ -77,7 +77,7 @@
           };
 
           security.nix-secrets.templates = {
-            "nix-access-tokens" = {
+            "programs-nix-config" = {
               content = ''
                 access-tokens = github.com=${config.security.nix-secrets.secrets."programs-github"}
               '';

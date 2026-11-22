@@ -24,6 +24,7 @@
     nixos =
       {
         self,
+        self',
         inputs,
         pkgs,
         lib,
@@ -53,19 +54,59 @@
           recipientAliases = secretsMeta.defaultKeys;
           defaultRecipients = lib.attrNames config.security.nix-secrets.recipientAliases;
 
-          generators = {
-            hashed-password =
-              { }:
-              pkgs.writeShellScript "password-generator" ''
-                ${lib.getExe pkgs.mkpasswd} -m yescrypt
-              '';
+          generators =
+            let
+              script = code: pkgs.writeShellScript "generator" code;
+            in
+            {
+              random-word =
+                {
+                  quanity ? 1,
+                }:
+                script
+                  # bash
+                  ''
+                    ${lib.getExe pkgs.xkcdpass} -n ${toString quanity}
+                  '';
 
-            openssl =
-              { numbers }:
-              pkgs.writeShellScript "password-generator" ''
-                ${lib.getExe pkgs.openssl} rand -hex ${toString numbers}
-              '';
-          };
+              random-pseudoword =
+                {
+                  length ? 8,
+                  quanity ? 1,
+                }:
+                script
+                  # bash
+                  ''
+                    ${lib.getExe pkgs.pwgen} -A0 ${toString length} ${toString quanity}
+                  '';
+
+              hashed-password =
+                { }:
+                script
+                  # bash
+                  ''
+                    ${lib.getExe pkgs.mkpasswd} -m yescrypt
+                  '';
+
+              openssl =
+                {
+                  length ? 16,
+                }:
+                script
+                  # bash
+                  ''
+                    ${lib.getExe pkgs.openssl} rand -hex ${toString length}
+                  '';
+
+              qbittorrent-password =
+                { }:
+                script
+                  # bash
+                  ''
+                    printf "Input: " > /dev/tty; read -r input < /dev/tty
+                    exec ${lib.getExe self'.packages.qbittorrent-pbkdf2} "$input"
+                  '';
+            };
         };
       };
 

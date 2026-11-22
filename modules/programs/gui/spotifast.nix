@@ -154,7 +154,7 @@
         # };
 
         # security.nix-secrets.templates = {
-        #   "spotifast-config" = {
+        #   "programs-spotifast-config" = {
         #     path = "${config.xdg.configHome}/spotifast/settings.json";
         #     content = lib.readFile (json.generate "spotifast-config.json" cfg.settings);
         #   };

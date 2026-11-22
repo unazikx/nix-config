@@ -63,7 +63,7 @@
           };
 
           includes = [
-            { path = config.security.nix-secrets.templates."git-user".path; }
+            { path = config.security.nix-secrets.templates."programs-git-credentials".path; }
           ];
         };
 
@@ -73,11 +73,11 @@
         };
 
         security.nix-secrets.templates = {
-          "git-user" = {
+          "programs-git-credentials" = {
             content = ''
               [user]
-                name = ${config.security.nix-secrets.secrets."programs-git-user"}
-                email = ${config.security.nix-secrets.secrets."programs-git-mail"}
+              name = ${config.security.nix-secrets.secrets."programs-git-user"}
+              email = ${config.security.nix-secrets.secrets."programs-git-mail"}
             '';
           };
         };
