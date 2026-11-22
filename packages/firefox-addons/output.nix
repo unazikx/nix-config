@@ -3,10 +3,10 @@ buildFirefoxXpiAddon:
 {
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "2026.10.2";
+    version = "2026.11.0";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5198653/bitwarden_password_manager-2026.10.2.xpi";
-    sha256 = "abf9d7273dd55ac0583ecc6997f7f7ae3d29de11e2ad0a4838b80e2b941daa73";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5278513/bitwarden_password_manager-2026.11.0.xpi";
+    sha256 = "607d6433d9de151a4c51135ad9e70882460d0e0493a9b585f15a9848d5f10b97";
     meta = { };
   };
 
@@ -93,19 +93,19 @@ buildFirefoxXpiAddon:
 
   "styl-us" = buildFirefoxXpiAddon {
     pname = "styl-us";
-    version = "2.4.17";
+    version = "2.4.18";
     addonId = "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5142667/styl_us-2.4.17.xpi";
-    sha256 = "6ea20f86a2015e3e7a639e2dbb13bc0d63461fdfdb80d7138c3f8e8924e4fb1c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5257053/styl_us-2.4.18.xpi";
+    sha256 = "4c8e1b0f63457dd9092e6148631fbaddb71edc24d3acfc39b53ea8f78f0d2254";
     meta = { };
   };
 
   "torrserver-adder" = buildFirefoxXpiAddon {
     pname = "torrserver-adder";
-    version = "2.0.7";
+    version = "2.0.8";
     addonId = "84z74tXJKt8OUrTD@TSA";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5219824/torrserver_adder-2.0.7.xpi";
-    sha256 = "47f77032f5a0699f5c18c5290588be1551ea4299c757da72936df8a1e121ffb6";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5285368/torrserver_adder-2.0.8.xpi";
+    sha256 = "00696eec6cef7f48f121b78dd76560e2182d6bf834c05b2c039c0bd3287a509d";
     meta = { };
   };
 
@@ -120,10 +120,10 @@ buildFirefoxXpiAddon:
 
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.76.2";
+    version = "1.76.6";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/5250345/ublock_origin-1.76.2.xpi";
-    sha256 = "36320e4735818f4f9b5ac1506610590233f4b201ca50196c2834e30f3e808a1e";
+    url = "https://addons.mozilla.org/firefox/downloads/file/5282683/ublock_origin-1.76.6.xpi";
+    sha256 = "debffadf7d5117bd2d4e9218e27bfdf3112544fd2e87f14882d274a11dc95375";
     meta = { };
   };
 
