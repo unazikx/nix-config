@@ -32,10 +32,10 @@
       zen.hardware.cpu-gpu
       zen.hardware.mounting
       zen.hardware.networking.dns-malw-link
+      zen.hardware.printing
       zen.hardware.security.yubikey
       zen.miscellaneous.disko
       zen.miscellaneous.home-manager
-      zen.miscellaneous.lon
       zen.miscellaneous.minimal
       zen.miscellaneous.nix
       zen.miscellaneous.nix.substituters
