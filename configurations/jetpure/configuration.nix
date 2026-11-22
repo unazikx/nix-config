@@ -76,7 +76,6 @@
       zen.games.supertuxkart
       zen.miscellaneous.bookmarks
       zen.miscellaneous.canvas-commons
-      zen.miscellaneous.cleaner
       zen.miscellaneous.nix
       zen.miscellaneous.users
       zen.miscellaneous.users.accounts
