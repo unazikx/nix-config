@@ -172,7 +172,7 @@
             width = 900;
 
             calendar = {
-              show_events_card = false;
+              show_events_card = true;
             };
           };
 
@@ -282,15 +282,9 @@
             enabled = false;
           };
 
-          plugins = {
-            auto_update = "all";
-            enabled = [
-              "cleboost/anilist"
-              "aabidk20/yt-music"
-            ];
-          };
-
           shell = {
+            show_close_buttons = false;
+
             font_family = lib.mkForce fonts.monospace.name;
             panel_anchor_bar = meta.bar;
 
@@ -309,6 +303,7 @@
             };
 
             launcher = {
+              layout = "simple";
               categories = false;
               compact = false;
               show_app_actions = true;

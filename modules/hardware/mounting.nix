@@ -24,5 +24,23 @@
           };
         };
       };
+
+    homeManager =
+      {
+        ...
+      }:
+      {
+        services.udiskie = {
+          enable = true;
+
+          settings = {
+            program_options = {
+              tray = true;
+              menu = "flat";
+              notify = true;
+            };
+          };
+        };
+      };
   };
 }
