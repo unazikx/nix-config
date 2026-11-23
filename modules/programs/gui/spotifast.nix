@@ -29,19 +29,19 @@
           # https://github.com/Flowseal/zapret-discord-youtube/issues/1136
           # hosts
           ''
-            45.13.237.213 gew1-spclient.spotify.com
-            45.13.237.213 login5.spotify.com
-            45.13.237.213 api.spotify.com
-            45.13.237.213 accounts.spotify.com
-            45.13.237.213 aet.spotify.com
-            45.13.237.213 open.spotify.com
-            45.13.237.213 spotifycdn.com
-            45.13.237.213 www.spotify.com
-            45.13.237.213 spclient.wg.spotify.com
-            45.13.237.213 api-partner.spotify.com
-            45.13.237.213 encore.scdn.co
-            45.13.237.213 i.scdn.co
-            45.13.237.213 image-cdn-ak.spotifycdn.com
+            31.58.216.201 api.spotify.com
+            31.58.216.201 login5.spotify.com
+            31.58.216.201 encore.scdn.co
+            31.58.216.201 gew1-spclient.spotify.com
+            31.58.216.201 spclient.wg.spotify.com
+            31.58.216.201 api-partner.spotify.com
+            31.58.216.201 aet.spotify.com
+            31.58.216.201 www.spotify.com
+            31.58.216.201 accounts.spotify.com
+            31.58.216.201 open.spotify.com
+            31.58.216.201 accounts.scdn.co
+            31.58.216.201 gew1-dealer.spotify.com
+            31.58.216.201 www-growth.scdn.co
           '';
       };
 
