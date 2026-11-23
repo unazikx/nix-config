@@ -58,12 +58,19 @@
       }:
       {
         imports = [ inputs.stylix.nixosModules.stylix ];
+
+        fonts = {
+          enableDefaultPackages = true;
+          fontDir.enable = true;
+        };
       };
 
     homeManager =
       {
         self',
+        pkgs,
         config,
+        osConfig,
         ...
       }:
       let
@@ -77,6 +84,11 @@
           images = self'.legacyPackages.images.override {
             colors = colors.toList;
           };
+        };
+
+        xdg.dataFile."fonts/nixos-system".source = pkgs.symlinkJoin {
+          name = "all-nixos-fonts";
+          paths = osConfig.fonts.packages;
         };
       };
 

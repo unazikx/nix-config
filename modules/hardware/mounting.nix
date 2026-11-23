@@ -1,4 +1,5 @@
 {
+  zen,
   ...
 }:
 
@@ -11,6 +12,7 @@
 
     nixos =
       {
+        pkgs,
         ...
       }:
       {
@@ -23,10 +25,16 @@
             mountOnMedia = true;
           };
         };
+
+        systemd.user.services = {
+          gvfs-daemon.path = [ pkgs.wsdd ];
+        };
       };
 
     homeManager =
       {
+        lib,
+        user,
         ...
       }:
       {
@@ -38,6 +46,7 @@
               tray = true;
               menu = "flat";
               notify = true;
+              file_manager = lib.mkIf (user.hasAspect zen.programs.gui.nemo) "nemo";
             };
           };
         };

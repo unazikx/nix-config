@@ -140,6 +140,8 @@
                 "XF86AudioLowerVolume" = "volume-down 10";
                 "Shift+XF86AudioRaiseVolume" = "mic-volume-up 10";
                 "Shift+XF86AudioLowerVolume" = "mic-volume-down 10";
+                "Alt+XF86AudioRaiseVolume" = "media volume-up 10";
+                "Alt+XF86AudioLowerVolume" = "media volume-down 10";
 
                 "XF86AudioPlay" = "media toggle";
                 "XF86AudioPrev" = "media previous";
