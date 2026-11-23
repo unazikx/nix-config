@@ -33,7 +33,7 @@
         ...
       }:
       {
-        hashedPasswordFile = config.sops.secrets."password-${user.userName}".path;
+        hashedPasswordFile = config.security.nix-secrets.secrets."password-${user.userName}".path;
       };
   };
 
@@ -45,7 +45,7 @@
         ...
       }:
       {
-        hashedPasswordFile = config.sops.secrets."password-${user.userName}".path;
+        hashedPasswordFile = config.security.nix-secrets.secrets."password-${user.userName}".path;
 
         extraGroups = [
           # keep-sorted start

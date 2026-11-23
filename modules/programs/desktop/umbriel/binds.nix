@@ -7,6 +7,7 @@
   zen.programs.desktop.umbriel.binds = {
     homeManager =
       {
+        pkgs,
         lib,
         config,
         osConfig,
@@ -132,10 +133,39 @@
 
                 "Mod+Backspace" = "session lock";
                 "Mod+Escape" = "panel-toggle session";
+
+                "XF86AudioMute" = "volume-mute";
+                # below
+                "XF86AudioRaiseVolume" = "volume-up 10";
+                "XF86AudioLowerVolume" = "volume-down 10";
+                "Shift+XF86AudioRaiseVolume" = "mic-volume-up 10";
+                "Shift+XF86AudioLowerVolume" = "mic-volume-down 10";
+
+                "XF86AudioPlay" = "media toggle";
+                "XF86AudioPrev" = "media previous";
+                "XF86AudioNext" = "media next";
+                "Shift+XF86AudioPrev" = "media volume-down 10";
+                "Shift+XF86AudioNext" = "media volume-up 10";
+
+                "XF86MonBrightnessUp" = "brightness-up 10";
+                "XF86MonBrightnessDown" = "brightness-down 10";
+                "Shift+XF86MonBrightnessUp" = "keyboard-backlight-up";
+                "Shift+XF86MonBrightnessDown" = "keyboard-backlight-down";
+
+                "XF86Display" = "dpms-off";
+                "Shift+XF86Display" = "annotate";
+
+                "XF86NotificationCenter" = "notification-invoke-latest";
+                "Shift+XF86NotificationCenter" = "notification-dnd-toggle";
               }
               |> lib.concatMapAttrs (
                 key: command: {
                   "${key}" = norepeat "spawn noctalia msg ${command}";
+                  "XF86AudioMicMute" = norepeat "spawn ${pkgs.writeShellScript "mic-mute-led" ''
+                    noctalia msg mic-mute
+                    IS_MUTED=$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q '\[MUTED\]' && echo "1" || echo "0")
+                    ${lib.getExe pkgs.brightnessctl} -d platform::micmute set "$IS_MUTED"
+                  ''}";
                 }
               )
             ))

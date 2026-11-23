@@ -26,6 +26,7 @@
     includes = [
       # keep-sorted start block=yes
       zen.hardware.boot.systemd-boot
+      zen.services.keyd
       zen.hardware.compression.zswap
       zen.hardware.cpu-gpu
       zen.hardware.mounting
