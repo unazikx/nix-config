@@ -29,8 +29,12 @@
           "$NOTMUCH" new > /dev/null
 
           "$NOTMUCH" search --format=json tag:new | "$JQ" -c '.[]' | while IFS= read -r item; do
-            SENDER=$(printf '%s' "$item" | "$JQ" -r '.authors // "Unknown"')
+            THREAD=$(printf '%s' "$item" | "$JQ" -r '.thread')
+            AUTHORS=$(printf '%s' "$item" | "$JQ" -r '.authors // "Unknown"')
             SUBJECT=$(printf '%s' "$item" | "$JQ" -r '.subject // "(No subject)"')
+
+            SENDER=$("$NOTMUCH" show --format=json "thread:$THREAD and tag:new" \
+              | "$JQ" -r --arg fallback "$AUTHORS" 'first(.. | objects | .headers?.From? // empty) // $fallback')
 
             "$NOTIFY" \
               --icon gmail \
