@@ -33,7 +33,7 @@
 
     homeManagerNixos =
       {
-        inputs',
+        self',
         pkgs,
         ...
       }:
@@ -42,13 +42,65 @@
       in
       {
         home.packages = [
-          inputs'.hytale-nix.packages.hytale-launcher
+          self'.packages.hytale-launcher
         ];
 
         xdg.dataFile = {
           "Hytale/settings.json".source = json.generate "hytale-settings.json" {
             disable_window_controls = true;
             language = "ru";
+          };
+        };
+      };
+
+    packages =
+      {
+        inputs',
+        pkgs,
+        lib,
+        ...
+      }:
+      {
+        hytale-launcher = pkgs.symlinkJoin {
+          name = "hytale-launcher";
+
+          paths = [
+            inputs'.hytale-nix.packages.hytale-launcher
+            (pkgs.makeDesktopItem {
+              name = "hytale";
+              desktopName = "Hytale Launcher";
+
+              comment = "Official launcher for Hytale";
+
+              exec = "hytale-launcher %U";
+              icon = "hytale-launcher";
+
+              keywords = [
+                "hytale"
+                "game"
+                "launcher"
+                "hypixel"
+              ];
+
+              categories = [ "Game" ];
+            })
+          ];
+
+          postBuild = ''
+            mkdir -p $out/share/icons/hicolor/256x256/apps
+            cp ${
+              pkgs.fetchurl {
+                url = "https://hytale.com/_astro/logo-h.DGX5BvcL.webp";
+                sha256 = "sha256-9z9ouxEgijhGxtQEJDYdv+yEzQ6CqoZG6LJzCC6/8u0=";
+              }
+            } $out/share/icons/hicolor/256x256/apps/hytale-launcher.png
+          '';
+
+          meta = {
+            description = "Official launcher for Hytale game";
+            homepage = "https://hytale.com";
+            license = lib.licenses.unfree;
+            mainProgram = "hytale-launcher";
           };
         };
       };
