@@ -20,6 +20,27 @@
       let
         mbsync = config.programs.mbsync;
         notmuch = config.programs.notmuch;
+
+        notifyScript = pkgs.writeShellScript "mail-notify" ''
+          NOTMUCH="${lib.getExe notmuch.package}"
+          JQ="${lib.getExe pkgs.jq}"
+          NOTIFY="${lib.getExe pkgs.libnotify}"
+
+          "$NOTMUCH" new > /dev/null
+
+          "$NOTMUCH" search --format=json tag:new | "$JQ" -c '.[]' | while IFS= read -r item; do
+            SENDER=$(printf '%s' "$item" | "$JQ" -r '.authors // "Unknown"')
+            SUBJECT=$(printf '%s' "$item" | "$JQ" -r '.subject // "(No subject)"')
+
+            "$NOTIFY" \
+              --icon gmail \
+              --app-name Imapnotify \
+              "$SENDER" \
+              "$SUBJECT"
+          done
+
+          "$NOTMUCH" tag -new -- tag:new
+        '';
       in
       {
         accounts.email.maildirBasePath = ".maildir";
@@ -33,14 +54,16 @@
             userName = "xfalwa@gmail.com";
 
             flavor = "gmail.com";
-            passwordCommand = "cat ${config.security.nix-secrets.secrets."email-personal-password".path}";
+            passwordCommand = "${lib.getExe' pkgs.coreutils "cat"} ${
+              config.security.nix-secrets.secrets."email-personal-password".path
+            }";
 
             signature = {
               showSignature = "append";
 
               text = ''
                 Warm regards,
-                ${_self.realName} / ${_self.address}
+                ${_self.realName} / ${_self.userName}
               '';
             };
 
@@ -141,7 +164,11 @@
               boxes = [ "INBOX" ];
 
               onNotify = "${lib.getExe mbsync.package} 'Personal:%s'";
-              onNotifyPost = "${lib.getExe notmuch.package} new";
+              onNotifyPost = toString notifyScript;
+
+              extraArgs = [
+                "-wait 5"
+              ];
             };
 
             mbsync = {
@@ -180,10 +207,18 @@
           enable = true;
 
           settings = {
-            new.ignore = [
-              "[Gmail]/Spam"
-              "[Gmail]/Trash"
-            ];
+            new = {
+              tags = [
+                "unread"
+                "inbox"
+                "new"
+              ];
+
+              ignore = [
+                "[Gmail]/Spam"
+                "[Gmail]/Trash"
+              ];
+            };
           };
         };
 
@@ -193,7 +228,7 @@
 
         services.mbsync = {
           enable = true;
-          postExec = "${lib.getExe notmuch.package} new";
+          postExec = toString notifyScript;
         };
 
         security.nix-secrets.secrets = {
