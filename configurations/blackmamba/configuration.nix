@@ -97,6 +97,7 @@
       zen.programs.gui.throne
       zen.programs.office.artcraft
       zen.programs.office.zathura
+      zen.programs.office.email
       zen.programs.terminal.fish
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash
