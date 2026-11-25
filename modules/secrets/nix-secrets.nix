@@ -115,11 +115,15 @@
         self,
         inputs,
         pkgs,
+        lib,
         osConfig,
         host,
         user,
         ...
       }:
+      let
+        osCfg = osConfig.security.nix-secrets;
+      in
       {
         imports = [
           inputs.nix-secrets.homeManagerModules.nix-secrets
@@ -128,13 +132,14 @@
         security.nix-secrets = {
           enable = true;
 
-          inherit (osConfig.security.nix-secrets)
+          inherit (osCfg)
             extraPackages
-            generators
             identityPaths
             recipientAliases
             defaultRecipients
             ;
+
+          generators = lib.mkForce osCfg.generators;
 
           storage = "${self}/secrets/${user.userName}";
           storagePath = "${host.flakeDir}/secrets/${user.userName}";

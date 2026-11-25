@@ -32,6 +32,8 @@
 
   zen.hardware.virtualization.winapps = {
     description = ''
+      http://127.0.0.1:8006
+
       windows11 in qemu that in podman
       idk will it works or not
 
@@ -43,7 +45,6 @@
 
     includes = [
       zen.hardware.virtualization.podman
-      zen.miscellaneous.npins
     ];
 
     homeManagerNixos =
@@ -57,7 +58,6 @@
       {
         home.packages = [
           inputs'.winapps.packages.winapps
-          inputs'.winapps.packages.winapps-launcher
           pkgs.freerdp
         ];
 
@@ -137,8 +137,16 @@
         };
 
         security.nix-secrets.secrets = {
-          "programs-windows-username" = { };
-          "programs-windows-password" = { };
+          "programs-windows-username" = {
+            generator = "random-word";
+          };
+
+          "programs-windows-password" = {
+            generator.password = {
+              length = 16;
+              numbers = false;
+            };
+          };
         };
 
         security.nix-secrets.templates = {

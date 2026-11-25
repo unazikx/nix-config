@@ -74,6 +74,7 @@
       zen.games.srb2
       zen.games.steam
       zen.games.supertuxkart
+      zen.hardware.virtualization.winapps
       zen.miscellaneous.bookmarks
       zen.miscellaneous.canvas-commons
       zen.miscellaneous.nix
