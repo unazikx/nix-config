@@ -26,7 +26,6 @@
     includes = [
       # keep-sorted start block=yes
       zen.hardware.boot.systemd-boot
-      zen.services.keyd
       zen.hardware.compression.zswap
       zen.hardware.cpu-gpu
       zen.hardware.mounting
@@ -47,11 +46,13 @@
       zen.secrets.nix-secrets
       zen.services.caddy
       zen.services.greetd
+      zen.services.keyd
       zen.services.proxy-suite.tg-ws-proxy
       zen.services.proxy-suite.zapret2
       zen.services.qbittorrent
       zen.services.tailscale
       zen.services.tg-ws-proxy-rs
+      zen.services.tlp
       zen.services.torrserver
       zen.styles.stylix
       zen.suites.hardware
@@ -96,8 +97,8 @@
       zen.programs.gui.spotifast
       zen.programs.gui.throne
       zen.programs.office.artcraft
-      zen.programs.office.zathura
       zen.programs.office.email
+      zen.programs.office.zathura
       zen.programs.terminal.fish
       zen.programs.terminal.translate-shell
       zen.programs.terminal.trash
