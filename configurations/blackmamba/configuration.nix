@@ -25,6 +25,7 @@
   zen.hosts.blackmamba = {
     includes = [
       # keep-sorted start block=yes
+      zen.games.xbox.driver
       zen.hardware.boot.systemd-boot
       zen.hardware.compression.zswap
       zen.hardware.cpu-gpu
