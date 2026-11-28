@@ -65,7 +65,7 @@
 
     nixos =
       {
-        # self',
+        self',
         pkgs,
         lib,
         config,
@@ -77,7 +77,12 @@
             enable = true;
 
             package = pkgs.steam.override {
-              extraPkgs = _: config.programs.steam.fontPackages;
+              extraPkgs =
+                _:
+                lib.flatten [
+                  config.programs.steam.fontPackages
+                  self'.packages.protonhax
+                ];
 
               extraProfile =
                 {
@@ -115,6 +120,10 @@
             enable = true;
           };
         };
+
+        environment.systemPackages = [
+          self'.packages.protonhax
+        ];
       };
 
     homeManagerNixos =

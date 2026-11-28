@@ -63,10 +63,20 @@
             };
 
             filters = {
-              "text/html" = "${lib.getExe pkgs.w3m} -I UTF-8 -T text/html -dump";
+              "application/gzip" = "${lib.getExe pkgs.gnutar} -ztf -";
+              "application/pdf" = "${lib.getExe' pkgs.poppler-utils "pdftotext"} -layout - -";
+              "application/x-tar" = "${lib.getExe pkgs.gnutar} -tf -";
+              "application/zip" = "${lib.getExe' pkgs.libarchive "bsdtar"} -tf -";
+              "image/*" = "${lib.getExe pkgs.chafa} -f symbols --size=80x40 -";
+              "subject" = "colorize";
+              "text/calendar" = "calendar";
+              "text/*" = "colorize";
+              "text/html" = "! html";
+              "text/markdown" = "${lib.getExe pkgs.bat} --color=always --style=plain --language=markdown";
               "text/plain" = "colorize";
-              "message/delivery-status" = "colorize";
-              "message/rfc822" = "colorize";
+              "text/x-diff" = "colorize";
+              "text/x-patch" = "colorize";
+              "text/x-python" = "${lib.getExe pkgs.bat} --color=always --style=plain --language=python";
             };
 
             openers = {
